@@ -6,7 +6,7 @@ anything, then read [`GUIDE.md`](GUIDE.md) for translation rules.
 ## What this repository is
 
 A Vietnamese (`vi`) locale pack for the **DeepSeek Harness (DSH)** Web GUI. The repository holds
-four different kinds of files, and each has a different edit policy:
+five different kinds of files, and each has a different edit policy:
 
 1. **`extract/` — generated, read-only.** Locale dictionaries pulled out of an installed DSH build
    (`app.asar`) plus derived artifacts (`manifest.json`, `dicts-v2.json`, `summary-v2.txt`,
@@ -23,6 +23,12 @@ four different kinds of files, and each has a different edit policy:
 4. **`plugin/` — the shippable DSH bundle.** `client.js` is **generated** from `vi-packs/` and
    `vi-meta/` by `tools/build-client.mjs`; the rest (`package.json`, `cordis.patch.yml`, `index.js`,
    `locale/*.json`, `icon.svg`) is hand-maintained but rarely changes.
+5. **`package.json` (repository root) — the install face of a plain Git URL.** A Git install packages
+   the repository root, so this manifest declares `dsh.bundle` (pointing at
+   `plugin/cordis.patch.yml`) and re-exports the bundle files under `plugin/`. `plugin/package.json`
+   remains the install face of the subdirectory spec
+   (`<repository-url>#path:/plugin`), which downloads this folder alone;
+   `node tools/validate-manifest.mjs` keeps the two in sync.
 
 Current baseline: **63 namespaces, 2,901 keys**, plus **216 package titles and 29 descriptions**
 (214 and 29 distinct English strings — two pairs of packages share one English title, and the
@@ -51,6 +57,9 @@ unless explicitly asked.
 
 - **Never hand-edit `plugin/client.js`.** It is generated. Edit `vi-packs/*.json` or
   `vi-meta/packages-*.json`, then run `node tools/build-client.mjs`.
+- **Two manifests, one bundle.** The repository-root `package.json` and `plugin/package.json` describe
+  the same package: keep their name, version, description, and `dsh.client` identical, and the root
+  one pointing into `plugin/`. `node tools/validate-manifest.mjs` checks exactly that.
 - **Never edit `extract/`.** It is a snapshot of the upstream DSH locale data. If it looks wrong,
   re-run the extraction scripts.
 - **Same keys, same order, same placeholders.** No added, removed, renamed, or reordered keys;
@@ -76,6 +85,7 @@ node tools/validate-vi.mjs                    # strict check: parity, placeholde
 node tools/validate-vi.mjs <ns> [...]         # scope to specific namespaces
 node tools/validate-meta.mjs                  # strict check: package titles/descriptions coverage
 node tools/validate-meta.mjs --partial        # same checks, missing entries reported, not failed
+node tools/validate-manifest.mjs              # strict check: the two bundle manifests describe one bundle
 node tools/audit-vi.mjs                       # soft check: leftover English, glossary drift, spacing
 node tools/build-client.mjs                   # regenerate plugin/client.js from vi-packs/ + vi-meta/
 node tools/test-client.mjs                    # smoke-test the bundle against a stubbed locale service
@@ -108,10 +118,10 @@ rule), translate `title` and `description`, then `node tools/validate-meta.mjs` 
 The overlay reaches the Plugin Manager, the built-in plugin inventory and anywhere else that renders
 `locale.resolveText` output; a brand-new package still needs a DSH restart before its row appears.
 
-**Touch the plugin manifest.** `plugin/package.json` and `plugin/cordis.patch.yml` define how DSH
-loads the bundle (`dsh.bundle.patch` inserts the `locale-vi` entry; `dsh.client` declares the web
-bundle and its `locale` dependency). Changing them changes install behavior — verify by installing
-the bundle into a DSH profile and reloading the GUI.
+**Touch the plugin manifest.** `package.json` (repository root), `plugin/package.json`, and
+`plugin/cordis.patch.yml` define how DSH loads the bundle (`dsh.bundle.patch` inserts the `locale-vi`
+entry; `dsh.client` declares the web bundle and its `locale` dependency). Changing them changes
+install behavior — verify by installing the bundle into a DSH profile and reloading the GUI.
 
 ## Definition of done
 
@@ -119,12 +129,13 @@ A change is complete only when all of the following hold:
 
 1. `node tools/validate-vi.mjs` prints `OK` (zero errors).
 2. `node tools/validate-meta.mjs` prints `OK` (every shipped package title/description covered).
-3. `node tools/build-client.mjs` succeeds; `plugin/client.js` matches the current `vi-packs/` and
+3. `node tools/validate-manifest.mjs` prints `OK` (both bundle manifests describe one bundle).
+4. `node tools/build-client.mjs` succeeds; `plugin/client.js` matches the current `vi-packs/` and
    `vi-meta/`.
-4. `node tools/test-client.mjs` prints `OK`.
-5. `node tools/audit-vi.mjs` raises no *new* findings versus the previous state; fix what your change
+5. `node tools/test-client.mjs` prints `OK`.
+6. `node tools/audit-vi.mjs` raises no *new* findings versus the previous state; fix what your change
    introduced, leave pre-existing findings alone unless asked.
-6. Any prose that quotes counts, paths, or commands still matches reality.
+7. Any prose that quotes counts, paths, or commands still matches reality.
 
 ## Pitfalls
 

@@ -1,7 +1,8 @@
-// Generate plugin/client.js (the browser bundle) from vi-packs/*.json and vi-meta/*.json.
+// Generate the browser bundle at plugin/client.js from vi-packs/*.json and vi-meta/*.json.
 // Fails unless every manifest namespace has a translation with matching keys and placeholders,
 // and unless every shipped package title/description has a Vietnamese translation.
 import fs from 'node:fs'
+import { BUNDLE_DIR } from './lib/bundle.mjs'
 import { listMetaParts, loadMetaSource, readMetaPart } from './lib/meta.mjs'
 import { loadManifest, readJson, repoPath } from './lib/repo.mjs'
 import { placeholderKey } from './lib/text.mjs'
@@ -179,7 +180,7 @@ ${metaBody(metaDescriptions)}
 });
 `
 
-fs.writeFileSync(repoPath('plugin/client.js'), source, 'utf8')
+fs.writeFileSync(repoPath(BUNDLE_DIR, 'client.js'), source, 'utf8')
 console.log(
   `build-client: ${sections.length} namespaces, ${keyTotal} keys, ` +
     `${Object.keys(metaTitles).length} package titles, ${Object.keys(metaDescriptions).length} descriptions, ` +

@@ -1,9 +1,10 @@
 // Smoke-test the generated plugin/client.js against a stub of the Client locale service.
 import fs from 'node:fs'
 import vm from 'node:vm'
+import { BUNDLE_DIR } from './lib/bundle.mjs'
 import { loadManifest, readJson, repoPath } from './lib/repo.mjs'
 
-const source = fs.readFileSync(repoPath('plugin/client.js'), 'utf8')
+const source = fs.readFileSync(repoPath(BUNDLE_DIR, 'client.js'), 'utf8')
 const manifest = loadManifest()
 const expectedKeys = new Map(
   manifest.map((m) => [

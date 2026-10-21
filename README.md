@@ -23,14 +23,37 @@ mà Harness phát hành.
 | `vi-packs/` | **Bản dịch tiếng Việt** — 63 tệp JSON cùng tên, cùng thứ tự khóa với `extract/en/` |
 | `vi-meta/` | **Bản dịch tên và mô tả gói** — `packages-*.json` khóa theo tên gói, đối chiếu `extract/meta.json` |
 | `plugin/` | Plugin đóng gói để cài vào DSH: `client.js` (sinh tự động), `index.js` (host no-op), `cordis.patch.yml`, `locale/*.json`, `icon.svg` |
+| `package.json` | Manifest cài đặt ở **gọc repository** — mặt cài đặt của địa chỉ Git thuần: khai báo `dsh.bundle` trỏ vào `plugin/cordis.patch.yml` và `exports` trỏ vào `plugin/`; giữ đồng bộ tên, version, mô tả với `plugin/package.json` |
 | `tools/` | Toàn bộ pipeline: trích xuất, dựng dataset, build, kiểm tra, audit, test |
-| `tools/lib/` | Helper dùng chung của `tools/`: gốc repo và đọc/ghi JSON (`repo.mjs`), regex placeholder & CJK (`text.mjs`), dữ liệu `vi-meta` (`meta.mjs`), đọc `app.asar` (`asar.mjs`) |
+| `tools/lib/` | Helper dùng chung của `tools/`: gốc repo và đọc/ghi JSON (`repo.mjs`), regex placeholder & CJK (`text.mjs`), dữ liệu `vi-meta` (`meta.mjs`), đọc `app.asar` (`asar.mjs`), thư mục bundle và hai manifest (`bundle.mjs`) |
 | `GUIDE.md` | Quy tắc dịch, định dạng, glossary thuật ngữ thống nhất |
 | `AGENTS.md` | Quy ước cho agent lập trình làm việc trong repo này |
 | `CONTRIBUTING.md` | Hướng dẫn đóng góp |
 | `LICENSE` | Giấy phép MIT |
 
 ## Cài đặt
+
+### Qua Plugin Manager (khuyên dùng)
+
+Trong giao diện web DSH, mở **Plugins → Add plugin** và dán địa chỉ repository:
+
+```
+https://github.com/dinhdev666/dsh-vi-pack
+```
+
+DSH chạy `pnpm add` với địa chỉ đó, nên **`package.json` ở gọc repository** chính là thứ được đọc:
+nó khai báo `dsh.bundle` (trỏ vào `plugin/cordis.patch.yml`) và `exports` (trỏ vào `plugin/`), nên
+DSH cài được đúng một bundle, tự thêm vào danh sách bundle của profile và kích hoạt nó. Sau khi cài,
+tải lại trang (Cmd/Ctrl+R), mở **Settings → General → Language** và chọn **Tiếng Việt**.
+
+Muốn nâng cấp sau khi có bản mới: gỡ bundle trong Plugin Manager rồi cài lại.
+
+> Cài bằng địa chỉ repository thuần sẽ tải **cả repository** (kèm `extract/`, `vi-packs/`, `tools/`).
+> Nếu chỉ muốn phần cài gọn, dùng spec trỏ thẳng vào thư mục bundle:
+> `https://github.com/dinhdev666/dsh-vi-pack#path:/plugin` — thư mục `plugin/` có manifest riêng
+> (`plugin/package.json`) nên cài được như một bundle độc lập.
+
+### Cài thủ công vào profile (khi clone sẵn repo)
 
 Plugin được nạp như một bundle local của DSH profile (ví dụ profile `desktop` tại
 `~/.dsh/profiles/desktop`, trên Windows là `%USERPROFILE%\.dsh\profiles\desktop`).

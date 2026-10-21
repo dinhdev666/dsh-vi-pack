@@ -15,7 +15,7 @@ size are welcome: fixing one awkward string, translating a new namespace, or imp
   `tools/extract-dicts.mjs` and `tools/extract-meta.mjs` read locale data directly out of the DSH
   `app.asar`.
 
-## The four kinds of files
+## The five kinds of files
 
 | Path | Policy |
 |---|---|
@@ -23,6 +23,7 @@ size are welcome: fixing one awkward string, translating a new namespace, or imp
 | `vi-packs/` | The translation output. **This is where namespace translation contributions go.** |
 | `vi-meta/` | Package titles and descriptions shown in the plugin list. Hand-written, keyed by package name. |
 | `plugin/` | The installable bundle. `client.js` is generated; other files are hand-maintained. |
+| `package.json` | The bundle manifest at the repository root, used when someone installs the plain Git URL. Keep it identical in name, version, and description to `plugin/package.json`. |
 
 ## Translating or fixing strings
 
