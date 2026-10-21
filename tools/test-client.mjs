@@ -81,7 +81,7 @@ vm.runInNewContext(source, sandbox, { filename: 'client.js' })
 
 console.log('module registration')
 assert(loaded !== undefined, 'client.js calls __ModuleLoader__.load once')
-assert(loaded.id === '@local/dsh-locale-vi', `bundle id is ${loaded.id}`)
+assert(loaded.id === '@dinhdev666/dsh-vi-pack', `bundle id is ${loaded.id}`)
 assert(typeof loaded.factory === 'function', 'factory is a function')
 
 const exports = loaded.factory((request) => {

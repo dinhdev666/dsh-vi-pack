@@ -10,7 +10,7 @@ mà Harness phát hành.
   gói nên không nằm trong namespace nào; gói ngôn ngữ bổ sung bản dịch trong `vi-meta/` và phủ lên
   `ctx.locale.resolveText`.
 - **Fallback `en`**: khóa nào chưa dịch sẽ hiển thị tiếng Anh, giao diện không bao giờ lộ khóa thô.
-- **Plugin DSH chuẩn**: `@local/dsh-locale-vi`, nửa browser đăng ký ngôn ngữ qua `ctx.locale.addLanguage`,
+- **Plugin DSH chuẩn**: `@dinhdev666/dsh-vi-pack`, nửa browser đăng ký ngôn ngữ qua `ctx.locale.addLanguage`,
   từng namespace qua `ctx.locale.register(ns, 'vi', dict)`, và tên/mô tả gói qua lớp phủ
   `ctx.locale.resolveText`; nửa host là no-op.
 
@@ -63,7 +63,7 @@ Plugin được nạp như một bundle local của DSH profile (ví dụ profil
 
    ```json
    "dependencies": {
-     "@local/dsh-locale-vi": "link:../../../dev/dsh-vi-pack/plugin"
+     "@dinhdev666/dsh-vi-pack": "link:../../../dev/dsh-vi-pack/plugin"
    }
    ```
 
@@ -77,7 +77,7 @@ Plugin được nạp như một bundle local của DSH profile (ví dụ profil
    "dsh": {
      "profile": {
        "bundles": [
-         "@local/dsh-locale-vi"
+         "@dinhdev666/dsh-vi-pack"
        ]
      }
    }

@@ -120,7 +120,7 @@ const metaBody = (object) => {
 }
 
 const source = `window.__ModuleLoader__.load({
-  id: '@local/dsh-locale-vi',
+  id: '@dinhdev666/dsh-vi-pack',
   factory: (require) => {
     var module = { exports: {} };
     var exports = module.exports;
