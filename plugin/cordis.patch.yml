@@ -1,0 +1,3 @@
+- insert:
+    - id: locale-vi
+      name: '@local/dsh-locale-vi'

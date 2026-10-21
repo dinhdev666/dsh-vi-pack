@@ -1,0 +1,632 @@
+[
+  {
+    "ns": "agent-team",
+    "pkg": "dsh-experimental-client-ui-agent-team",
+    "file": "agent-team.json",
+    "keys": 25,
+    "maxLength": 58,
+    "longestKey": "empty",
+    "multiLineKeys": 0,
+    "placeholderKeys": 1
+  },
+  {
+    "ns": "approval",
+    "pkg": "dsh-client-ui-approval",
+    "file": "approval.json",
+    "keys": 5,
+    "maxLength": 45,
+    "longestKey": "escalation",
+    "multiLineKeys": 0,
+    "placeholderKeys": 1
+  },
+  {
+    "ns": "chat",
+    "pkg": "dsh-client-ui-chat",
+    "file": "chat.json",
+    "keys": 191,
+    "maxLength": 209,
+    "longestKey": "message.failure.interrupted",
+    "multiLineKeys": 0,
+    "placeholderKeys": 39
+  },
+  {
+    "ns": "command",
+    "pkg": "dsh-client-ui-commands",
+    "file": "command.json",
+    "keys": 28,
+    "maxLength": 61,
+    "longestKey": "description.permission",
+    "multiLineKeys": 0,
+    "placeholderKeys": 3
+  },
+  {
+    "ns": "common",
+    "pkg": "dsh-client-locale",
+    "file": "common.json",
+    "keys": 41,
+    "maxLength": 38,
+    "longestKey": "copy.optionsHint",
+    "multiLineKeys": 0,
+    "placeholderKeys": 4
+  },
+  {
+    "ns": "conversation",
+    "pkg": "dsh-client-ui-conversation",
+    "file": "conversation.json",
+    "keys": 373,
+    "maxLength": 158,
+    "longestKey": "error.sessionInUse",
+    "multiLineKeys": 0,
+    "placeholderKeys": 65
+  },
+  {
+    "ns": "cordis",
+    "pkg": "dsh-client-ui-cordis",
+    "file": "cordis.json",
+    "keys": 51,
+    "maxLength": 56,
+    "longestKey": "render.failedAbdicated",
+    "multiLineKeys": 0,
+    "placeholderKeys": 6
+  },
+  {
+    "ns": "cotTranslation",
+    "pkg": "dsh-experimental-client-ui-cot-translation",
+    "file": "cotTranslation.json",
+    "keys": 32,
+    "maxLength": 262,
+    "longestKey": "paidNotice",
+    "multiLineKeys": 0,
+    "placeholderKeys": 1
+  },
+  {
+    "ns": "deepseek-model-label-1017",
+    "pkg": "dsh-client-ui-deepseek-model-label-1017",
+    "file": "deepseek-model-label-1017.json",
+    "keys": 1,
+    "maxLength": 4,
+    "longestKey": "badge.label",
+    "multiLineKeys": 0,
+    "placeholderKeys": 0
+  },
+  {
+    "ns": "deliverables",
+    "pkg": "dsh-client-ui-deliverables",
+    "file": "deliverables.json",
+    "keys": 60,
+    "maxLength": 122,
+    "longestKey": "presented.unavailable",
+    "multiLineKeys": 0,
+    "placeholderKeys": 14
+  },
+  {
+    "ns": "directory-browser",
+    "pkg": "dsh-client-ui-directory-picker-browse",
+    "file": "directory-browser.json",
+    "keys": 13,
+    "maxLength": 54,
+    "longestKey": "browser.truncated",
+    "multiLineKeys": 0,
+    "placeholderKeys": 1
+  },
+  {
+    "ns": "documentHtml",
+    "pkg": "dsh-client-ui-sidebar-documentpreview",
+    "file": "documentHtml.json",
+    "keys": 4,
+    "maxLength": 42,
+    "longestKey": "failed",
+    "multiLineKeys": 0,
+    "placeholderKeys": 0
+  },
+  {
+    "ns": "documentMarkdown",
+    "pkg": "dsh-client-ui-sidebar-documentpreview",
+    "file": "documentMarkdown.json",
+    "keys": 4,
+    "maxLength": 9,
+    "longestKey": "footnotes",
+    "multiLineKeys": 0,
+    "placeholderKeys": 0
+  },
+  {
+    "ns": "feedback",
+    "pkg": "dsh-client-ui-message-feedback",
+    "file": "feedback.json",
+    "keys": 20,
+    "maxLength": 90,
+    "longestKey": "dialog.hint",
+    "multiLineKeys": 0,
+    "placeholderKeys": 0
+  },
+  {
+    "ns": "goal",
+    "pkg": "dsh-client-ui-goal",
+    "file": "goal.json",
+    "keys": 12,
+    "maxLength": 14,
+    "longestKey": "objective.aria",
+    "multiLineKeys": 0,
+    "placeholderKeys": 0
+  },
+  {
+    "ns": "job",
+    "pkg": "dsh-client-ui-jobs",
+    "file": "job.json",
+    "keys": 40,
+    "maxLength": 39,
+    "longestKey": "output.error",
+    "multiLineKeys": 0,
+    "placeholderKeys": 19
+  },
+  {
+    "ns": "model",
+    "pkg": "dsh-client-ui-model-selection",
+    "file": "model.json",
+    "keys": 23,
+    "maxLength": 158,
+    "longestKey": "error.sessionInUse",
+    "multiLineKeys": 0,
+    "placeholderKeys": 5
+  },
+  {
+    "ns": "open-in-app",
+    "pkg": "dsh-client-ui-open-in-app",
+    "file": "open-in-app.json",
+    "keys": 45,
+    "maxLength": 50,
+    "longestKey": "shortcut.unavailable",
+    "multiLineKeys": 0,
+    "placeholderKeys": 2
+  },
+  {
+    "ns": "permission.access",
+    "pkg": "dsh-client-ui-permission-presets",
+    "file": "permission.access.json",
+    "keys": 17,
+    "maxLength": 286,
+    "longestKey": "auto.confirm.description",
+    "multiLineKeys": 0,
+    "placeholderKeys": 1
+  },
+  {
+    "ns": "plan",
+    "pkg": "dsh-client-ui-plan",
+    "file": "plan.json",
+    "keys": 17,
+    "maxLength": 80,
+    "longestKey": "preview.expired",
+    "multiLineKeys": 0,
+    "placeholderKeys": 1
+  },
+  {
+    "ns": "pluginManager",
+    "pkg": "dsh-client-ui-plugin-manager",
+    "file": "pluginManager.json",
+    "keys": 221,
+    "maxLength": 450,
+    "longestKey": "installDoneOtherVersion",
+    "multiLineKeys": 0,
+    "placeholderKeys": 45
+  },
+  {
+    "ns": "pluginMarket",
+    "pkg": "dsh-client-ui-plugin-market",
+    "file": "pluginMarket.json",
+    "keys": 78,
+    "maxLength": 116,
+    "longestKey": "sourcesTrust",
+    "multiLineKeys": 0,
+    "placeholderKeys": 14
+  },
+  {
+    "ns": "question",
+    "pkg": "dsh-client-ui-user-questions",
+    "file": "question.json",
+    "keys": 31,
+    "maxLength": 65,
+    "longestKey": "error.resubmit",
+    "multiLineKeys": 0,
+    "placeholderKeys": 2
+  },
+  {
+    "ns": "reference",
+    "pkg": "dsh-client-ui-reference",
+    "file": "reference.json",
+    "keys": 15,
+    "maxLength": 56,
+    "longestKey": "fileOpen.failed",
+    "multiLineKeys": 0,
+    "placeholderKeys": 6
+  },
+  {
+    "ns": "schedule.catalog",
+    "pkg": "dsh-client-ui-schedule",
+    "file": "schedule.catalog.json",
+    "keys": 70,
+    "maxLength": 48,
+    "longestKey": "cron.day.bothStarred",
+    "multiLineKeys": 0,
+    "placeholderKeys": 36
+  },
+  {
+    "ns": "schedule.manager",
+    "pkg": "dsh-client-ui-schedule",
+    "file": "schedule.manager.json",
+    "keys": 188,
+    "maxLength": 173,
+    "longestKey": "delete.description",
+    "multiLineKeys": 0,
+    "placeholderKeys": 36
+  },
+  {
+    "ns": "secretMask",
+    "pkg": "dsh-client-ui-secret-mask",
+    "file": "secretMask.json",
+    "keys": 2,
+    "maxLength": 11,
+    "longestKey": "secret.reveal",
+    "multiLineKeys": 0,
+    "placeholderKeys": 0
+  },
+  {
+    "ns": "session-inspector",
+    "pkg": "dsh-experimental-session-inspector",
+    "file": "session-inspector.json",
+    "keys": 52,
+    "maxLength": 82,
+    "longestKey": "tab.description",
+    "multiLineKeys": 0,
+    "placeholderKeys": 0
+  },
+  {
+    "ns": "session-log-download",
+    "pkg": "dsh-session-log-export",
+    "file": "session-log-download.json",
+    "keys": 10,
+    "maxLength": 75,
+    "longestKey": "dialog.preparingDescription",
+    "multiLineKeys": 0,
+    "placeholderKeys": 0
+  },
+  {
+    "ns": "settings",
+    "pkg": "dsh-client-ui-settings-general",
+    "file": "settings.json",
+    "keys": 41,
+    "maxLength": 91,
+    "longestKey": "desktop.update.stopFailed",
+    "multiLineKeys": 1,
+    "placeholderKeys": 4
+  },
+  {
+    "ns": "settings.account",
+    "pkg": "dsh-client-ui-settings-account",
+    "file": "settings.account.json",
+    "keys": 94,
+    "maxLength": 226,
+    "longestKey": "onboardingIntroduction",
+    "multiLineKeys": 0,
+    "placeholderKeys": 0
+  },
+  {
+    "ns": "settings.agentLoop",
+    "pkg": "dsh-client-ui-settings-agent-loop",
+    "file": "settings.agentLoop.json",
+    "keys": 12,
+    "maxLength": 78,
+    "longestKey": "saveFailed",
+    "multiLineKeys": 0,
+    "placeholderKeys": 0
+  },
+  {
+    "ns": "settings.agentPreset",
+    "pkg": "dsh-client-ui-agent-preset",
+    "file": "settings.agentPreset.json",
+    "keys": 47,
+    "maxLength": 933,
+    "longestKey": "guideCordisUsage",
+    "multiLineKeys": 8,
+    "placeholderKeys": 1
+  },
+  {
+    "ns": "settings.locale",
+    "pkg": "dsh-client-locale",
+    "file": "settings.locale.json",
+    "keys": 1,
+    "maxLength": 8,
+    "longestKey": "language.title",
+    "multiLineKeys": 0,
+    "placeholderKeys": 0
+  },
+  {
+    "ns": "settings.models",
+    "pkg": "dsh-client-ui-settings-models",
+    "file": "settings.models.json",
+    "keys": 134,
+    "maxLength": 756,
+    "longestKey": "welcomeBody",
+    "multiLineKeys": 1,
+    "placeholderKeys": 14
+  },
+  {
+    "ns": "settings.permission",
+    "pkg": "dsh-client-ui-permission-presets",
+    "file": "settings.permission.json",
+    "keys": 12,
+    "maxLength": 203,
+    "longestKey": "confirm.description",
+    "multiLineKeys": 0,
+    "placeholderKeys": 0
+  },
+  {
+    "ns": "settings.pluginInventory",
+    "pkg": "dsh-client-ui-settings-plugin-inventory",
+    "file": "settings.pluginInventory.json",
+    "keys": 37,
+    "maxLength": 71,
+    "longestKey": "clientSyncFailed",
+    "multiLineKeys": 0,
+    "placeholderKeys": 4
+  },
+  {
+    "ns": "settings.plugins",
+    "pkg": "dsh-client-ui-settings-plugins",
+    "file": "settings.plugins.json",
+    "keys": 5,
+    "maxLength": 42,
+    "longestKey": "intro",
+    "multiLineKeys": 0,
+    "placeholderKeys": 0
+  },
+  {
+    "ns": "settings.sessionLog",
+    "pkg": "dsh-client-ui-settings-session-log",
+    "file": "settings.sessionLog.json",
+    "keys": 4,
+    "maxLength": 52,
+    "longestKey": "title",
+    "multiLineKeys": 0,
+    "placeholderKeys": 0
+  },
+  {
+    "ns": "settings.shell",
+    "pkg": "dsh-client-ui-settings-shell",
+    "file": "settings.shell.json",
+    "keys": 14,
+    "maxLength": 78,
+    "longestKey": "saveFailed",
+    "multiLineKeys": 0,
+    "placeholderKeys": 0
+  },
+  {
+    "ns": "settings.subagent",
+    "pkg": "dsh-client-ui-settings-subagent",
+    "file": "settings.subagent.json",
+    "keys": 35,
+    "maxLength": 163,
+    "longestKey": "subagentCapacityHelp",
+    "multiLineKeys": 0,
+    "placeholderKeys": 0
+  },
+  {
+    "ns": "settings.theme",
+    "pkg": "dsh-client-ui-theme",
+    "file": "settings.theme.json",
+    "keys": 25,
+    "maxLength": 107,
+    "longestKey": "fontFamily.code.description",
+    "multiLineKeys": 0,
+    "placeholderKeys": 0
+  },
+  {
+    "ns": "settings.webSearch",
+    "pkg": "dsh-client-ui-settings-web-search",
+    "file": "settings.webSearch.json",
+    "keys": 27,
+    "maxLength": 170,
+    "longestKey": "countHint",
+    "multiLineKeys": 0,
+    "placeholderKeys": 0
+  },
+  {
+    "ns": "shortcuts",
+    "pkg": "dsh-client-ui-shortcuts",
+    "file": "shortcuts.json",
+    "keys": 56,
+    "maxLength": 228,
+    "longestKey": "macos-web-help",
+    "multiLineKeys": 0,
+    "placeholderKeys": 6
+  },
+  {
+    "ns": "shortcuts.layout",
+    "pkg": "dsh-client-ui-layout",
+    "file": "shortcuts.layout.json",
+    "keys": 1,
+    "maxLength": 19,
+    "longestKey": "toggle",
+    "multiLineKeys": 0,
+    "placeholderKeys": 0
+  },
+  {
+    "ns": "sidebar",
+    "pkg": "dsh-client-ui-sidebar",
+    "file": "sidebar.json",
+    "keys": 5,
+    "maxLength": 16,
+    "longestKey": "toggle.collapse",
+    "multiLineKeys": 0,
+    "placeholderKeys": 0
+  },
+  {
+    "ns": "sidebarBrowser",
+    "pkg": "dsh-client-ui-sidebar-browser",
+    "file": "sidebarBrowser.json",
+    "keys": 26,
+    "maxLength": 125,
+    "longestKey": "sandbox.warning",
+    "multiLineKeys": 0,
+    "placeholderKeys": 1
+  },
+  {
+    "ns": "sidebarCodePreview",
+    "pkg": "dsh-client-ui-sidebar-documentpreview",
+    "file": "sidebarCodePreview.json",
+    "keys": 3,
+    "maxLength": 6,
+    "longestKey": "copied",
+    "multiLineKeys": 0,
+    "placeholderKeys": 0
+  },
+  {
+    "ns": "sidebarDocumentPreview",
+    "pkg": "dsh-client-ui-sidebar-documentpreview",
+    "file": "sidebarDocumentPreview.json",
+    "keys": 22,
+    "maxLength": 55,
+    "longestKey": "error.tooLarge",
+    "multiLineKeys": 0,
+    "placeholderKeys": 3
+  },
+  {
+    "ns": "sidebarExcel",
+    "pkg": "dsh-client-ui-sidebar-documentpreview",
+    "file": "sidebarExcel.json",
+    "keys": 15,
+    "maxLength": 115,
+    "longestKey": "unsupportedNotice",
+    "multiLineKeys": 0,
+    "placeholderKeys": 1
+  },
+  {
+    "ns": "sidebarFiles",
+    "pkg": "dsh-client-ui-sidebar-files",
+    "file": "sidebarFiles.json",
+    "keys": 17,
+    "maxLength": 73,
+    "longestKey": "error.outsideWorkspace",
+    "multiLineKeys": 0,
+    "placeholderKeys": 1
+  },
+  {
+    "ns": "sidebarImage",
+    "pkg": "dsh-client-ui-sidebar-documentpreview",
+    "file": "sidebarImage.json",
+    "keys": 11,
+    "maxLength": 50,
+    "longestKey": "unsupported",
+    "multiLineKeys": 0,
+    "placeholderKeys": 2
+  },
+  {
+    "ns": "sidebarOffice",
+    "pkg": "dsh-client-ui-sidebar-documentpreview",
+    "file": "sidebarOffice.json",
+    "keys": 15,
+    "maxLength": 122,
+    "longestKey": "tooLarge",
+    "multiLineKeys": 0,
+    "placeholderKeys": 2
+  },
+  {
+    "ns": "sidebarPdf",
+    "pkg": "dsh-client-ui-sidebar-documentpreview",
+    "file": "sidebarPdf.json",
+    "keys": 15,
+    "maxLength": 76,
+    "longestKey": "password",
+    "multiLineKeys": 0,
+    "placeholderKeys": 3
+  },
+  {
+    "ns": "sidebarRight",
+    "pkg": "dsh-client-ui-sidebar-right",
+    "file": "sidebarRight.json",
+    "keys": 34,
+    "maxLength": 47,
+    "longestKey": "tab.unavailable",
+    "multiLineKeys": 0,
+    "placeholderKeys": 0
+  },
+  {
+    "ns": "sidebarTerminal",
+    "pkg": "dsh-client-ui-sidebar-terminal",
+    "file": "sidebarTerminal.json",
+    "keys": 28,
+    "maxLength": 120,
+    "longestKey": "terminalLimit",
+    "multiLineKeys": 0,
+    "placeholderKeys": 4
+  },
+  {
+    "ns": "skill",
+    "pkg": "dsh-client-ui-skill",
+    "file": "skill.json",
+    "keys": 8,
+    "maxLength": 25,
+    "longestKey": "row.preparing",
+    "multiLineKeys": 0,
+    "placeholderKeys": 0
+  },
+  {
+    "ns": "slash.menu",
+    "pkg": "dsh-client-ui-input-trigger",
+    "file": "slash.menu.json",
+    "keys": 9,
+    "maxLength": 19,
+    "longestKey": "suggestions.aria",
+    "multiLineKeys": 0,
+    "placeholderKeys": 0
+  },
+  {
+    "ns": "subagent",
+    "pkg": "dsh-client-ui-subagent",
+    "file": "subagent.json",
+    "keys": 41,
+    "maxLength": 79,
+    "longestKey": "readonly.oneShot.body",
+    "multiLineKeys": 0,
+    "placeholderKeys": 22
+  },
+  {
+    "ns": "trajectory",
+    "pkg": "dsh-client-ui-trajectory",
+    "file": "trajectory.json",
+    "keys": 192,
+    "maxLength": 52,
+    "longestKey": "timeline.overviewAria",
+    "multiLineKeys": 0,
+    "placeholderKeys": 37
+  },
+  {
+    "ns": "voice-input",
+    "pkg": "dsh-experimental-client-ui-voice-input",
+    "file": "voice-input.json",
+    "keys": 109,
+    "maxLength": 198,
+    "longestKey": "local",
+    "multiLineKeys": 0,
+    "placeholderKeys": 22
+  },
+  {
+    "ns": "workflowRun",
+    "pkg": "dsh-client-ui-workflow-run",
+    "file": "workflowRun.json",
+    "keys": 18,
+    "maxLength": 19,
+    "longestKey": "statusCount.interrupted",
+    "multiLineKeys": 0,
+    "placeholderKeys": 9
+  },
+  {
+    "ns": "workspace",
+    "pkg": "dsh-client-ui-workspace",
+    "file": "workspace.json",
+    "keys": 119,
+    "maxLength": 214,
+    "longestKey": "archive.confirm.desc",
+    "multiLineKeys": 0,
+    "placeholderKeys": 29
+  }
+]

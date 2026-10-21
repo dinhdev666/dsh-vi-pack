@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Tiếng Việt">
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#c62828"/>
+  <path d="M32 13.5l3.9 8.1 8.9 1.2-6.5 6.3 1.6 8.9L32 33.8l-7.9 4.2 1.6-8.9-6.5-6.3 8.9-1.2z" fill="#ffcd00"/>
+  <text x="32" y="55" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0.5" fill="#ffffff">VI</text>
+</svg>

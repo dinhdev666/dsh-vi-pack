@@ -1,0 +1,250 @@
+{
+  "@deepseek-ai/dsh-message-feedback": {
+    "title": "Phản hồi tin nhắn"
+  },
+  "@deepseek-ai/dsh-office-to-pdf": {
+    "title": "Chuyển Office sang PDF"
+  },
+  "@deepseek-ai/dsh-otel": {
+    "title": "Báo cáo OpenTelemetry"
+  },
+  "@deepseek-ai/dsh-permission-presets": {
+    "title": "Preset quyền"
+  },
+  "@deepseek-ai/dsh-persona": {
+    "title": "Vai trò agent"
+  },
+  "@deepseek-ai/dsh-plan-mode": {
+    "title": "Chế độ kế hoạch"
+  },
+  "@deepseek-ai/dsh-plugin-manager": {
+    "title": "Trình quản lý plugin"
+  },
+  "@deepseek-ai/dsh-plugin-package-inventory-deepseek": {
+    "title": "Báo cáo danh mục plugin DeepSeek"
+  },
+  "@deepseek-ai/dsh-ptc-runtime-node": {
+    "title": "Runtime PTC trên Node"
+  },
+  "@deepseek-ai/dsh-pwsh-sandbox": {
+    "title": "Chạy PowerShell trong sandbox"
+  },
+  "@deepseek-ai/dsh-repeat-tool-reminder": {
+    "title": "Nhắc lặp lệnh gọi công cụ"
+  },
+  "@deepseek-ai/dsh-sandbox-local": {
+    "title": "Sandbox tiến trình cục bộ"
+  },
+  "@deepseek-ai/dsh-sandbox-policy": {
+    "title": "Chính sách quyền sandbox"
+  },
+  "@deepseek-ai/dsh-schedule": {
+    "title": "Lập lịch tác vụ",
+    "description": "Lưu các tác vụ tự động, chạy từng tác vụ trong phiên gốc khi đến hạn và cung cấp cho agent các công cụ để quản lý chúng."
+  },
+  "@deepseek-ai/dsh-session": {
+    "title": "Bản ghi phiên"
+  },
+  "@deepseek-ai/dsh-session-checkpoint-policy": {
+    "title": "Điểm kiểm tra phiên"
+  },
+  "@deepseek-ai/dsh-session-log-deepseek": {
+    "title": "Tải lên nhật ký phiên DeepSeek"
+  },
+  "@deepseek-ai/dsh-session-log-export": {
+    "title": "Xuất nhật ký phiên"
+  },
+  "@deepseek-ai/dsh-session-persistence-jsonl": {
+    "title": "Lưu bền nhật ký phiên"
+  },
+  "@deepseek-ai/dsh-session-projection": {
+    "title": "Tổng hợp trạng thái phiên"
+  },
+  "@deepseek-ai/dsh-session-projection-cache": {
+    "title": "Bộ nhớ đệm trạng thái phiên"
+  },
+  "@deepseek-ai/dsh-session-query-sqlite": {
+    "title": "Truy vấn và tìm kiếm phiên"
+  },
+  "@deepseek-ai/dsh-session-reference": {
+    "title": "Tham chiếu chéo phiên"
+  },
+  "@deepseek-ai/dsh-session-stats": {
+    "title": "Thống kê phiên"
+  },
+  "@deepseek-ai/dsh-session-telemetry-otel": {
+    "title": "Gửi nhật ký phiên phản hồi"
+  },
+  "@deepseek-ai/dsh-session-title": {
+    "title": "Tiêu đề phiên"
+  },
+  "@deepseek-ai/dsh-session-title-first-prompt-llm": {
+    "title": "Tạo tiêu đề từ tin nhắn đầu"
+  },
+  "@deepseek-ai/dsh-session-turn-outline": {
+    "title": "Dàn ý lượt phiên"
+  },
+  "@deepseek-ai/dsh-settings": {
+    "title": "Cài đặt"
+  },
+  "@deepseek-ai/dsh-shell-env": {
+    "title": "Biến môi trường shell"
+  },
+  "@deepseek-ai/dsh-skill": {
+    "title": "Đăng ký kỹ năng"
+  },
+  "@deepseek-ai/dsh-skill-badge": {
+    "title": "DSH",
+    "description": "Cung cấp kỹ năng huy hiệu powered-by-DSH chính thức."
+  },
+  "@deepseek-ai/dsh-skill-filesystem": {
+    "title": "Tải kỹ năng cục bộ"
+  },
+  "@deepseek-ai/dsh-spill-local": {
+    "title": "Lưu kết quả dài cục bộ"
+  },
+  "@deepseek-ai/dsh-spill-policy": {
+    "title": "Giới hạn độ dài kết quả công cụ"
+  },
+  "@deepseek-ai/dsh-storage": {
+    "title": "Lưu trữ dữ liệu"
+  },
+  "@deepseek-ai/dsh-storage-domain": {
+    "title": "Lưu trữ dữ liệu có cấu trúc"
+  },
+  "@deepseek-ai/dsh-storage-json": {
+    "title": "Lưu trữ tệp JSON"
+  },
+  "@deepseek-ai/dsh-subagent": {
+    "title": "Agent con"
+  },
+  "@deepseek-ai/dsh-subagent-fork-in-process": {
+    "title": "Agent con kế thừa ngữ cảnh"
+  },
+  "@deepseek-ai/dsh-subagent-spawn-in-process": {
+    "title": "Agent con tạo mới"
+  },
+  "@deepseek-ai/dsh-subprocess-local": {
+    "title": "Tiến trình con cục bộ"
+  },
+  "@deepseek-ai/dsh-system-prompt": {
+    "title": "Lắp ghép lời nhắc hệ thống"
+  },
+  "@deepseek-ai/dsh-terminal": {
+    "title": "Terminal thường trực"
+  },
+  "@deepseek-ai/dsh-terminal-bash": {
+    "title": "Shell thường trực"
+  },
+  "@deepseek-ai/dsh-time-context": {
+    "title": "Nhận biết thời gian",
+    "description": "Cho mô hình biết thời gian hiện tại, múi giờ của trình duyệt và khoảng thời gian kể từ tin nhắn trước ở mỗi bước."
+  },
+  "@deepseek-ai/dsh-token-meter": {
+    "title": "Đo lường token"
+  },
+  "@deepseek-ai/dsh-tool-ask-user": {
+    "title": "Công cụ hỏi người dùng"
+  },
+  "@deepseek-ai/dsh-tool-bash": {
+    "title": "Công cụ lệnh Bash"
+  },
+  "@deepseek-ai/dsh-tool-bash-persistent": {
+    "title": "Công cụ Bash thường trực"
+  },
+  "@deepseek-ai/dsh-tool-call-timeout-policy": {
+    "title": "Kiểm soát thời gian chờ công cụ"
+  },
+  "@deepseek-ai/dsh-tool-cordis": {
+    "title": "Công cụ tra cứu API plugin"
+  },
+  "@deepseek-ai/dsh-tool-fs": {
+    "title": "Công cụ đọc ghi tệp"
+  },
+  "@deepseek-ai/dsh-tool-fs-search": {
+    "title": "Công cụ tìm kiếm tệp"
+  },
+  "@deepseek-ai/dsh-tool-goal": {
+    "title": "Công cụ quản lý mục tiêu"
+  },
+  "@deepseek-ai/dsh-tool-jobs": {
+    "title": "Công cụ tác vụ nền"
+  },
+  "@deepseek-ai/dsh-tool-present": {
+    "title": "Công cụ bàn giao tệp"
+  },
+  "@deepseek-ai/dsh-tool-pwsh": {
+    "title": "Công cụ lệnh PowerShell"
+  },
+  "@deepseek-ai/dsh-tool-pwsh-persistent": {
+    "title": "Công cụ PowerShell thường trực"
+  },
+  "@deepseek-ai/dsh-tool-ralph": {
+    "title": "Công cụ lặp Ralph"
+  },
+  "@deepseek-ai/dsh-tool-skill": {
+    "title": "Công cụ tải kỹ năng"
+  },
+  "@deepseek-ai/dsh-tool-subagent": {
+    "title": "Công cụ ủy thác agent con"
+  },
+  "@deepseek-ai/dsh-tool-subagent-control": {
+    "title": "Công cụ điều khiển agent con"
+  },
+  "@deepseek-ai/dsh-tool-todo": {
+    "title": "Công cụ việc cần làm"
+  },
+  "@deepseek-ai/dsh-tool-web": {
+    "title": "Công cụ tìm kiếm và đọc web"
+  },
+  "@deepseek-ai/dsh-tool-workflow": {
+    "title": "Công cụ quy trình"
+  },
+  "@deepseek-ai/dsh-tools": {
+    "title": "Đăng ký và thực thi công cụ"
+  },
+  "@deepseek-ai/dsh-typert-loader": {
+    "title": "Tải kiểu Typert"
+  },
+  "@deepseek-ai/dsh-typert-registry": {
+    "title": "Sổ đăng ký kiểu Typert"
+  },
+  "@deepseek-ai/dsh-user-approval": {
+    "title": "Phê duyệt người dùng"
+  },
+  "@deepseek-ai/dsh-user-questions": {
+    "title": "Câu hỏi người dùng"
+  },
+  "@deepseek-ai/dsh-web": {
+    "title": "Truy cập web"
+  },
+  "@deepseek-ai/dsh-web-app": {
+    "title": "Hỗ trợ chạy ứng dụng web"
+  },
+  "@deepseek-ai/dsh-web-deepseek-api": {
+    "title": "API tìm kiếm và đọc web DeepSeek"
+  },
+  "@deepseek-ai/dsh-web-fetch-http": {
+    "title": "Tải trang web công khai"
+  },
+  "@deepseek-ai/dsh-web-search-deepseek": {
+    "title": "Tìm kiếm web DeepSeek"
+  },
+  "@deepseek-ai/dsh-workflow-ptc": {
+    "title": "Bộ máy thực thi quy trình"
+  },
+  "@deepseek-ai/dsh-workspace": {
+    "title": "Quản lý không gian làm việc"
+  },
+  "@deepseek-ai/dsh-workspace-changes": {
+    "title": "Thay đổi không gian làm việc"
+  },
+  "@local/demo-mcp": {
+    "title": "Kết nối MCP minh họa",
+    "description": "Kết nối một máy chủ MCP từ xa để cung cấp các công cụ của nó cho agent."
+  },
+  "@local/my-decoration": {
+    "title": "Trang trí ô soạn tin nhắn",
+    "description": "Hiển thị một vòng tròn màu xanh bên dưới ô soạn tin nhắn."
+  }
+}

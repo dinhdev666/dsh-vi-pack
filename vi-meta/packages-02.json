@@ -1,0 +1,165 @@
+{
+  "@deepseek-ai/dsh-cordis-client-runner": {
+    "title": "Trình chạy plugin động trên trình duyệt"
+  },
+  "@deepseek-ai/dsh-cordis-host-runner": {
+    "title": "Trình chạy plugin động trên máy chủ"
+  },
+  "@deepseek-ai/dsh-credentials-local": {
+    "title": "Kho thông tin xác thực cục bộ"
+  },
+  "@deepseek-ai/dsh-deepseek-account-platform": {
+    "title": "Đăng nhập tài khoản DeepSeek"
+  },
+  "@deepseek-ai/dsh-deepseek-llm-api-extensions": {
+    "title": "Tiện ích mở rộng DeepSeek API"
+  },
+  "@deepseek-ai/dsh-experimental-agent-team": {
+    "title": "Cộng tác nhóm",
+    "description": "Quản lý thành viên nhóm, tin nhắn của thành viên và tác vụ nhóm."
+  },
+  "@deepseek-ai/dsh-experimental-agent-team-profile": {
+    "title": "Nhóm agent",
+    "description": "Bật cộng tác nhóm, công cụ nhóm, danh sách thành viên và bảng tác vụ nhóm."
+  },
+  "@deepseek-ai/dsh-experimental-api-speech-to-text": {
+    "title": "API chuyển giọng nói thành văn bản",
+    "description": "Cung cấp khả năng chuyển giọng nói thành văn bản cho client trên trình duyệt."
+  },
+  "@deepseek-ai/dsh-experimental-auto-review": {
+    "title": "Tự động xem xét quyền",
+    "description": "Thêm chế độ quyền Tự động xem xét dùng mô hình đánh giá quyền trước mỗi lệnh gọi công cụ."
+  },
+  "@deepseek-ai/dsh-experimental-badge-skill-bundle": {
+    "title": "Kỹ năng huy hiệu DSH",
+    "description": "Cho phép agent thêm huy hiệu “powered by dsh” vào tài liệu, yêu cầu kéo và các sản phẩm khác."
+  },
+  "@deepseek-ai/dsh-experimental-client-ui-agent-team": {
+    "title": "Bảng nhóm",
+    "description": "Xem thành viên nhóm và tác vụ nhóm, rồi chuyển đến cuộc trò chuyện của từng thành viên."
+  },
+  "@deepseek-ai/dsh-experimental-client-ui-cot-translation": {
+    "title": "Dịch máy phần suy luận",
+    "description": "Hiển thị phần suy luận được mở rộng bằng ngôn ngữ khác nhờ dịch máy."
+  },
+  "@deepseek-ai/dsh-experimental-client-ui-voice-input": {
+    "title": "Ghi âm giọng nói",
+    "description": "Ghi âm giọng nói và chèn văn bản có thể chỉnh sửa vào bản nháp hội thoại."
+  },
+  "@deepseek-ai/dsh-experimental-cot-translation-bundle": {
+    "title": "Dịch máy phần suy luận",
+    "description": "Dịch máy phần suy luận được mở rộng; văn bản nguồn được gửi đến dịch vụ đã chọn"
+  },
+  "@deepseek-ai/dsh-experimental-inspector": {
+    "title": "Trình kiểm tra NodeJS",
+    "description": "Nhấn Ctrl/Cmd+Shift+. để mở Chrome DevTools ở bảng dưới cùng cho phát triển và gỡ lỗi."
+  },
+  "@deepseek-ai/dsh-experimental-inspector-profile": {
+    "title": "Công cụ phát triển",
+    "description": "Kiểm tra và gỡ lỗi dữ liệu thô của phiên, tin nhắn trò chuyện đã nhóm và máy chủ NodeJS."
+  },
+  "@deepseek-ai/dsh-experimental-plugin-market-bundle": {
+    "title": "Chợ plugin tùy chỉnh",
+    "description": "Thêm tab Khám phá vào Plugin để duyệt và cài đặt gói từ các chỉ mục chợ plugin do bạn thêm"
+  },
+  "@deepseek-ai/dsh-experimental-ralph-bundle": {
+    "title": "Vòng lặp Ralph",
+    "description": "Chạy công việc lặp lại khi được yêu cầu rõ ràng, bằng các agent mới."
+  },
+  "@deepseek-ai/dsh-experimental-session-inspector": {
+    "title": "Nhật ký phiên",
+    "description": "Bật phân tích dữ liệu thô và tin nhắn trò chuyện đã nhóm của phiên hiện tại ở thanh bên."
+  },
+  "@deepseek-ai/dsh-experimental-session-search": {
+    "title": "Tìm kiếm phiên",
+    "description": "Cho agent công cụ để tìm kiếm và đọc các phiên trước trong không gian làm việc hiện tại."
+  },
+  "@deepseek-ai/dsh-experimental-session-titles-bundle": {
+    "title": "Tiêu đề theo hội thoại",
+    "description": "Làm mới tiêu đề phiên mỗi khi có lời nhắc mới từ người dùng."
+  },
+  "@deepseek-ai/dsh-experimental-speech-to-text": {
+    "title": "Nhận dạng giọng nói",
+    "description": "Quản lý việc chuyển giọng nói thành văn bản và chọn dịch vụ nhận dạng."
+  },
+  "@deepseek-ai/dsh-experimental-speech-to-text-sensevoice": {
+    "title": "Nhận dạng SenseVoice cục bộ",
+    "description": "Chuyển bản ghi âm thành văn bản ngay trên máy bằng SenseVoice."
+  },
+  "@deepseek-ai/dsh-experimental-terminal-bundle": {
+    "title": "Terminal thường trực",
+    "description": "Giữ tiến trình shell luôn sống qua các lệnh gọi công cụ."
+  },
+  "@deepseek-ai/dsh-experimental-tool-agent-team": {
+    "title": "Công cụ nhóm",
+    "description": "Cho agent công cụ để phối hợp thành viên, trao đổi tin nhắn và quản lý tác vụ nhóm."
+  },
+  "@deepseek-ai/dsh-experimental-tool-worktree": {
+    "title": "Worktree Git",
+    "description": "Cho phép agent tạo nhánh Git và worktree mới, rồi tiếp tục làm việc ở đó."
+  },
+  "@deepseek-ai/dsh-experimental-voice-input-bundle": {
+    "title": "Nhập bằng giọng nói",
+    "description": "Chuyển bản ghi âm thành văn bản cục bộ bằng SenseVoice; lần đầu cần cài thư viện phụ thuộc"
+  },
+  "@deepseek-ai/dsh-file-reference-local": {
+    "title": "Tham chiếu tệp cục bộ"
+  },
+  "@deepseek-ai/dsh-fs-observation-policy": {
+    "title": "Bảo vệ chỉnh sửa tệp"
+  },
+  "@deepseek-ai/dsh-fs-sandbox": {
+    "title": "Truy cập tệp trong sandbox"
+  },
+  "@deepseek-ai/dsh-goal": {
+    "title": "Dịch vụ mục tiêu phiên"
+  },
+  "@deepseek-ai/dsh-goal-round-driver": {
+    "title": "Tự động tiếp tục mục tiêu"
+  },
+  "@deepseek-ai/dsh-hmr": {
+    "title": "Tải lại nóng"
+  },
+  "@deepseek-ai/dsh-host-directory-picker-auto": {
+    "title": "Tự động chọn thư mục"
+  },
+  "@deepseek-ai/dsh-host-directory-picker-browse": {
+    "title": "Duyệt thư mục trong ứng dụng"
+  },
+  "@deepseek-ai/dsh-host-directory-picker-native": {
+    "title": "Chọn thư mục hệ thống"
+  },
+  "@deepseek-ai/dsh-host-open-in-app": {
+    "title": "Mở bằng ứng dụng ngoài"
+  },
+  "@deepseek-ai/dsh-host-plugin-inventory": {
+    "title": "Danh mục plugin"
+  },
+  "@deepseek-ai/dsh-host-product-telemetry-otel": {
+    "title": "Gửi sự kiện sử dụng sản phẩm"
+  },
+  "@deepseek-ai/dsh-host-webserver": {
+    "title": "Dịch vụ web"
+  },
+  "@deepseek-ai/dsh-jobs-local": {
+    "title": "Tác vụ nền cục bộ"
+  },
+  "@deepseek-ai/dsh-llm": {
+    "title": "Dịch vụ gọi mô hình"
+  },
+  "@deepseek-ai/dsh-llm-deepseek-account": {
+    "title": "Kết nối mô hình qua tài khoản DeepSeek"
+  },
+  "@deepseek-ai/dsh-llm-deepseek-api-key": {
+    "title": "Kết nối mô hình qua khóa API DeepSeek"
+  },
+  "@deepseek-ai/dsh-llm-pi-ai": {
+    "title": "Bộ chuyển đổi mô hình pi-ai"
+  },
+  "@deepseek-ai/dsh-llm-retry": {
+    "title": "Thử lại yêu cầu mô hình"
+  },
+  "@deepseek-ai/dsh-mcp-resources": {
+    "title": "Truy cập tài nguyên MCP"
+  }
+}

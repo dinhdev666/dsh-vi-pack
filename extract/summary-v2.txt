@@ -1,0 +1,153 @@
+entries=126
+EN KEYS=2901
+namespaces=63
+agent-team|en = 25
+agent-team|zh = 25
+approval|en = 5
+approval|zh = 5
+chat|en = 191
+chat|zh = 191
+command|en = 28
+command|zh = 28
+common|en = 41
+common|zh = 41
+conversation|en = 373
+conversation|zh = 373
+cordis|en = 51
+cordis|zh = 51
+cotTranslation|en = 32
+cotTranslation|zh = 32
+deepseek-model-label-1017|en = 1
+deepseek-model-label-1017|zh = 1
+deliverables|en = 60
+deliverables|zh = 60
+directory-browser|en = 13
+directory-browser|zh = 13
+documentHtml|en = 4
+documentHtml|zh = 4
+documentMarkdown|en = 4
+documentMarkdown|zh = 4
+feedback|en = 20
+feedback|zh = 20
+goal|en = 12
+goal|zh = 12
+job|en = 40
+job|zh = 40
+model|en = 23
+model|zh = 23
+open-in-app|en = 45
+open-in-app|zh = 45
+permission.access|en = 17
+permission.access|zh = 17
+plan|en = 17
+plan|zh = 17
+pluginManager|en = 221
+pluginManager|zh = 221
+pluginMarket|en = 78
+pluginMarket|zh = 78
+question|en = 31
+question|zh = 31
+reference|en = 15
+reference|zh = 15
+schedule.catalog|en = 70
+schedule.catalog|zh = 70
+schedule.manager|en = 188
+schedule.manager|zh = 188
+secretMask|en = 2
+secretMask|zh = 2
+session-inspector|en = 52
+session-inspector|zh = 52
+session-log-download|en = 10
+session-log-download|zh = 10
+settings.account|en = 94
+settings.account|zh = 94
+settings.agentLoop|en = 12
+settings.agentLoop|zh = 12
+settings.agentPreset|en = 47
+settings.agentPreset|zh = 47
+settings.locale|en = 1
+settings.locale|zh = 1
+settings.models|en = 134
+settings.models|zh = 134
+settings.permission|en = 12
+settings.permission|zh = 12
+settings.pluginInventory|en = 37
+settings.pluginInventory|zh = 37
+settings.plugins|en = 5
+settings.plugins|zh = 5
+settings.sessionLog|en = 4
+settings.sessionLog|zh = 4
+settings.shell|en = 14
+settings.shell|zh = 14
+settings.subagent|en = 35
+settings.subagent|zh = 35
+settings.theme|en = 25
+settings.theme|zh = 25
+settings.webSearch|en = 27
+settings.webSearch|zh = 27
+settings|en = 41
+settings|zh = 41
+shortcuts.layout|en = 1
+shortcuts.layout|zh = 1
+shortcuts|en = 56
+shortcuts|zh = 56
+sidebarBrowser|en = 26
+sidebarBrowser|zh = 26
+sidebarCodePreview|en = 3
+sidebarCodePreview|zh = 3
+sidebarDocumentPreview|en = 22
+sidebarDocumentPreview|zh = 22
+sidebarExcel|en = 15
+sidebarExcel|zh = 15
+sidebarFiles|en = 17
+sidebarFiles|zh = 17
+sidebarImage|en = 11
+sidebarImage|zh = 11
+sidebarOffice|en = 15
+sidebarOffice|zh = 15
+sidebarPdf|en = 15
+sidebarPdf|zh = 15
+sidebarRight|en = 34
+sidebarRight|zh = 34
+sidebarTerminal|en = 28
+sidebarTerminal|zh = 28
+sidebar|en = 5
+sidebar|zh = 5
+skill|en = 8
+skill|zh = 8
+slash.menu|en = 9
+slash.menu|zh = 9
+subagent|en = 41
+subagent|zh = 41
+trajectory|en = 192
+trajectory|zh = 192
+voice-input|en = 109
+voice-input|zh = 109
+workflowRun|en = 18
+workflowRun|zh = 18
+workspace|en = 119
+workspace|zh = 119
+--- report ---
+dsh-api-job-controller: NO locale.register site
+dsh-api-remote-access: NO locale.register site
+dsh-api-remotes: NO locale.register site
+dsh-api-session-controller: NO locale.register site
+dsh-api-terminal-controller: NO locale.register site
+dsh-api-workspace-controller: NO locale.register site
+dsh-api-workspace-files: NO locale.register site
+dsh-client-file-upload: NO locale.register site
+dsh-client-hmr: NO locale.register site
+dsh-client-modules: NO locale.register site
+dsh-client-product-analytics: NO locale.register site
+dsh-client-resources: NO locale.register site
+dsh-client-shortcuts: NO locale.register site
+dsh-client-ui-attachment: NO locale.register site
+dsh-client-ui-brand-official: NO locale.register site
+dsh-client-ui-directory-picker-browse/directory-browser: recovered loop dictionaries (dictionaries)
+dsh-client-ui-directory-picker-native: NO locale.register site
+dsh-client-ui-renderer: NO locale.register site
+dsh-client-ui-session: NO locale.register site
+dsh-client-ui-settings: NO locale.register site
+dsh-client-ui-tool: NO locale.register site
+dsh-cordis-client-runner: NO locale.register site
+dsh-experimental-inspector: NO locale.register site

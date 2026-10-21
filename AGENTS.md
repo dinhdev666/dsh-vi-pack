@@ -1,0 +1,154 @@
+# AGENTS.md
+
+Working notes for coding agents (and humans) changing this repository. Read this file before editing
+anything, then read [`GUIDE.md`](GUIDE.md) for translation rules.
+
+## What this repository is
+
+A Vietnamese (`vi`) locale pack for the **DeepSeek Harness (DSH)** Web GUI. The repository holds
+four different kinds of files, and each has a different edit policy:
+
+1. **`extract/` — generated, read-only.** Locale dictionaries pulled out of an installed DSH build
+   (`app.asar`) plus derived artifacts (`manifest.json`, `dicts-v2.json`, `summary-v2.txt`,
+   `extract/en/*.json`, `meta.json`). Never hand-edit; regenerate with the scripts in `tools/`.
+   The `extract/reference/` subfolder is different: it holds read-only dumps of the upstream client
+   bundles for maintainers (see its own `README.md`). No script generates or reads it.
+2. **`vi-packs/` — hand-written translation output.** One JSON file per namespace, mirroring
+   `extract/en/<ns>.json` key for key. This is where namespace translation work happens.
+3. **`vi-meta/` — hand-written package display text.** `packages-*.json` maps an installed
+   package's name to its Vietnamese `title` and `description`, mirroring `extract/meta.json` (the
+   English source snapshot). A locale namespace cannot carry this text — package titles and
+   descriptions are Host data built from each package's own `locale/en.json` — so the bundle ships
+   the translations and resolves them through the documented `locale.resolveText` entry point.
+4. **`plugin/` — the shippable DSH bundle.** `client.js` is **generated** from `vi-packs/` and
+   `vi-meta/` by `tools/build-client.mjs`; the rest (`package.json`, `cordis.patch.yml`, `index.js`,
+   `locale/*.json`, `icon.svg`) is hand-maintained but rarely changes.
+
+Current baseline: **63 namespaces, 2,901 keys**, plus **216 package titles and 29 descriptions**
+(214 and 29 distinct English strings — two pairs of packages share one English title, and the
+overlay keys translations by that English string). Treat any deviation from these numbers as a
+signal to investigate, not to "fix" by editing counts in prose.
+
+## Documentation language policy
+
+This is a settled decision — do not ask again.
+
+| File | Language |
+|---|---|
+| `README.md` | **Vietnamese** |
+| `AGENTS.md` | English |
+| `CONTRIBUTING.md` | English |
+| `GUIDE.md` | English (the glossary table stays bilingual by design) |
+| `plugin/README.md` | English |
+| Code comments, commit messages, task notes | English |
+| User-facing UI copy in `vi-packs/` | Vietnamese |
+
+When you add a new top-level document, follow the same split: user-facing overview in Vietnamese,
+maintainer-facing material in English. Do not rewrite existing documents into the other language
+unless explicitly asked.
+
+## Golden rules
+
+- **Never hand-edit `plugin/client.js`.** It is generated. Edit `vi-packs/*.json` or
+  `vi-meta/packages-*.json`, then run `node tools/build-client.mjs`.
+- **Never edit `extract/`.** It is a snapshot of the upstream DSH locale data. If it looks wrong,
+  re-run the extraction scripts.
+- **Same keys, same order, same placeholders.** No added, removed, renamed, or reordered keys;
+  `{name}`, `{count}`, `{{x}}` keep identical spelling and braces; no CJK characters; `…` stays `…`.
+- **`vi-meta/` keys are package names, not UI keys.** Keep `extract/meta.json` order inside each
+  part file, never rename a package, and give two packages that share an English title the same
+  Vietnamese wording — the browser overlay looks translations up by the English string.
+- **Keep technical tokens verbatim** and follow the glossary in `GUIDE.md`. Terminology is settled
+  repo-wide: change a term only by sweeping every pack, not one file.
+- **JSON hygiene:** UTF-8, 2-space indentation, exactly one trailing newline, no trailing spaces.
+- **No tooling churn.** Do not reformat unrelated packs, do not add dependencies, do not rename
+  scripts or restructure `tools/` as a side effect of another task. Shared code that two scripts
+  need belongs in `tools/lib/`, not copied into each of them.
+
+## Commands
+
+Run these from the repository root. Each script resolves the repository root from its own location,
+so an absolute script path also works from any working directory. The shared helpers the scripts
+build on live in `tools/lib/` (see `tools/lib/README.md`).
+
+```bash
+node tools/validate-vi.mjs                    # strict check: parity, placeholders, CJK, whitespace
+node tools/validate-vi.mjs <ns> [...]         # scope to specific namespaces
+node tools/validate-meta.mjs                  # strict check: package titles/descriptions coverage
+node tools/validate-meta.mjs --partial        # same checks, missing entries reported, not failed
+node tools/audit-vi.mjs                       # soft check: leftover English, glossary drift, spacing
+node tools/build-client.mjs                   # regenerate plugin/client.js from vi-packs/ + vi-meta/
+node tools/test-client.mjs                    # smoke-test the bundle against a stubbed locale service
+node tools/extract-dicts.mjs                  # re-extract locales from the installed DSH build
+node tools/extract-meta.mjs                   # re-extract package titles/descriptions into extract/meta.json
+node tools/prepare-dataset.mjs                # rebuild extract/en/*.json + manifest.json
+```
+
+`extract-dicts.mjs` reads JSON straight out of `app.asar`, and `extract-meta.mjs` reads the same
+archive with a plain-`node` reader, so both need the installed build: they find the default
+Windows/macOS install themselves; set `DSH_APP_ASAR` to the installed `app.asar` when DSH lives
+somewhere else. The dictionary script must run under an asar-aware runtime (the Electron-as-node
+interpreter shipped with the DSH runtime); the metadata script runs under plain `node`.
+
+## Working recipes
+
+**Change or fix a translation.** Edit the value in `vi-packs/<ns>.json` only, keeping position and
+placeholders intact → `node tools/validate-vi.mjs <ns>` → `node tools/audit-vi.mjs <ns>` →
+`node tools/build-client.mjs` → `node tools/test-client.mjs`.
+
+**Translate new or changed upstream strings.** Run `extract-dicts.mjs` then `prepare-dataset.mjs`,
+diff `extract/en/` against the previous state, add the missing keys in the same order as the source,
+translate, then validate → build → test. Update the key/namespace counts quoted in `README.md` and
+`plugin/README.md` if the baseline moved.
+
+**Translate a package title or description.** Re-run `node tools/extract-meta.mjs`, diff
+`extract/meta.json` against the previous state, add the missing package names to a
+`vi-meta/packages-*.json` part file (keep the part files' ordering and the shared-English-title
+rule), translate `title` and `description`, then `node tools/validate-meta.mjs` → build → test.
+The overlay reaches the Plugin Manager, the built-in plugin inventory and anywhere else that renders
+`locale.resolveText` output; a brand-new package still needs a DSH restart before its row appears.
+
+**Touch the plugin manifest.** `plugin/package.json` and `plugin/cordis.patch.yml` define how DSH
+loads the bundle (`dsh.bundle.patch` inserts the `locale-vi` entry; `dsh.client` declares the web
+bundle and its `locale` dependency). Changing them changes install behavior — verify by installing
+the bundle into a DSH profile and reloading the GUI.
+
+## Definition of done
+
+A change is complete only when all of the following hold:
+
+1. `node tools/validate-vi.mjs` prints `OK` (zero errors).
+2. `node tools/validate-meta.mjs` prints `OK` (every shipped package title/description covered).
+3. `node tools/build-client.mjs` succeeds; `plugin/client.js` matches the current `vi-packs/` and
+   `vi-meta/`.
+4. `node tools/test-client.mjs` prints `OK`.
+5. `node tools/audit-vi.mjs` raises no *new* findings versus the previous state; fix what your change
+   introduced, leave pre-existing findings alone unless asked.
+6. Any prose that quotes counts, paths, or commands still matches reality.
+
+## Pitfalls
+
+- **Keep paths portable.** Every script in `tools/` resolves the repository root through
+  `tools/lib/repo.mjs` (from its own file location), so the checkout can live anywhere and the tools
+  run from any working directory; do not reintroduce hard-coded roots. The one external path is the
+  installed DSH build read by `extract-dicts.mjs`: `tools/lib/asar.mjs` auto-detects the default
+  Windows/macOS install and accepts `DSH_APP_ASAR` (path to the installed `app.asar`) otherwise.
+- **`node_modules` is absent** and the project has no dependencies; the tools use only `node:`
+  builtins. Keep it that way unless the user approves an extra dependency. `tools/lib/asar.mjs`
+  carries its own small `app.asar` reader for exactly that reason.
+- **Package text is matched by its English wording, not by package name.** `build-client.mjs` turns
+  `vi-meta/` into English → Vietnamese maps, so an upstream wording change silently disables the
+  translation until `extract-meta.mjs` is re-run and the entry updated. `validate-meta.mjs` is what
+  catches it; never key the maps by anything else.
+- **Do not "improve" short labels for length.** The validator warns on long translations; a
+  natural shorter wording beats a literal one, but meaning must not drift.
+- **Warnings are not errors** (key order, line counts, Markdown markers, length). Read them, fix the
+  ones your change caused, and do not silence them by editing the validators.
+- **Do not reintroduce duplicated helpers.** A script that needs the repo root, JSON I/O, placeholder
+  parsing, `vi-meta` discovery, or `app.asar` access imports it from `tools/lib/`; copying the block
+  into a second script is what this layout exists to prevent.
+
+## License
+
+MIT — see [`LICENSE`](LICENSE). Copyright (c) 2026 Phạm Văn Định. Contributions are accepted under
+the same terms.

@@ -1,0 +1,268 @@
+{
+  "@deepseek-ai/cordis-plugin-timer": {
+    "title": "Dịch vụ hẹn giờ"
+  },
+  "@deepseek-ai/dsh-agent": {
+    "title": "Quản lý agent"
+  },
+  "@deepseek-ai/dsh-agent-default-model": {
+    "title": "Mô hình mặc định"
+  },
+  "@deepseek-ai/dsh-agent-instructions": {
+    "title": "Tải chỉ dẫn không gian làm việc"
+  },
+  "@deepseek-ai/dsh-agent-loop": {
+    "title": "Vòng lặp chạy agent"
+  },
+  "@deepseek-ai/dsh-agent-preset": {
+    "title": "Định nghĩa preset agent"
+  },
+  "@deepseek-ai/dsh-agent-preset-registry": {
+    "title": "Quản lý preset agent"
+  },
+  "@deepseek-ai/dsh-agent-tool-presentation": {
+    "title": "Cách hiển thị lệnh gọi công cụ"
+  },
+  "@deepseek-ai/dsh-api-account-controller": {
+    "title": "API thao tác tài khoản"
+  },
+  "@deepseek-ai/dsh-api-gateway": {
+    "title": "Cổng gọi từ xa"
+  },
+  "@deepseek-ai/dsh-api-job-controller": {
+    "title": "API quan sát tác vụ nền"
+  },
+  "@deepseek-ai/dsh-api-remotes": {
+    "title": "Tổng hợp API client"
+  },
+  "@deepseek-ai/dsh-api-session-controller": {
+    "title": "API điều khiển phiên"
+  },
+  "@deepseek-ai/dsh-api-settings-controller": {
+    "title": "API đọc ghi cài đặt"
+  },
+  "@deepseek-ai/dsh-api-terminal-controller": {
+    "title": "API điều khiển terminal"
+  },
+  "@deepseek-ai/dsh-api-workspace-controller": {
+    "title": "API điều khiển không gian làm việc"
+  },
+  "@deepseek-ai/dsh-api-workspace-files": {
+    "title": "API tệp không gian làm việc"
+  },
+  "@deepseek-ai/dsh-attachment-local": {
+    "title": "Lưu trữ tệp đính kèm cục bộ"
+  },
+  "@deepseek-ai/dsh-authorization": {
+    "title": "Dịch vụ quy trình cấp quyền"
+  },
+  "@deepseek-ai/dsh-bash-sandbox": {
+    "title": "Thực thi Bash trong sandbox"
+  },
+  "@deepseek-ai/dsh-client-connection": {
+    "title": "Kết nối client"
+  },
+  "@deepseek-ai/dsh-client-file-upload": {
+    "title": "Tải tệp lên"
+  },
+  "@deepseek-ai/dsh-client-hmr": {
+    "title": "Tải lại nóng"
+  },
+  "@deepseek-ai/dsh-client-locale": {
+    "title": "Ngôn ngữ giao diện"
+  },
+  "@deepseek-ai/dsh-client-modules": {
+    "title": "Tải mô-đun client"
+  },
+  "@deepseek-ai/dsh-client-product-analytics": {
+    "title": "Thống kê sử dụng trên desktop"
+  },
+  "@deepseek-ai/dsh-client-resources": {
+    "title": "Dịch vụ tài nguyên client"
+  },
+  "@deepseek-ai/dsh-client-shortcuts": {
+    "title": "Dịch vụ phím tắt"
+  },
+  "@deepseek-ai/dsh-client-ui-agent-preset": {
+    "title": "Giao diện preset agent"
+  },
+  "@deepseek-ai/dsh-client-ui-approval": {
+    "title": "Giao diện phê duyệt thao tác"
+  },
+  "@deepseek-ai/dsh-client-ui-attachment": {
+    "title": "Hiển thị tệp đính kèm"
+  },
+  "@deepseek-ai/dsh-client-ui-brand-official": {
+    "title": "Hiển thị thương hiệu DeepSeek"
+  },
+  "@deepseek-ai/dsh-client-ui-chat": {
+    "title": "Hiển thị nội dung trò chuyện"
+  },
+  "@deepseek-ai/dsh-client-ui-commands": {
+    "title": "Giao diện chọn lệnh"
+  },
+  "@deepseek-ai/dsh-client-ui-conversation": {
+    "title": "Khung giao diện phiên"
+  },
+  "@deepseek-ai/dsh-client-ui-cordis": {
+    "title": "Thẻ chạy plugin động"
+  },
+  "@deepseek-ai/dsh-client-ui-deliverables": {
+    "title": "Hiển thị thay đổi tệp và sản phẩm bàn giao"
+  },
+  "@deepseek-ai/dsh-client-ui-directory-picker-browse": {
+    "title": "Giao diện chọn thư mục trong ứng dụng"
+  },
+  "@deepseek-ai/dsh-client-ui-directory-picker-native": {
+    "title": "Giao diện chọn thư mục hệ thống"
+  },
+  "@deepseek-ai/dsh-client-ui-goal": {
+    "title": "Thanh mục tiêu phiên"
+  },
+  "@deepseek-ai/dsh-client-ui-input-trigger": {
+    "title": "Dịch vụ gợi ý khi nhập"
+  },
+  "@deepseek-ai/dsh-client-ui-jobs": {
+    "title": "Giao diện tác vụ nền"
+  },
+  "@deepseek-ai/dsh-client-ui-layout": {
+    "title": "Bố cục ứng dụng"
+  },
+  "@deepseek-ai/dsh-client-ui-message-feedback": {
+    "title": "Giao diện phản hồi tin nhắn"
+  },
+  "@deepseek-ai/dsh-client-ui-model-selection": {
+    "title": "Giao diện chọn mô hình"
+  },
+  "@deepseek-ai/dsh-client-ui-open-in-app": {
+    "title": "Giao diện mở bằng ứng dụng ngoài"
+  },
+  "@deepseek-ai/dsh-client-ui-permission-presets": {
+    "title": "Giao diện chế độ quyền"
+  },
+  "@deepseek-ai/dsh-client-ui-plan": {
+    "title": "Giao diện xem xét kế hoạch"
+  },
+  "@deepseek-ai/dsh-client-ui-plugin-manager": {
+    "title": "Giao diện quản lý plugin"
+  },
+  "@deepseek-ai/dsh-client-ui-reference": {
+    "title": "Giao diện tham chiếu tệp và phiên"
+  },
+  "@deepseek-ai/dsh-client-ui-renderer": {
+    "title": "Kết xuất giao diện"
+  },
+  "@deepseek-ai/dsh-client-ui-schedule": {
+    "title": "Giao diện tác vụ",
+    "description": "Trang tác vụ tự động trong thanh bên, cùng thẻ tác vụ và dấu nhắc trong phiên."
+  },
+  "@deepseek-ai/dsh-client-ui-secret-mask": {
+    "title": "Che khuất bí mật",
+    "description": "Che các khóa, token và mật khẩu được nhận diện trong tin nhắn đã gửi."
+  },
+  "@deepseek-ai/dsh-client-ui-session": {
+    "title": "Kết nối giao diện phiên"
+  },
+  "@deepseek-ai/dsh-client-ui-settings": {
+    "title": "Khung giao diện cài đặt"
+  },
+  "@deepseek-ai/dsh-client-ui-settings-account": {
+    "title": "Giao diện cài đặt tài khoản"
+  },
+  "@deepseek-ai/dsh-client-ui-settings-agent-loop": {
+    "title": "Cài đặt vòng lặp agent"
+  },
+  "@deepseek-ai/dsh-client-ui-settings-general": {
+    "title": "Cài đặt chung và lời nhắc chào mừng"
+  },
+  "@deepseek-ai/dsh-client-ui-settings-models": {
+    "title": "Giao diện cài đặt mô hình"
+  },
+  "@deepseek-ai/dsh-client-ui-settings-plugin-inventory": {
+    "title": "Giao diện danh sách plugin tích hợp sẵn"
+  },
+  "@deepseek-ai/dsh-client-ui-settings-plugins": {
+    "title": "Mục cài đặt plugin tích hợp sẵn"
+  },
+  "@deepseek-ai/dsh-client-ui-settings-session-log": {
+    "title": "Cài đặt tải lên nhật ký phiên"
+  },
+  "@deepseek-ai/dsh-client-ui-settings-shell": {
+    "title": "Cài đặt thực thi lệnh"
+  },
+  "@deepseek-ai/dsh-client-ui-settings-subagent": {
+    "title": "Cài đặt agent con"
+  },
+  "@deepseek-ai/dsh-client-ui-settings-web-search": {
+    "title": "Cài đặt tìm kiếm web"
+  },
+  "@deepseek-ai/dsh-client-ui-shortcuts": {
+    "title": "Giao diện cài đặt phím tắt"
+  },
+  "@deepseek-ai/dsh-client-ui-sidebar": {
+    "title": "Thanh bên phiên"
+  },
+  "@deepseek-ai/dsh-client-ui-sidebar-browser": {
+    "title": "Bảng trình duyệt"
+  },
+  "@deepseek-ai/dsh-client-ui-sidebar-documentpreview": {
+    "title": "Bảng xem trước tài liệu"
+  },
+  "@deepseek-ai/dsh-client-ui-sidebar-files": {
+    "title": "Bảng duyệt tệp"
+  },
+  "@deepseek-ai/dsh-client-ui-sidebar-right": {
+    "title": "Bảng bên phải"
+  },
+  "@deepseek-ai/dsh-client-ui-sidebar-terminal": {
+    "title": "Bảng terminal"
+  },
+  "@deepseek-ai/dsh-client-ui-skill": {
+    "title": "Tham chiếu và hiển thị kỹ năng"
+  },
+  "@deepseek-ai/dsh-client-ui-subagent": {
+    "title": "Giao diện phiên agent con"
+  },
+  "@deepseek-ai/dsh-client-ui-theme": {
+    "title": "Chủ đề giao diện"
+  },
+  "@deepseek-ai/dsh-client-ui-tool": {
+    "title": "Hiển thị lệnh gọi công cụ"
+  },
+  "@deepseek-ai/dsh-client-ui-trajectory": {
+    "title": "Diễn biến thực thi"
+  },
+  "@deepseek-ai/dsh-client-ui-user-questions": {
+    "title": "Giao diện hỏi đáp người dùng"
+  },
+  "@deepseek-ai/dsh-client-ui-workflow-run": {
+    "title": "Hiển thị chạy quy trình"
+  },
+  "@deepseek-ai/dsh-client-ui-workspace": {
+    "title": "Giao diện chọn không gian làm việc"
+  },
+  "@deepseek-ai/dsh-command-compact": {
+    "title": "Lệnh nén ngữ cảnh"
+  },
+  "@deepseek-ai/dsh-command-feedback": {
+    "title": "Lệnh phản hồi phiên"
+  },
+  "@deepseek-ai/dsh-command-goal": {
+    "title": "Lệnh quản lý mục tiêu"
+  },
+  "@deepseek-ai/dsh-commands": {
+    "title": "Dịch vụ lệnh người dùng"
+  },
+  "@deepseek-ai/dsh-compaction-basic": {
+    "title": "Nén ngữ cảnh cơ bản"
+  },
+  "@deepseek-ai/dsh-compaction-image-offload": {
+    "title": "Dọn ảnh cũ khỏi lịch sử"
+  },
+  "@deepseek-ai/dsh-compaction-tool-result-pruner": {
+    "title": "Rút gọn kết quả công cụ"
+  },
+  "@deepseek-ai/dsh-config-editor": {
+    "title": "Chỉnh sửa cấu hình plugin"
+  }
+}

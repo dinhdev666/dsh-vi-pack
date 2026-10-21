@@ -1,0 +1,17 @@
+{
+  "zoomControls": "Điều khiển thu phóng",
+  "zoomMenu": "Chọn mức thu phóng",
+  "zoomOut": "Thu nhỏ",
+  "zoomIn": "Phóng to",
+  "zoomFitWidth": "Vừa chiều rộng",
+  "zoomValue": "{percent}%",
+  "title": "PDF",
+  "pageImage": "Trang {page} của PDF",
+  "loading": "Đang kết xuất tài liệu...",
+  "rendering": "Đang kết xuất trang…",
+  "failed": "Không thể hiển thị PDF: {message}",
+  "password": "PDF này yêu cầu mật khẩu; bản xem trước được bảo vệ bằng mật khẩu không được hỗ trợ.",
+  "workerFailed": "Quá trình kết xuất PDF không thể tiếp tục. Vui lòng thử lại.",
+  "unsupported": "Xem trước PDF cần toàn bộ nội dung tệp.",
+  "retry": "Thử lại"
+}

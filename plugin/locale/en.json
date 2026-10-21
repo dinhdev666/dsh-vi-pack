@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Vietnamese Language",
+    "description": "Adds Tiếng Việt to the language selector, translates the Web GUI with a Vietnamese dictionary that falls back to English, and localizes installed-package titles and descriptions."
+  }
+}

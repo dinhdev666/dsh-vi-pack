@@ -1,0 +1,12 @@
+# Keep line endings stable across platforms: the packs, tools and validators
+# assume LF (JSON hygiene rule in AGENTS.md). Git for Windows often sets
+# core.autocrlf=true, which would otherwise check files out as CRLF.
+* text=auto eol=lf
+
+# Binary assets
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.gif binary
+*.ico binary

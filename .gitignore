@@ -1,0 +1,35 @@
+# Scratch space: icon drafts, render helpers, ad-hoc probes.
+# Not part of the pipeline — keep it out of the repository.
+.tmp/
+
+# Dependencies (this project has none; the tools use node: builtins only).
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local environment overrides (e.g. DSH_APP_ASAR for extract-dicts.mjs)
+.env
+.env.*
+!.env.example
+
+# OS and editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Transient files
+*.tmp
+*.bak
+
+# NOTE: extract/ and plugin/client.js are generated but committed on purpose.
+# extract/ is the upstream reference the validators check against, and
+# plugin/client.js is the shipped bundle. Never ignore them.
