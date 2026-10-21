@@ -59,7 +59,10 @@ unless explicitly asked.
   `vi-meta/packages-*.json`, then run `node tools/build-client.mjs`.
 - **Two manifests, one bundle.** The repository-root `package.json` and `plugin/package.json` describe
   the same package: keep their name, version, description, and `dsh.client` identical, and the root
-  one pointing into `plugin/`. `node tools/validate-manifest.mjs` checks exactly that.
+  one pointing into `plugin/`. Each manifest needs a module entry at its own root (`main`, or an
+  `index.js` beside the manifest): the Loader resolves the bundle module the CommonJS way, so a
+  manifest with only `exports` installs and then fails to activate. `node tools/validate-manifest.mjs`
+  checks exactly that.
 - **Never edit `extract/`.** It is a snapshot of the upstream DSH locale data. If it looks wrong,
   re-run the extraction scripts.
 - **Same keys, same order, same placeholders.** No added, removed, renamed, or reordered keys;
@@ -121,7 +124,9 @@ The overlay reaches the Plugin Manager, the built-in plugin inventory and anywhe
 **Touch the plugin manifest.** `package.json` (repository root), `plugin/package.json`, and
 `plugin/cordis.patch.yml` define how DSH loads the bundle (`dsh.bundle.patch` inserts the `locale-vi`
 entry; `dsh.client` declares the web bundle and its `locale` dependency). Changing them changes
-install behavior — verify by installing the bundle into a DSH profile and reloading the GUI.
+install behavior — verify by installing the bundle into a DSH profile and reloading the GUI. A
+manifest without a module entry (`main`, or `index.js` at its root) installs but fails to activate:
+`failed to import: ... /index.js`.
 
 ## Definition of done
 

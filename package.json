@@ -4,6 +4,7 @@
   "private": true,
   "description": "Adds the Vietnamese (vi) language to the DeepSeek Harness Web GUI, including installed-package titles and descriptions.",
   "type": "module",
+  "main": "./plugin/index.js",
   "exports": {
     ".": "./plugin/index.js",
     "./client": "./plugin/client.js",

@@ -36,6 +36,11 @@ The bundle has two install faces, and DSH reads the one the install target selec
 Both manifests describe the same package, so their name, version, description, and `dsh.client` must
 stay in sync; `node tools/validate-manifest.mjs` fails when they drift.
 
+Each manifest also needs a module entry at its own root — `main`, or an `index.js` beside the
+manifest. The Loader resolves the bundle module the CommonJS way (package root, then `index.js`),
+so a root manifest that only declares `exports` installs but fails to activate with
+`failed to import: ... /index.js`.
+
 ## Regenerating
 
 `client.js` is generated from the translation sources; do not hand-edit it.

@@ -21,7 +21,16 @@ for (const field of ['name', 'version', 'description', 'type']) {
 }
 
 // Every resource the loader or the client module system resolves through `exports` must exist
-// relative to the manifest that declares it.
+// relative to the manifest that declares it. The Loader's module resolution also falls back to a
+// package-root entry the CJS way (`main`, else `index.js`), so both manifests need one.
+const ENTRY_EXTENSIONS = ['js', 'mjs', 'cjs']
+const bundleEntry = (manifest, dir) => {
+  const declared = typeof manifest.main === 'string' ? manifest.main : undefined
+  if (declared !== undefined) {
+    return fs.existsSync(path.resolve(dir, declared)) ? declared : undefined
+  }
+  return ENTRY_EXTENSIONS.map((extension) => `index.${extension}`).find((entry) => fs.existsSync(path.resolve(dir, entry)))
+}
 const checked = [
   ['root', root, repoPath()],
   ['bundle', bundle, repoPath(BUNDLE_DIR)],
@@ -41,6 +50,7 @@ for (const [label, manifest, dir] of checked) {
     if (target.includes('*')) continue
     if (!fs.existsSync(path.resolve(dir, target))) problems.push(`${label} manifest: ${target} (exports "${subpath}") does not exist`)
   }
+  if (bundleEntry(manifest, dir) === undefined) problems.push(`${label} manifest: no module entry (set main or keep index.js at the manifest directory)`)
 }
 
 // The bundle patch inserts the row the loader resolves; its module name is the manifest name.
