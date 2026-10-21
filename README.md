@@ -159,6 +159,10 @@ Trạng thái hiện tại: 63/63 namespace dịch đủ 2.901 khóa; 216/216 ti
   biến môi trường `DSH_APP_ASAR` trỏ tới `app.asar`.
 - Tên sản phẩm, thuật ngữ kỹ thuật (`JSON`, `Markdown`, `MCP`, tổ hợp phím, tên model…) được giữ
   nguyên tiếng Anh theo quy ước trong `GUIDE.md`.
+- Id row mà bundle chèn vào cây Loader là `dsh-vi-pack` (trước là `locale-vi`); Plugin Manager hiện
+  id này trong mục **Thành phần**, và đây là địa chỉ duy nhất để tắt/bật riêng row đó trong
+  `cordis.patch.yml` của profile. Nếu bạn đã từng ghi tay `- id: locale-vi` vào profile patch, hãy
+  xoá hoặc đổi sang `dsh-vi-pack` — bộ ghép patch của DSH bỏ qua id không khớp và chỉ cảnh báo.
 
 ## Phạm vi: những chỗ vẫn là tiếng Anh
 

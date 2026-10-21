@@ -3372,11 +3372,11 @@ window.__ModuleLoader__.load({
       };
     }
     function apply(ctx) {
-      ctx.effect(() => ctx.locale.addLanguage(LANGUAGE), 'locale-vi: language');
+      ctx.effect(() => ctx.locale.addLanguage(LANGUAGE), 'dsh-vi-pack: language');
       for (const ns of Object.keys(DICTIONARIES)) {
-        ctx.effect(() => ctx.locale.register(ns, LANGUAGE.id, DICTIONARIES[ns]), 'locale-vi: ' + ns);
+        ctx.effect(() => ctx.locale.register(ns, LANGUAGE.id, DICTIONARIES[ns]), 'dsh-vi-pack: ' + ns);
       }
-      ctx.effect(() => localizePackageText(ctx), 'locale-vi: package text');
+      ctx.effect(() => localizePackageText(ctx), 'dsh-vi-pack: package text');
     }
     exports.LANGUAGE = LANGUAGE;
     exports.DICTIONARIES = DICTIONARIES;

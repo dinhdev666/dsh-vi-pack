@@ -18,7 +18,7 @@ package titles and 29 package descriptions shown in the plugin lists.
 | Path | Purpose |
 |---|---|
 | `package.json` | Bundle manifest (`dsh.bundle.patch`, `dsh.client`); also the install face of a subdirectory spec (`<repository-url>#path:/plugin`) |
-| `cordis.patch.yml` | Loader patch inserting the `locale-vi` entry |
+| `cordis.patch.yml` | Loader patch inserting the `dsh-vi-pack` entry |
 | `index.js` | Host half (no-op) |
 | `client.js` | Generated browser bundle: every Vietnamese dictionary plus the package-text overlay |
 | `locale/en.json`, `locale/vi.json` | Display title/description used by the plugin list |

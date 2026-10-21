@@ -54,12 +54,13 @@ for (const [label, manifest, dir] of checked) {
 }
 
 // The bundle patch inserts the row the loader resolves; its module name is the manifest name.
+// The `- id:` match is anchored so a matching `name:` line cannot satisfy the id check.
 const patchText = fs.readFileSync(repoPath(BUNDLE_DIR, 'cordis.patch.yml'), 'utf8')
 if (!patchText.includes(`name: '${bundle.name}'`)) {
   problems.push(`${BUNDLE_DIR}/cordis.patch.yml does not insert a row named ${JSON.stringify(bundle.name)}`)
 }
-if (!patchText.includes('locale-vi')) {
-  problems.push(`${BUNDLE_DIR}/cordis.patch.yml does not insert the locale-vi entry`)
+if (!/^\s*-\s+id:\s*dsh-vi-pack\s*(?:#.*)?$/m.test(patchText)) {
+  problems.push(`${BUNDLE_DIR}/cordis.patch.yml does not insert a row with id dsh-vi-pack`)
 }
 
 // The locale exports must cover the display metadata the plugin list reads, in English and Vietnamese.

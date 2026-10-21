@@ -122,7 +122,7 @@ The overlay reaches the Plugin Manager, the built-in plugin inventory and anywhe
 `locale.resolveText` output; a brand-new package still needs a DSH restart before its row appears.
 
 **Touch the plugin manifest.** `package.json` (repository root), `plugin/package.json`, and
-`plugin/cordis.patch.yml` define how DSH loads the bundle (`dsh.bundle.patch` inserts the `locale-vi`
+`plugin/cordis.patch.yml` define how DSH loads the bundle (`dsh.bundle.patch` inserts the `dsh-vi-pack`
 entry; `dsh.client` declares the web bundle and its `locale` dependency). Changing them changes
 install behavior — verify by installing the bundle into a DSH profile and reloading the GUI. A
 manifest without a module entry (`main`, or `index.js` at its root) installs but fails to activate:
