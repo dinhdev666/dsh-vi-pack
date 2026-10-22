@@ -1,9 +1,11 @@
-// Validate vi-meta/packages-*.json (installed-package display text) against extract/meta.json.
+// Validate vi-meta/*.json (Host-provided display text) against extract/meta.json and
+// extract/host-text.json.
 //
-// Strict shape: every shipped package's title is translated, and every English description is
-// translated. `--partial` reports the coverage without failing, so a batch can check its own file
+// Strict shape: every shipped package's title is translated, every English description is
+// translated, and every Host reason template carries a Vietnamese counterpart with the same
+// placeholders. `--partial` reports the coverage without failing, so a batch can check its own file
 // while the other batches are still being written.
-import { listMetaParts, loadMetaSource, readMetaPart } from './lib/meta.mjs'
+import { listMetaParts, loadHostTextSource, loadMetaSource, readHostTextPart, readMetaPart } from './lib/meta.mjs'
 import { CJK_META } from './lib/text.mjs'
 
 const PARTIAL = process.argv.includes('--partial')
@@ -114,6 +116,42 @@ function checkSharedText(role) {
 checkSharedText('title')
 checkSharedText('description')
 
+// Host copy that reaches the GUI as a reason (approval prompts) is keyed by the English template,
+// so a source template without a translation is a gap and a translation without a source template
+// is stale.
+const hostSource = loadHostTextSource().entries ?? []
+const hostPart = readHostTextPart()
+const hostMissing = []
+const placeholderNames = (text) =>
+  [...text.matchAll(/\{([A-Za-z_$][\w$]*)\}/g)].map((match) => match[1]).sort()
+
+for (const entry of hostSource) {
+  if (entry.computable) {
+    warn(`${entry.pkg}: ${JSON.stringify(entry.template)} has a computed interpolation and cannot be translated`)
+    continue
+  }
+  const vi = hostPart[entry.template]
+  if (typeof vi !== 'string' || vi.trim() === '') {
+    hostMissing.push(entry.template)
+    if (!PARTIAL) problem(`host text: no Vietnamese translation for ${JSON.stringify(entry.template)}`)
+    continue
+  }
+  const where = `host text ${JSON.stringify(entry.template)}`
+  if (vi !== vi.trim()) problem(`${where}: leading or trailing whitespace`)
+  if (/\s{2,}/.test(vi)) problem(`${where}: repeated whitespace`)
+  if (CJK_META.test(vi)) problem(`${where}: contains CJK characters`)
+  const expected = placeholderNames(entry.template)
+  const actual = placeholderNames(vi)
+  if (expected.join('\u0000') !== actual.join('\u0000')) {
+    problem(`${where}: placeholders differ (${expected.join(', ') || 'none'} vs ${actual.join(', ') || 'none'})`)
+  }
+}
+for (const key of Object.keys(hostPart)) {
+  if (!hostSource.some((entry) => entry.template === key)) {
+    problem(`host text: ${JSON.stringify(key)} is not in extract/host-text.json (stale translation)`)
+  }
+}
+
 for (const warning of warnings) console.warn('warn  ' + warning)
 if (problems.length) {
   console.error(`validate-meta: ${problems.length} problem(s)`)
@@ -127,10 +165,12 @@ const descriptionCount = packages.filter(
 const covered = translations.size
 console.log(
   `validate-meta: OK (${covered}/${packages.length} packages, ${titleCount} titles, ` +
-    `${descriptionCount} descriptions${warnings.length ? `, ${warnings.length} warning(s)` : ''})`,
+    `${descriptionCount} descriptions, ${hostSource.length - hostMissing.length}/${hostSource.length} host texts` +
+    `${warnings.length ? `, ${warnings.length} warning(s)` : ''})`,
 )
 if (PARTIAL) {
   console.log(
-    `partial: ${missing.length} title(s) and ${missingDescriptions.length} description(s) still pending`,
+    `partial: ${missing.length} title(s), ${missingDescriptions.length} description(s) and ` +
+      `${hostMissing.length} host text(s) still pending`,
   )
 }

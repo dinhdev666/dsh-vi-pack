@@ -1324,6 +1324,30 @@
       }
     },
     {
+      "name": "@deepseek-ai/dsh-subagent-claude-code",
+      "title": {
+        "en": "Claude Code subagent",
+        "zh": "Claude Code 子智能体"
+      },
+      "description": {
+        "en": "Delegate one task to Claude Code using its native authentication and settings.",
+        "zh": "使用 Claude Code 原生认证和设置委派单个任务。"
+      },
+      "icon": true
+    },
+    {
+      "name": "@deepseek-ai/dsh-subagent-codex",
+      "title": {
+        "en": "Codex subagent",
+        "zh": "Codex 子智能体"
+      },
+      "description": {
+        "en": "Delegate one task to Codex using its native authentication and settings.",
+        "zh": "使用 Codex 原生认证和设置委派单个任务。"
+      },
+      "icon": true
+    },
+    {
       "name": "@deepseek-ai/dsh-subagent-fork-in-process",
       "title": {
         "en": "subagent-fork-in-process",

@@ -11,9 +11,8 @@ size are welcome: fixing one awkward string, translating a new namespace, or imp
   the documentation language policy.
 - You need **Node.js 20+** to run the tools. There are no dependencies to install: the scripts use
   only `node:` builtins, so `node tools/validate-vi.mjs` works in a fresh checkout.
-- Re-extracting upstream strings additionally needs a local DSH installation, because
-  `tools/extract-dicts.mjs` and `tools/extract-meta.mjs` read locale data directly out of the DSH
-  `app.asar`.
+- Re-extracting upstream strings additionally needs a local DSH installation, because the
+  `tools/extract-*.mjs` scripts read their data directly out of the DSH `app.asar`.
 
 ## The five kinds of files
 
@@ -21,7 +20,7 @@ size are welcome: fixing one awkward string, translating a new namespace, or imp
 |---|---|
 | `extract/` | Generated snapshot of upstream DSH locale data. Do not edit. (`extract/reference/` holds read-only dumps of the upstream client bundles for maintainers — see its own `README.md`.) |
 | `vi-packs/` | The translation output. **This is where namespace translation contributions go.** |
-| `vi-meta/` | Package titles and descriptions shown in the plugin list. Hand-written, keyed by package name. |
+| `vi-meta/` | Overlay text for the plugin list and the approval card: package titles/descriptions (keyed by package name) and Host approval prompts (keyed by their English wording). Hand-written. |
 | `plugin/` | The installable bundle. `client.js` is generated; other files are hand-maintained. |
 | `package.json` | The bundle manifest at the repository root, used when someone installs the plain Git URL. Keep it identical in name, version, and description to `plugin/package.json`. |
 
@@ -78,6 +77,23 @@ that no longer exists, and when two packages that share one English title carry 
 text — the browser overlay keys translations by the English wording. `--partial` reports coverage
 without failing, which is useful while translating a batch.
 
+### Translating approval prompts (Host copy)
+
+The approval card shows a reason the Host builds and sends with the permission request — a sandbox
+escalation ("Allow this operation with danger-full-access permissions: …") or an auto-review denial
+("Auto review denied this call: …"). Those arrive as `en`/`zh` maps with no locale key, so they live
+in `vi-meta/host-text.json`, keyed by the English wording and mirrored against
+`extract/host-text.json`:
+
+1. Re-run `node tools/extract-host-text.mjs` to refresh `extract/host-text.json` from the installed
+   build, and diff it before adding entries.
+2. One key per English wording, `{mode}`, `{justification}`, `{reason}` placeholders unchanged; the
+   translated frame may reorder them, but the placeholder names must match.
+3. Permission modes and reviewer reasons are kept verbatim — translate the frame, not the value.
+
+`validate-meta.mjs` and `build-client.mjs` run the same coverage checks on this file as on the
+package lists, and `test-client.mjs` exercises the matcher (exact wording, then template).
+
 ### Non-negotiables
 
 - Placeholders keep identical spelling and braces: `{name}`, `{count}`, `{{x}}`. Move them where
@@ -119,7 +135,10 @@ If the namespace or key count changed, update the numbers quoted in `README.md` 
 justified and discussed first.
 
 - `extract-dicts.mjs` — parse locale dictionaries out of the installed DSH client bundles.
-- `extract-meta.mjs` — read package titles/descriptions from the same `app.asar` into `extract/meta.json`.
+- `extract-meta.mjs` — read package titles/descriptions from the same `app.asar` into `extract/meta.json`
+  (it also reads the official on-demand catalog, whose bundles are not installed yet but do appear in
+  the Plugin Manager).
+- `extract-host-text.mjs` — read the approval prompts the Host localizes into `extract/host-text.json`.
 - `prepare-dataset.mjs` — split `dicts-v2.json` into per-namespace English sources plus the manifest.
 - `build-client.mjs` — generate `plugin/client.js` from `vi-packs/` and `vi-meta/`.
 - `validate-vi.mjs` — strict structural validation of the dictionaries.
@@ -129,13 +148,15 @@ justified and discussed first.
 
 `tools/lib/` holds what more than one script needs, so nothing is copy-pasted between them:
 `repo.mjs` (repository root, JSON I/O, the manifest), `text.mjs` (placeholder helpers, the CJK
-ranges), `meta.mjs` (`vi-meta` part files, `extract/meta.json`), and `asar.mjs` (installed-build
+ranges), `meta.mjs` (`vi-meta` part files, `extract/meta.json`, `extract/host-text.json`), `bundle-text.mjs` (reading
+language maps out of minified bundles), and `asar.mjs` (installed-build
 detection, the `app.asar` reader). If two scripts start repeating a block, move it there. See
 `tools/lib/README.md`.
 
 The scripts resolve the repository root from their own location (through `tools/lib/repo.mjs`), so
 they run from any working directory and the checkout can live anywhere. `extract-dicts.mjs` and
-`extract-meta.mjs` are the only tools that read outside the repository: they auto-detect the default
+`extract-meta.mjs` and `extract-host-text.mjs` are the only tools that read outside the repository: they
+auto-detect the default
 Windows/macOS DSH install and take `DSH_APP_ASAR` (path to the installed `app.asar`) when DSH lives
 elsewhere. Do not commit machine-specific paths.
 

@@ -3098,6 +3098,63 @@ window.__ModuleLoader__.load({
         "time.ago": "{t} trước"
       }
     };
+    /** Vietnamese Host copy keyed by the English original, for approval prompts the GUI shows. */
+    const HOST_TEXT = {
+      "Auto review denied this call: {reason}": "Tự động xem xét đã từ chối lệnh gọi này: {reason}",
+      "Auto review denied this call.": "Tự động xem xét đã từ chối lệnh gọi này.",
+      "Allow this operation with {mode} permissions: {justification}": "Cho phép thao tác này với quyền {mode}: {justification}"
+    };
+    /**
+     * Build the matcher for one Host text template.
+     *
+     * The English original decides where a placeholder sits; the Vietnamese text may reorder them,
+     * so the pattern only captures the values and the translation re-inserts them.
+     */
+    function hostTextPattern(template) {
+      const token = /\{[A-Za-z_$][\w$]*\}/;
+      let source = '^';
+      let rest = template;
+      for (;;) {
+        const at = rest.search(token);
+        if (at < 0) {
+          source += escapeHostText(rest);
+          break;
+        }
+        source += escapeHostText(rest.slice(0, at));
+        const name = rest.slice(at).match(token)[0].slice(1, -1);
+        const after = rest.slice(at + name.length + 2);
+        source += after.length ? '(?<' + name + '>.*?)' : '(?<' + name + '>.*)';
+        rest = after;
+      }
+      return new RegExp(source + '$', 's');
+    }
+    /** Escape the literal parts of a template so they match verbatim. */
+    function escapeHostText(text) {
+      return text.replace(/[.*+?^$(){}|[\]\\]/g, '\\$&');
+    }
+    /** Host templates, matched after the exact wording misses. */
+    const HOST_TEXT_TEMPLATES = Object.entries(HOST_TEXT)
+      .filter(([source]) => /\{[A-Za-z_$][\w$]*\}/.test(source))
+      .map(([source, text]) => ({ pattern: hostTextPattern(source), text }));
+    /**
+     * Translate Host copy that reaches the GUI through locale.resolveText.
+     *
+     * Such copy is a Host-built language map with no \`vi\` key, so the overlay supplies the
+     * Vietnamese wording instead of a dictionary.
+     *
+     * @param text - the Host language map
+     * @returns the Vietnamese wording, or undefined when the pack does not cover it
+     */
+    function localizeHostText(text) {
+      const english = text.en;
+      if (Object.hasOwn(HOST_TEXT, english)) return HOST_TEXT[english];
+      for (const template of HOST_TEXT_TEMPLATES) {
+        const match = template.pattern.exec(english);
+        if (!match) continue;
+        return template.text.replace(/\{([A-Za-z_$][\w$]*)\}/g, (whole, name) => match.groups?.[name] ?? whole);
+      }
+      return undefined;
+    }
     /** Vietnamese package titles keyed by the English original, for installed-plugin lists. */
     const META_TITLES = {
       "timer": "Dịch vụ hẹn giờ",
@@ -3272,6 +3329,8 @@ window.__ModuleLoader__.load({
       "storage-domain": "Lưu trữ dữ liệu có cấu trúc",
       "storage-json": "Lưu trữ tệp JSON",
       "subagent": "Agent con",
+      "Claude Code subagent": "Agent con Claude Code",
+      "Codex subagent": "Agent con Codex",
       "subagent-fork-in-process": "Agent con kế thừa ngữ cảnh",
       "subagent-spawn-in-process": "Agent con tạo mới",
       "subprocess-local": "Tiến trình con cục bộ",
@@ -3343,6 +3402,8 @@ window.__ModuleLoader__.load({
       "Transcribe recordings locally with SenseVoice; first use requires installing dependencies": "Chuyển bản ghi âm thành văn bản cục bộ bằng SenseVoice; lần đầu cần cài thư viện phụ thuộc",
       "Stores automation tasks, runs each in its original session when it is due, and gives the agent tools to manage them.": "Lưu các tác vụ tự động, chạy từng tác vụ trong phiên gốc khi đến hạn và cung cấp cho agent các công cụ để quản lý chúng.",
       "Provide the official powered-by-DSH badge skill.": "Cung cấp kỹ năng huy hiệu powered-by-DSH chính thức.",
+      "Delegate one task to Claude Code using its native authentication and settings.": "Giao một tác vụ cho Claude Code bằng xác thực và cài đặt gốc của nó.",
+      "Delegate one task to Codex using its native authentication and settings.": "Giao một tác vụ cho Codex bằng xác thực và cài đặt gốc của nó.",
       "Tells the model the current time, the browser's time zone, and the time since the previous message at each step.": "Cho mô hình biết thời gian hiện tại, múi giờ của trình duyệt và khoảng thời gian kể từ tin nhắn trước ở mỗi bước.",
       "Connects a remote MCP server to make its tools available to the agent.": "Kết nối một máy chủ MCP từ xa để cung cấp các công cụ của nó cho agent.",
       "Displays a blue circle below the message composer.": "Hiển thị một vòng tròn màu xanh bên dưới ô soạn tin nhắn."
@@ -3365,6 +3426,8 @@ window.__ModuleLoader__.load({
         if (typeof text.vi === 'string' || locale.getLocale().active !== LANGUAGE.id) return resolve(text);
         if (Object.hasOwn(META_TITLES, text.en)) return META_TITLES[text.en];
         if (Object.hasOwn(META_DESCRIPTIONS, text.en)) return META_DESCRIPTIONS[text.en];
+        const host = localizeHostText(text);
+        if (host !== undefined) return host;
         return resolve(text);
       };
       return () => {
@@ -3382,6 +3445,7 @@ window.__ModuleLoader__.load({
     exports.DICTIONARIES = DICTIONARIES;
     exports.META_TITLES = META_TITLES;
     exports.META_DESCRIPTIONS = META_DESCRIPTIONS;
+    exports.HOST_TEXT = HOST_TEXT;
     exports.inject = ['locale'];
     exports.apply = apply;
     return module.exports;

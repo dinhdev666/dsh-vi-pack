@@ -1,0 +1,33 @@
+{
+  "entries": [
+    {
+      "pkg": "dsh-experimental-auto-review",
+      "file": "index.js",
+      "property": "displayReason",
+      "template": "Auto review denied this call: {reason}",
+      "params": [
+        "reason"
+      ],
+      "computable": false
+    },
+    {
+      "pkg": "dsh-experimental-auto-review",
+      "file": "index.js",
+      "property": "displayReason",
+      "template": "Auto review denied this call.",
+      "params": [],
+      "computable": false
+    },
+    {
+      "pkg": "dsh-sandbox",
+      "file": "index.js",
+      "property": "displayReason",
+      "template": "Allow this operation with {mode} permissions: {justification}",
+      "params": [
+        "mode",
+        "justification"
+      ],
+      "computable": false
+    }
+  ]
+}

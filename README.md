@@ -5,10 +5,13 @@ Gói ngôn ngữ tiếng Việt cho giao diện web **DeepSeek Harness (DSH)**: 
 mà Harness phát hành.
 
 - **63 namespace, 2.901 khóa** trên 53 gói client của DSH.
-- **216 tiêu đề và 29 mô tả gói** đã dịch cho danh sách plugin: **Plugin Manager** và
-  **Settings → Plugins → Built-in plugins**. Phần chữ này do Host dựng từ `locale/en.json` của từng
-  gói nên không nằm trong namespace nào; gói ngôn ngữ bổ sung bản dịch trong `vi-meta/` và phủ lên
-  `ctx.locale.resolveText`.
+- **218 tiêu đề và 31 mô tả gói** đã dịch cho danh sách plugin: **Plugin Manager** (kể cả mục
+  *More* của các gói chưa cài) và **Settings → Plugins → Built-in plugins**. Phần chữ này do Host
+  dựng từ `locale/en.json` của từng gói nên không nằm trong namespace nào; gói ngôn ngữ bổ sung bản
+  dịch trong `vi-meta/` và phủ lên `ctx.locale.resolveText`.
+- **3 lời nhắc phê duyệt** (nâng quyền sandbox và Auto review từ chối lệnh gọi) cũng đã dịch: đây
+  là chữ do Host gửi kèm yêu cầu phê duyệt dưới dạng `en`/`zh`, nên bản dịch nằm trong
+  `vi-meta/host-text.json` và được phủ qua cùng entry point đó.
 - **Fallback `en`**: khóa nào chưa dịch sẽ hiển thị tiếng Anh, giao diện không bao giờ lộ khóa thô.
 - **Plugin DSH chuẩn**: `@dinhdev666/dsh-vi-pack`, nửa browser đăng ký ngôn ngữ qua `ctx.locale.addLanguage`,
   từng namespace qua `ctx.locale.register(ns, 'vi', dict)`, và tên/mô tả gói qua lớp phủ
@@ -18,10 +21,10 @@ mà Harness phát hành.
 
 | Đường dẫn | Nội dung |
 |---|---|
-| `extract/` | Dữ liệu trích xuất từ DSH chỉ dùng cho pipeline: `en/<namespace>.json` (nguồn chuẩn), `manifest.json`, `meta.json` (tên/mô tả gói), `dicts-v2.json`, `summary-v2.txt`, `validation.txt` |
+| `extract/` | Dữ liệu trích xuất từ DSH chỉ dùng cho pipeline: `en/<namespace>.json` (nguồn chuẩn), `manifest.json`, `meta.json` (tên/mô tả gói), `host-text.json` (lời nhắc phê duyệt), `dicts-v2.json`, `summary-v2.txt`, `validation.txt` |
 | `extract/reference/` | Bản dump bundle gốc của DSH để tham chiếu khi bảo trì (`README.md` của thư mục này giải thích nguồn gốc); không sinh tự động, không script nào đọc |
 | `vi-packs/` | **Bản dịch tiếng Việt** — 63 tệp JSON cùng tên, cùng thứ tự khóa với `extract/en/` |
-| `vi-meta/` | **Bản dịch tên và mô tả gói** — `packages-*.json` khóa theo tên gói, đối chiếu `extract/meta.json` |
+| `vi-meta/` | **Bản dịch phần chữ Host không đi qua namespace** — `packages-*.json` (tên/mô tả gói, khóa theo tên gói, đối chiếu `extract/meta.json`) và `host-text.json` (lời nhắc phê duyệt, khóa theo câu tiếng Anh, đối chiếu `extract/host-text.json`) |
 | `plugin/` | Plugin đóng gói để cài vào DSH: `client.js` (sinh tự động), `index.js` (host no-op), `cordis.patch.yml`, `locale/*.json`, `icon.svg` |
 | `package.json` | Manifest cài đặt ở **gọc repository** — mặt cài đặt của địa chỉ Git thuần: khai báo `dsh.bundle` trỏ vào `plugin/cordis.patch.yml` và `exports` trỏ vào `plugin/`; giữ đồng bộ tên, version, mô tả với `plugin/package.json` |
 | `tools/` | Toàn bộ pipeline: trích xuất, dựng dataset, build, kiểm tra, audit, test |
@@ -99,11 +102,13 @@ Plugin được nạp như một bundle local của DSH profile (ví dụ profil
 DSH đã cài (app.asar)
   ├─ tools/extract-dicts.mjs ──► extract/dicts-v2.json, extract/summary-v2.txt
   │    └─ tools/prepare-dataset.mjs ──► extract/en/*.json, extract/manifest.json
-  │         └─ [dịch tay] ──► vi-packs/*.json ─────────────┐
-  └─ tools/extract-meta.mjs ──► extract/meta.json          │
-       └─ [dịch tay] ──► vi-meta/packages-*.json ──────────┤
-                                                           └─ tools/build-client.mjs ──► plugin/client.js
-                                                                └─ tools/validate-*.mjs / audit-vi.mjs / test-client.mjs
+  │         └─ [dịch tay] ──► vi-packs/*.json                                   ┐
+  ├─ tools/extract-meta.mjs ──► extract/meta.json                               │
+  │    └─ [dịch tay] ──► vi-meta/packages-*.json                                ┤
+  └─ tools/extract-host-text.mjs ──► extract/host-text.json                     │
+       └─ [dịch tay] ──► vi-meta/host-text.json                                 ┤
+                                                                                └─ tools/build-client.mjs ──► plugin/client.js
+                                                                                 └─ tools/validate-*.mjs / audit-vi.mjs / test-client.mjs
 ```
 
 Chỉ cần chạy lại các bước trích xuất khi DSH cập nhật từ điển gốc:
@@ -112,6 +117,7 @@ Chỉ cần chạy lại các bước trích xuất khi DSH cập nhật từ đ
 node tools/extract-dicts.mjs      # đọc locale từ bundle DSH đã cài (cần Electron-as-node để mở app.asar)
 node tools/prepare-dataset.mjs    # tách extract/en/*.json + manifest.json
 node tools/extract-meta.mjs       # đọc tên/mô tả gói vào extract/meta.json (chạy bằng node thường)
+node tools/extract-host-text.mjs  # đọc lời nhắc phê duyệt vào extract/host-text.json (node thường)
 ```
 
 Các lệnh dùng hằng ngày (chạy từ thư mục gốc repo):
@@ -119,7 +125,7 @@ Các lệnh dùng hằng ngày (chạy từ thư mục gốc repo):
 ```bash
 node tools/validate-vi.mjs                       # toàn bộ 63 namespace
 node tools/validate-vi.mjs chat conversation     # chỉ định namespace
-node tools/validate-meta.mjs                     # toàn bộ 216 tiêu đề + 29 mô tả gói
+node tools/validate-meta.mjs                     # toàn bộ 218 tiêu đề, 31 mô tả gói, 3 lời nhắc phê duyệt
 node tools/validate-meta.mjs --partial           # báo phần còn thiếu, không tính là lỗi
 node tools/audit-vi.mjs                          # soát tiếng Anh sót, glossary, khoảng trắng
 node tools/build-client.mjs                      # sinh lại plugin/client.js
@@ -136,13 +142,14 @@ namespace, ngôn ngữ dự phòng, lớp phủ tên/mô tả gói và việc d�
 - `validate-vi.mjs` — lỗi cứng: key parity, placeholder, ký tự CJK, khoảng trắng thừa, giá trị
   trùng tiếng Anh; cảnh báo: thứ tự khóa, số dòng, marker Markdown, độ dài.
 - `validate-meta.mjs` — lỗi cứng: gói trong DSH chưa có tên/mô tả, khóa lạ hoặc trùng, ký tự CJK,
-  và hai gói dùng chung một chuỗi tiếng Anh nhưng dịch khác nhau.
+  hai gói dùng chung một chuỗi tiếng Anh nhưng dịch khác nhau, và lời nhắc phê duyệt thiếu bản dịch,
+  sai placeholder hoặc không còn trong bản trích xuất.
 - `audit-vi.mjs` — soát mềm: cụm tiếng Anh còn sót, lệch glossary, lỗi khoảng trắng, chuỗi ASCII
   không dấu đáng ngờ.
 - Quy tắc chi tiết và glossary nằm trong [GUIDE.md](GUIDE.md).
 
-Trạng thái hiện tại: 63/63 namespace dịch đủ 2.901 khóa; 216/216 tiêu đề và 29/29 mô tả gói đã dịch;
-`validate-vi`, `validate-meta`, `test-client` và `build-client` đều qua.
+Trạng thái hiện tại: 63/63 namespace dịch đủ 2.901 khóa; 218/218 tiêu đề, 31/31 mô tả gói và 3/3 lời
+nhắc phê duyệt đã dịch; `validate-vi`, `validate-meta`, `test-client` và `build-client` đều qua.
 
 ## Ghi chú
 
@@ -171,7 +178,8 @@ vẫn hiển thị tiếng Anh, kể cả khi chọn tiếng Việt — bản `z
 
 - Nội dung `SKILL.md` và mô tả kỹ năng do từng gói/gói kỹ năng tự cung cấp: đây là nội dung của
   plugin, không phải chuỗi giao diện.
-- Tên và mô tả của plugin bên thứ ba trong chợ plugin: do chỉ mục bên ngoài cung cấp.
+- Tên và mô tả của plugin bên thứ ba trong chợ plugin: do chỉ mục bên ngoài cung cấp (chỉ hiện tiếng
+  Việt nếu chính chỉ mục đó có bản dịch `vi`).
 - Màn hình khởi động của shell (`Loading plugins…`, `Failed to load plugins`) vẽ trước khi ngôn ngữ
   được nạp.
 - Tên gói, đường dẫn, mã lệnh và tên model luôn giữ nguyên.

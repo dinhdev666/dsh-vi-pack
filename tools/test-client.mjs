@@ -132,6 +132,39 @@ active = 'en'
 assert(locale.resolveText({ en: firstTitle }) === firstTitle, 'English locale ignores the overlay')
 active = 'vi'
 
+console.log('host text')
+const hostText = exports.HOST_TEXT
+assert(hostText !== null && typeof hostText === 'object', 'HOST_TEXT is an object')
+assert(
+  Object.values(hostText).every((value) => typeof value === 'string' && value.trim() !== ''),
+  'every host text is a non-empty string',
+)
+assert(
+  locale.resolveText({ en: 'Auto review denied this call.' }) === 'Tự động xem xét đã từ chối lệnh gọi này.',
+  'an exact host text resolves to Vietnamese',
+)
+assert(
+  locale.resolveText({ en: 'Auto review denied this call: the file looks stale' }) ===
+    'Tự động xem xét đã từ chối lệnh gọi này: the file looks stale',
+  'a host template keeps the reason wording',
+)
+assert(
+  locale.resolveText({
+    en: 'Allow this operation with danger-full-access permissions: run (npm test) & exit [0] now.',
+  }) ===
+    'Cho phép thao tác này với quyền danger-full-access: run (npm test) & exit [0] now.',
+  'a sandbox prompt survives permission mode and justification',
+)
+assert(
+  locale.resolveText({ en: 'Allow this operation with workspace-write permissions: A\nB' }) ===
+    'Cho phép thao tác này với quyền workspace-write: A\nB',
+  'a sandbox prompt keeps newlines in the justification',
+)
+assert(
+  locale.resolveText({ en: 'Some other refusal reason', zh: '其他拒绝原因' }) === 'Some other refusal reason',
+  'a host text the pack does not cover passes through',
+)
+
 let keyTotal = 0
 const badNamespaces = []
 for (const ns of registered) {
@@ -150,6 +183,10 @@ console.log('disposal')
 for (const effect of effects) effect.dispose()
 assert(!catalog.has('vi'), 'language removed after disposal')
 assert(locale.resolveText({ en: firstTitle }) === firstTitle, 'package text overlay removed after disposal')
+assert(
+  locale.resolveText({ en: 'Auto review denied this call.' }) === 'Auto review denied this call.',
+  'host text overlay removed after disposal',
+)
 assert(dicts.size === registered.length, 'namespace maps retained, locale entries removed')
 
 console.log(failed.length ? `\nFAIL (${failed.length})` : '\nOK')

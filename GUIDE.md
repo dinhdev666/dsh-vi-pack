@@ -162,6 +162,30 @@ Rules that differ from namespaces:
    `Typert`, `SenseVoice`, `Ralph`, `Chrome DevTools`, `Ctrl/Cmd+Shift+.`, `shell`, `terminal`,
    `plugin`, `worktree`, `preset`) and `DSH`/`DeepSeek` unchanged.
 
+## Host copy (`vi-meta/host-text.json`)
+
+Some copy never passes through a namespace: the Host builds it and hands it to the GUI as a language
+map, which the browser bundle resolves through `locale.resolveText`. The approval card is the case
+the pack covers — a sandbox escalation asks the user to allow a wider permission mode, and an auto
+review can refuse one tool call. Both arrive with `en` and `zh` only, so a language pack has to
+supply its own wording.
+
+| | |
+|---|---|
+| Source of truth | `extract/host-text.json`, regenerated with `node tools/extract-host-text.mjs` from the installed build |
+| Output | `vi-meta/host-text.json`, keyed by the English wording |
+| Check | `node tools/validate-meta.mjs` |
+
+Rules that differ from namespaces:
+
+1. **Keys are English templates**, not UI keys: one key per Host string, copied verbatim.
+2. **Placeholders stay put.** `{mode}`, `{justification}` and `{reason}` keep their spelling and
+   braces; Vietnamese word order may move them, but the set of names must not change.
+3. **Values the Host interpolates stay verbatim.** A sandbox permission mode (`danger-full-access`)
+   and a reviewer's reason are technical or free-form text — translate the frame, not the value.
+4. The overlay matches the English wording exactly first, then as a template, so a Host string that
+   grows a value is still translated.
+
 ## Lead decisions after review
 
 Terminology settled during the final polish pass, applied across every pack:
@@ -182,6 +206,7 @@ Terminology settled during the final polish pass, applied across every pack:
 | Worktree | worktree | Loanword, like `terminal`. |
 | Auto review (permission mode) | Tự động xem xét | Matches `permission.access.json` `auto.label`. |
 | Installed-package text | `vi-meta/` | Titles/descriptions resolve by English wording, not by package name. |
+| Approval prompt (Host copy) | `vi-meta/host-text.json` | Same mechanism as package text: the Host wording is the key. |
 
 Lowercase ASCII values are only acceptable for units (`s`, `m `, `h `, `ms`, `px`), product
 names, URLs, and placeholder-only strings. Labels are sentence case, never all lowercase.

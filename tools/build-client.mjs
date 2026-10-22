@@ -3,7 +3,7 @@
 // and unless every shipped package title/description has a Vietnamese translation.
 import fs from 'node:fs'
 import { BUNDLE_DIR } from './lib/bundle.mjs'
-import { listMetaParts, loadMetaSource, readMetaPart } from './lib/meta.mjs'
+import { listMetaParts, loadHostTextSource, loadMetaSource, readHostTextPart, readMetaPart } from './lib/meta.mjs'
 import { loadManifest, readJson, repoPath } from './lib/repo.mjs'
 import { placeholderKey } from './lib/text.mjs'
 
@@ -98,6 +98,26 @@ for (const pkg of metaSource.packages ?? []) {
   }
 }
 
+// Host copy that reaches the GUI as an approval reason: the browser overlay resolves it by the
+// English original, so a shipped reason without a translation is a build failure.
+const hostSource = loadHostTextSource().entries ?? []
+const hostTranslations = readHostTextPart()
+const hostText = {}
+for (const entry of hostSource) {
+  if (entry.computable) continue
+  const translation = hostTranslations[entry.template]
+  if (typeof translation !== 'string' || translation.trim() === '') {
+    problems.push(`host text: no Vietnamese translation for ${JSON.stringify(entry.template)}`)
+    continue
+  }
+  hostText[entry.template] = translation
+}
+for (const key of Object.keys(hostTranslations)) {
+  if (!hostSource.some((entry) => entry.template === key)) {
+    problems.push(`host text: ${JSON.stringify(key)} is not in extract/host-text.json`)
+  }
+}
+
 const allProblems = partial ? problems.filter((p) => !p.startsWith('missing ')) : problems
 if (allProblems.length) {
   console.error(`build-client: ${allProblems.length} problem(s)`)
@@ -111,6 +131,61 @@ const body = sections
     return `      // ${ns} (${Object.keys(dict).length} keys)\n      ${JSON.stringify(ns)}: {\n${lines.join(',\n')}\n      }`
   })
   .join(',\n')
+
+// Browser-side matcher for Host copy. Kept as a raw string so the emitted code keeps its regular
+// expressions and placeholder tokens exactly as written; no template interpolation happens here.
+const HOST_TEXT_CODE = String.raw`    /**
+     * Build the matcher for one Host text template.
+     *
+     * The English original decides where a placeholder sits; the Vietnamese text may reorder them,
+     * so the pattern only captures the values and the translation re-inserts them.
+     */
+    function hostTextPattern(template) {
+      const token = /\{[A-Za-z_$][\w$]*\}/;
+      let source = '^';
+      let rest = template;
+      for (;;) {
+        const at = rest.search(token);
+        if (at < 0) {
+          source += escapeHostText(rest);
+          break;
+        }
+        source += escapeHostText(rest.slice(0, at));
+        const name = rest.slice(at).match(token)[0].slice(1, -1);
+        const after = rest.slice(at + name.length + 2);
+        source += after.length ? '(?<' + name + '>.*?)' : '(?<' + name + '>.*)';
+        rest = after;
+      }
+      return new RegExp(source + '$', 's');
+    }
+    /** Escape the literal parts of a template so they match verbatim. */
+    function escapeHostText(text) {
+      return text.replace(/[.*+?^$(){}|[\]\\]/g, '\\$&');
+    }
+    /** Host templates, matched after the exact wording misses. */
+    const HOST_TEXT_TEMPLATES = Object.entries(HOST_TEXT)
+      .filter(([source]) => /\{[A-Za-z_$][\w$]*\}/.test(source))
+      .map(([source, text]) => ({ pattern: hostTextPattern(source), text }));
+    /**
+     * Translate Host copy that reaches the GUI through locale.resolveText.
+     *
+     * Such copy is a Host-built language map with no \`vi\` key, so the overlay supplies the
+     * Vietnamese wording instead of a dictionary.
+     *
+     * @param text - the Host language map
+     * @returns the Vietnamese wording, or undefined when the pack does not cover it
+     */
+    function localizeHostText(text) {
+      const english = text.en;
+      if (Object.hasOwn(HOST_TEXT, english)) return HOST_TEXT[english];
+      for (const template of HOST_TEXT_TEMPLATES) {
+        const match = template.pattern.exec(english);
+        if (!match) continue;
+        return template.text.replace(/\{([A-Za-z_$][\w$]*)\}/g, (whole, name) => match.groups?.[name] ?? whole);
+      }
+      return undefined;
+    }
+`
 
 const metaBody = (object) => {
   const lines = Object.keys(object).map(
@@ -130,7 +205,11 @@ const source = `window.__ModuleLoader__.load({
     const DICTIONARIES = {
 ${body}
     };
-    /** Vietnamese package titles keyed by the English original, for installed-plugin lists. */
+    /** Vietnamese Host copy keyed by the English original, for approval prompts the GUI shows. */
+    const HOST_TEXT = {
+${metaBody(hostText)}
+    };
+${HOST_TEXT_CODE}    /** Vietnamese package titles keyed by the English original, for installed-plugin lists. */
     const META_TITLES = {
 ${metaBody(metaTitles)}
     };
@@ -156,6 +235,8 @@ ${metaBody(metaDescriptions)}
         if (typeof text.vi === 'string' || locale.getLocale().active !== LANGUAGE.id) return resolve(text);
         if (Object.hasOwn(META_TITLES, text.en)) return META_TITLES[text.en];
         if (Object.hasOwn(META_DESCRIPTIONS, text.en)) return META_DESCRIPTIONS[text.en];
+        const host = localizeHostText(text);
+        if (host !== undefined) return host;
         return resolve(text);
       };
       return () => {
@@ -173,6 +254,7 @@ ${metaBody(metaDescriptions)}
     exports.DICTIONARIES = DICTIONARIES;
     exports.META_TITLES = META_TITLES;
     exports.META_DESCRIPTIONS = META_DESCRIPTIONS;
+    exports.HOST_TEXT = HOST_TEXT;
     exports.inject = ['locale'];
     exports.apply = apply;
     return module.exports;
@@ -184,5 +266,6 @@ fs.writeFileSync(repoPath(BUNDLE_DIR, 'client.js'), source, 'utf8')
 console.log(
   `build-client: ${sections.length} namespaces, ${keyTotal} keys, ` +
     `${Object.keys(metaTitles).length} package titles, ${Object.keys(metaDescriptions).length} descriptions, ` +
+    `${Object.keys(hostText).length} host texts, ` +
     `${(Buffer.byteLength(source) / 1024).toFixed(1)} KiB`,
 )

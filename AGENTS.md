@@ -10,16 +10,19 @@ five different kinds of files, and each has a different edit policy:
 
 1. **`extract/` — generated, read-only.** Locale dictionaries pulled out of an installed DSH build
    (`app.asar`) plus derived artifacts (`manifest.json`, `dicts-v2.json`, `summary-v2.txt`,
-   `extract/en/*.json`, `meta.json`). Never hand-edit; regenerate with the scripts in `tools/`.
+   `extract/en/*.json`, `meta.json`, `host-text.json`). Never hand-edit; regenerate with the scripts
+   in `tools/`.
    The `extract/reference/` subfolder is different: it holds read-only dumps of the upstream client
    bundles for maintainers (see its own `README.md`). No script generates or reads it.
 2. **`vi-packs/` — hand-written translation output.** One JSON file per namespace, mirroring
    `extract/en/<ns>.json` key for key. This is where namespace translation work happens.
-3. **`vi-meta/` — hand-written package display text.** `packages-*.json` maps an installed
-   package's name to its Vietnamese `title` and `description`, mirroring `extract/meta.json` (the
-   English source snapshot). A locale namespace cannot carry this text — package titles and
-   descriptions are Host data built from each package's own `locale/en.json` — so the bundle ships
-   the translations and resolves them through the documented `locale.resolveText` entry point.
+3. **`vi-meta/` — hand-written overlay text.** `packages-*.json` maps an installed package's name
+   to its Vietnamese `title` and `description`, mirroring `extract/meta.json` (the English source
+   snapshot); `host-text.json` maps the English wording of Host copy — approval prompts, refusals —
+   to its Vietnamese wording, mirroring `extract/host-text.json`. A locale namespace cannot carry
+   either family: package titles, descriptions and approval reasons are Host data built from the
+   packages' own locale files, so the bundle ships the translations and resolves them through the
+   documented `locale.resolveText` entry point.
 4. **`plugin/` — the shippable DSH bundle.** `client.js` is **generated** from `vi-packs/` and
    `vi-meta/` by `tools/build-client.mjs`; the rest (`package.json`, `cordis.patch.yml`, `index.js`,
    `locale/*.json`, `icon.svg`) is hand-maintained but rarely changes.
@@ -30,10 +33,10 @@ five different kinds of files, and each has a different edit policy:
    (`<repository-url>#path:/plugin`), which downloads this folder alone;
    `node tools/validate-manifest.mjs` keeps the two in sync.
 
-Current baseline: **63 namespaces, 2,901 keys**, plus **216 package titles and 29 descriptions**
-(214 and 29 distinct English strings — two pairs of packages share one English title, and the
-overlay keys translations by that English string). Treat any deviation from these numbers as a
-signal to investigate, not to "fix" by editing counts in prose.
+Current baseline: **63 namespaces, 2,901 keys**, plus **218 package titles and 31 descriptions**
+(216 and 31 distinct English strings — two pairs of packages share one English title, and the
+overlay keys translations by that English string) and **3 Host reason texts**. Treat any deviation
+from these numbers as a signal to investigate, not to "fix" by editing counts in prose.
 
 ## Documentation language policy
 
@@ -55,8 +58,8 @@ unless explicitly asked.
 
 ## Golden rules
 
-- **Never hand-edit `plugin/client.js`.** It is generated. Edit `vi-packs/*.json` or
-  `vi-meta/packages-*.json`, then run `node tools/build-client.mjs`.
+- **Never hand-edit `plugin/client.js`.** It is generated. Edit `vi-packs/*.json`,
+  `vi-meta/packages-*.json` or `vi-meta/host-text.json`, then run `node tools/build-client.mjs`.
 - **Two manifests, one bundle.** The repository-root `package.json` and `plugin/package.json` describe
   the same package: keep their name, version, description, and `dsh.client` identical, and the root
   one pointing into `plugin/`. Each manifest needs a module entry at its own root (`main`, or an
@@ -70,6 +73,9 @@ unless explicitly asked.
 - **`vi-meta/` keys are package names, not UI keys.** Keep `extract/meta.json` order inside each
   part file, never rename a package, and give two packages that share an English title the same
   Vietnamese wording — the browser overlay looks translations up by the English string.
+- **`vi-meta/host-text.json` keys are English templates.** One key per Host string, `{name}`
+  placeholders unchanged; a key that no longer exists upstream is stale and the validator rejects
+  it.
 - **Keep technical tokens verbatim** and follow the glossary in `GUIDE.md`. Terminology is settled
   repo-wide: change a term only by sweeping every pack, not one file.
 - **JSON hygiene:** UTF-8, 2-space indentation, exactly one trailing newline, no trailing spaces.
@@ -94,14 +100,16 @@ node tools/build-client.mjs                   # regenerate plugin/client.js from
 node tools/test-client.mjs                    # smoke-test the bundle against a stubbed locale service
 node tools/extract-dicts.mjs                  # re-extract locales from the installed DSH build
 node tools/extract-meta.mjs                   # re-extract package titles/descriptions into extract/meta.json
+node tools/extract-host-text.mjs              # re-extract Host reason texts into extract/host-text.json
 node tools/prepare-dataset.mjs                # rebuild extract/en/*.json + manifest.json
 ```
 
-`extract-dicts.mjs` reads JSON straight out of `app.asar`, and `extract-meta.mjs` reads the same
-archive with a plain-`node` reader, so both need the installed build: they find the default
-Windows/macOS install themselves; set `DSH_APP_ASAR` to the installed `app.asar` when DSH lives
-somewhere else. The dictionary script must run under an asar-aware runtime (the Electron-as-node
-interpreter shipped with the DSH runtime); the metadata script runs under plain `node`.
+`extract-dicts.mjs` reads JSON straight out of `app.asar`, and `extract-meta.mjs` and
+`extract-host-text.mjs` read the same archive with a plain-`node` reader, so all three need the
+installed build: they find the default Windows/macOS install themselves; set `DSH_APP_ASAR` to the
+installed `app.asar` when DSH lives somewhere else. The dictionary script must run under an
+asar-aware runtime (the Electron-as-node interpreter shipped with the DSH runtime); the metadata
+and Host-text scripts run under plain `node`.
 
 ## Working recipes
 
@@ -121,6 +129,12 @@ rule), translate `title` and `description`, then `node tools/validate-meta.mjs` 
 The overlay reaches the Plugin Manager, the built-in plugin inventory and anywhere else that renders
 `locale.resolveText` output; a brand-new package still needs a DSH restart before its row appears.
 
+**Translate Host copy (approval reasons).** Re-run `node tools/extract-host-text.mjs`, diff
+`extract/host-text.json` against the previous state, add the missing English wording to
+`vi-meta/host-text.json`, translate it, keep the `{name}` placeholders, then
+`node tools/validate-meta.mjs` → build → test. The overlay matches the English wording first
+exactly, then as a template, so a Host prompt that interpolates values keeps them.
+
 **Touch the plugin manifest.** `package.json` (repository root), `plugin/package.json`, and
 `plugin/cordis.patch.yml` define how DSH loads the bundle (`dsh.bundle.patch` inserts the `dsh-vi-pack`
 entry; `dsh.client` declares the web bundle and its `locale` dependency). Changing them changes
@@ -133,7 +147,8 @@ manifest without a module entry (`main`, or `index.js` at its root) installs but
 A change is complete only when all of the following hold:
 
 1. `node tools/validate-vi.mjs` prints `OK` (zero errors).
-2. `node tools/validate-meta.mjs` prints `OK` (every shipped package title/description covered).
+2. `node tools/validate-meta.mjs` prints `OK` (every shipped package title/description and every
+   Host reason template covered).
 3. `node tools/validate-manifest.mjs` prints `OK` (both bundle manifests describe one bundle).
 4. `node tools/build-client.mjs` succeeds; `plugin/client.js` matches the current `vi-packs/` and
    `vi-meta/`.
@@ -152,10 +167,11 @@ A change is complete only when all of the following hold:
 - **`node_modules` is absent** and the project has no dependencies; the tools use only `node:`
   builtins. Keep it that way unless the user approves an extra dependency. `tools/lib/asar.mjs`
   carries its own small `app.asar` reader for exactly that reason.
-- **Package text is matched by its English wording, not by package name.** `build-client.mjs` turns
-  `vi-meta/` into English → Vietnamese maps, so an upstream wording change silently disables the
-  translation until `extract-meta.mjs` is re-run and the entry updated. `validate-meta.mjs` is what
-  catches it; never key the maps by anything else.
+- **Package and Host text is matched by its English wording, not by package name or key.**
+  `build-client.mjs` turns both `vi-meta/` families into English → Vietnamese maps, so an upstream
+  wording change silently disables the translation until `extract-meta.mjs` (or
+  `extract-host-text.mjs`) is re-run and the entry updated. `validate-meta.mjs` is what catches it;
+  never key the maps by anything else.
 - **Do not "improve" short labels for length.** The validator warns on long translations; a
   natural shorter wording beats a literal one, but meaning must not drift.
 - **Warnings are not errors** (key order, line counts, Markdown markers, length). Read them, fix the

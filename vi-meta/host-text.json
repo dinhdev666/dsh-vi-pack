@@ -1,0 +1,5 @@
+{
+  "Auto review denied this call.": "Tự động xem xét đã từ chối lệnh gọi này.",
+  "Auto review denied this call: {reason}": "Tự động xem xét đã từ chối lệnh gọi này: {reason}",
+  "Allow this operation with {mode} permissions: {justification}": "Cho phép thao tác này với quyền {mode}: {justification}"
+}

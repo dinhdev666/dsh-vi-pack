@@ -118,6 +118,14 @@
   "@deepseek-ai/dsh-subagent": {
     "title": "Agent con"
   },
+  "@deepseek-ai/dsh-subagent-claude-code": {
+    "title": "Agent con Claude Code",
+    "description": "Giao một tác vụ cho Claude Code bằng xác thực và cài đặt gốc của nó."
+  },
+  "@deepseek-ai/dsh-subagent-codex": {
+    "title": "Agent con Codex",
+    "description": "Giao một tác vụ cho Codex bằng xác thực và cài đặt gốc của nó."
+  },
   "@deepseek-ai/dsh-subagent-fork-in-process": {
     "title": "Agent con kế thừa ngữ cảnh"
   },
