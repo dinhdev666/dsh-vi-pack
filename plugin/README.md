@@ -1,8 +1,8 @@
 # Tiếng Việt language pack for DeepSeek Harness
 
 Adds `Tiếng Việt (vi)` to **Settings → General → Language** and translates the Web GUI with a
-Vietnamese dictionary for all 63 locale namespaces shipped by the Harness (2,901 keys), plus 218
-package titles and 31 package descriptions shown in the plugin lists, and the approval prompts the
+Vietnamese dictionary for all 64 locale namespaces shipped by the Harness (2,909 keys), plus 219
+package titles and 32 package descriptions shown in the plugin lists, and the approval prompts the
 Host sends with a permission request.
 
 - Client bundle: `client.js` registers `vi` through `ctx.locale.addLanguage`, then registers one

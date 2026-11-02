@@ -4,8 +4,8 @@ Gói ngôn ngữ tiếng Việt cho giao diện web **DeepSeek Harness (DSH)**: 
 **Settings → General → Language** và dịch giao diện bằng bộ từ điển phủ toàn bộ namespace locale
 mà Harness phát hành.
 
-- **63 namespace, 2.901 khóa** trên 53 gói client của DSH.
-- **218 tiêu đề và 31 mô tả gói** đã dịch cho danh sách plugin: **Plugin Manager** (kể cả mục
+- **64 namespace, 2.909 khóa** trên 54 gói client của DSH.
+- **219 tiêu đề và 32 mô tả gói** đã dịch cho danh sách plugin: **Plugin Manager** (kể cả mục
   *More* của các gói chưa cài) và **Settings → Plugins → Built-in plugins**. Phần chữ này do Host
   dựng từ `locale/en.json` của từng gói nên không nằm trong namespace nào; gói ngôn ngữ bổ sung bản
   dịch trong `vi-meta/` và phủ lên `ctx.locale.resolveText`.
@@ -23,7 +23,7 @@ mà Harness phát hành.
 |---|---|
 | `extract/` | Dữ liệu trích xuất từ DSH chỉ dùng cho pipeline: `en/<namespace>.json` (nguồn chuẩn), `manifest.json`, `meta.json` (tên/mô tả gói), `host-text.json` (lời nhắc phê duyệt), `dicts-v2.json`, `summary-v2.txt`, `validation.txt` |
 | `extract/reference/` | Bản dump bundle gốc của DSH để tham chiếu khi bảo trì (`README.md` của thư mục này giải thích nguồn gốc); không sinh tự động, không script nào đọc |
-| `vi-packs/` | **Bản dịch tiếng Việt** — 63 tệp JSON cùng tên, cùng thứ tự khóa với `extract/en/` |
+| `vi-packs/` | **Bản dịch tiếng Việt** — 64 tệp JSON cùng tên, cùng thứ tự khóa với `extract/en/` |
 | `vi-meta/` | **Bản dịch phần chữ Host không đi qua namespace** — `packages-*.json` (tên/mô tả gói, khóa theo tên gói, đối chiếu `extract/meta.json`) và `host-text.json` (lời nhắc phê duyệt, khóa theo câu tiếng Anh, đối chiếu `extract/host-text.json`) |
 | `plugin/` | Plugin đóng gói để cài vào DSH: `client.js` (sinh tự động), `index.js` (host no-op), `cordis.patch.yml`, `locale/*.json`, `icon.svg` |
 | `package.json` | Manifest cài đặt ở **gọc repository** — mặt cài đặt của địa chỉ Git thuần: khai báo `dsh.bundle` trỏ vào `plugin/cordis.patch.yml` và `exports` trỏ vào `plugin/`; giữ đồng bộ tên, version, mô tả với `plugin/package.json` |
@@ -123,9 +123,9 @@ node tools/extract-host-text.mjs  # đọc lời nhắc phê duyệt vào extrac
 Các lệnh dùng hằng ngày (chạy từ thư mục gốc repo):
 
 ```bash
-node tools/validate-vi.mjs                       # toàn bộ 63 namespace
+node tools/validate-vi.mjs                       # toàn bộ 64 namespace
 node tools/validate-vi.mjs chat conversation     # chỉ định namespace
-node tools/validate-meta.mjs                     # toàn bộ 218 tiêu đề, 31 mô tả gói, 3 lời nhắc phê duyệt
+node tools/validate-meta.mjs                     # toàn bộ 219 tiêu đề, 32 mô tả gói, 3 lời nhắc phê duyệt
 node tools/validate-meta.mjs --partial           # báo phần còn thiếu, không tính là lỗi
 node tools/audit-vi.mjs                          # soát tiếng Anh sót, glossary, khoảng trắng
 node tools/build-client.mjs                      # sinh lại plugin/client.js
@@ -148,7 +148,7 @@ namespace, ngôn ngữ dự phòng, lớp phủ tên/mô tả gói và việc d�
   không dấu đáng ngờ.
 - Quy tắc chi tiết và glossary nằm trong [GUIDE.md](GUIDE.md).
 
-Trạng thái hiện tại: 63/63 namespace dịch đủ 2.901 khóa; 218/218 tiêu đề, 31/31 mô tả gói và 3/3 lời
+Trạng thái hiện tại: 64/64 namespace dịch đủ 2.909 khóa; 219/219 tiêu đề, 32/32 mô tả gói và 3/3 lời
 nhắc phê duyệt đã dịch; `validate-vi`, `validate-meta`, `test-client` và `build-client` đều qua.
 
 ## Ghi chú

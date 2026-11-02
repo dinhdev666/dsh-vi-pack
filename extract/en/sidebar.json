@@ -3,5 +3,6 @@
   "session.new.label": "New session",
   "toggle.open": "Open sidebar",
   "toggle.collapse": "Collapse sidebar",
-  "panels.label": "Global panels"
+  "panels.label": "Global panels",
+  "panels.more": "More"
 }

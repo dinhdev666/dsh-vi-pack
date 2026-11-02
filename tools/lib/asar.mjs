@@ -4,6 +4,21 @@ import fs from 'node:fs'
 import os from 'node:os'
 import path from 'node:path'
 
+// Package roots DSH ships inside app.asar, in the order the extraction scripts walk them.
+export const UPSTREAM_ROOTS = ['node_modules/@deepseek-ai', 'dsh/node_modules/@deepseek-ai']
+
+// Resolve the installed app.asar or exit with the standard "not found" message. Centralizes the
+// guard the three extraction scripts repeat; behavior is identical to inlining it.
+export function requireAppAsar() {
+  const appAsar = resolveAppAsar()
+  if (!appAsar || !fs.existsSync(appAsar)) {
+    console.error('Could not find the installed DeepSeek Harness app.asar.')
+    console.error('Set DSH_APP_ASAR to its path when DSH lives somewhere else.')
+    process.exit(1)
+  }
+  return appAsar
+}
+
 // The installed app.asar, or undefined when DSH_APP_ASAR and the default install paths all miss.
 export function resolveAppAsar() {
   if (process.env.DSH_APP_ASAR) return path.resolve(process.env.DSH_APP_ASAR)

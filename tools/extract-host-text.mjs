@@ -12,21 +12,13 @@
 //
 // Plain `node` runs it (it reads app.asar itself). Set DSH_APP_ASAR when DSH lives somewhere else.
 import fs from 'node:fs'
-import { repoPath, writeJson } from './lib/repo.mjs'
-import { openAsarArchive, resolveAppAsar } from './lib/asar.mjs'
+import { extractPath, writeJson } from './lib/repo.mjs'
+import { openAsarArchive, requireAppAsar, UPSTREAM_ROOTS } from './lib/asar.mjs'
 import { languageMaps } from './lib/bundle-text.mjs'
 
-const appAsar = resolveAppAsar()
-if (!appAsar || !fs.existsSync(appAsar)) {
-  console.error('Could not find the installed DeepSeek Harness app.asar.')
-  console.error('Set DSH_APP_ASAR to its path when DSH lives somewhere else.')
-  process.exit(1)
-}
+const appAsar = requireAppAsar()
 
 const { nodeAt, readFile } = openAsarArchive(appAsar)
-
-/** Package directories DSH ships: the main tree and the generated dsh tree. */
-const ROOTS = ['node_modules/@deepseek-ai', 'dsh/node_modules/@deepseek-ai']
 
 /** Host copy that reaches the GUI as a reason: approval prompts and refusals. */
 const REASON_PROPERTY = /reason/i
@@ -34,7 +26,7 @@ const REASON_PROPERTY = /reason/i
 const entries = []
 const seen = new Set()
 
-for (const root of ROOTS) {
+for (const root of UPSTREAM_ROOTS) {
   const rootNode = nodeAt(root)
   if (!rootNode?.files) continue
   for (const [pkg, node] of Object.entries(rootNode.files)) {
@@ -68,7 +60,7 @@ for (const root of ROOTS) {
 
 entries.sort((a, b) => (a.pkg === b.pkg ? a.template.localeCompare(b.template) : a.pkg.localeCompare(b.pkg)))
 
-writeJson(repoPath('extract', 'host-text.json'), { entries })
+writeJson(extractPath('host-text.json'), { entries })
 const computable = entries.filter((entry) => entry.computable)
 console.log(`host text: ${entries.length} entries, ${computable.length} with computed interpolations`)
 for (const entry of entries) {

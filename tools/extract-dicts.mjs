@@ -4,19 +4,11 @@
 // elsewhere (portable install, custom drive, non-standard app bundle).
 import fs from 'node:fs'
 import path from 'node:path'
-import { repoPath } from './lib/repo.mjs'
-import { resolveAppAsar } from './lib/asar.mjs'
+import { extractPath } from './lib/repo.mjs'
+import { requireAppAsar } from './lib/asar.mjs'
 
-const OUT = repoPath('extract')
-const appAsar = resolveAppAsar()
-if (!appAsar || !fs.existsSync(appAsar)) {
-  console.error('Could not find the installed DeepSeek Harness app.asar.')
-  console.error('Set DSH_APP_ASAR to its path, for example on macOS:')
-  console.error(
-    '  DSH_APP_ASAR="/Applications/DeepSeek Harness.app/Contents/Resources/app.asar" node tools/extract-dicts.mjs',
-  )
-  process.exit(1)
-}
+const OUT = extractPath()
+const appAsar = requireAppAsar()
 const ROOT = path.join(appAsar, 'dsh', 'node_modules', '@deepseek-ai')
 
 const report = []
@@ -513,7 +505,7 @@ for (const pkg of pkgs) {
 }
 
 fs.mkdirSync(OUT, { recursive: true })
-fs.writeFileSync(repoPath('extract/dicts-v2.json'), JSON.stringify(dicts, null, 1), 'utf8')
+fs.writeFileSync(extractPath('dicts-v2.json'), JSON.stringify(dicts, null, 1), 'utf8')
 const byNs = new Map()
 for (const d of dicts) {
   const k = d.ns + '|' + d.locale
@@ -528,5 +520,5 @@ summary.push('namespaces=' + new Set(dicts.map((d) => d.ns)).size)
 for (const [k, v] of [...byNs].sort()) summary.push(k + ' = ' + v)
 summary.push('--- report ---')
 summary.push(...report)
-fs.writeFileSync(repoPath('extract/summary-v2.txt'), summary.join('\n'), 'utf8')
+fs.writeFileSync(extractPath('summary-v2.txt'), summary.join('\n'), 'utf8')
 console.log('entries=' + dicts.length + ' enKeys=' + enTotal)

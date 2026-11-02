@@ -6,12 +6,12 @@ second time. Only `node:` builtins are used — the project has no dependencies.
 
 | Module | Exports | Used for |
 |---|---|---|
-| `repo.mjs` | `BASE`, `repoPath()`, `readJson()`, `writeJson()`, `loadManifest()` | Repository root resolution, JSON I/O with the repo's hygiene rules (2-space indent, one trailing newline), and the namespace manifest. |
+| `repo.mjs` | `BASE`, `repoPath()`, `readJson()`, `writeJson()`, `loadManifest()`, `EXTRACT_DIR`, `extractPath()`, `PACKS_DIR`, `packsPath()`, `META_DIR`, `metaPath()` | Repository root resolution, JSON I/O with the repo's hygiene rules (2-space indent, one trailing newline), the namespace manifest, and the `extract/`, `vi-packs/`, `vi-meta/` directory helpers. |
 | `text.mjs` | `placeholders()`, `placeholderKey()`, `stripPlaceholders()`, `CJK_VI`, `CJK_META` | Placeholder extraction (`{name}`, `{{x}}`) shared by the validators, the builder, and the dataset step. The two CJK constants differ **on purpose** (`validate-vi` starts at U+3000, `validate-meta` also rejects CJK radicals from U+2E80); do not unify them. |
 | `meta.mjs` | `loadMetaSource()`, `loadHostTextSource()`, `listMetaParts()`, `readMetaPart()`, `readHostTextPart()`, `HOST_TEXT_FILE` | The overlay sources: `extract/meta.json` plus the sorted `vi-meta/packages-*.json` part files, and `extract/host-text.json` plus `vi-meta/host-text.json`. |
 | `bundle-text.mjs` | `tokenize()`, `matchBrackets()`, `readBinding()`, `languageMaps()`, `MAX_LANGUAGES` | Reading the language maps that sit inside the installed build's JavaScript bundles (package display text, approval reasons): a tokenizer that survives minified source, a bracket matcher, and a reader for `const NAME = …` bindings. |
 | `bundle.mjs` | `BUNDLE_DIR`, `ROOT_MANIFEST`, `BUNDLE_MANIFEST`, `readRootManifest()`, `readBundleManifest()` | The shippable bundle folder and its two manifests: the repository-root `package.json` (a plain Git URL packages it) and `plugin/package.json` (the `<url>#path:/plugin` subdirectory spec packages it). |
-| `asar.mjs` | `resolveAppAsar()`, `openAsarArchive()` | Locating the installed DSH build (`DSH_APP_ASAR`, then the default Windows/macOS paths) and reading files out of its `app.asar` with a plain-`node` reader. |
+| `asar.mjs` | `resolveAppAsar()`, `requireAppAsar()`, `UPSTREAM_ROOTS`, `openAsarArchive()` | Locating the installed DSH build (`DSH_APP_ASAR`, then the default Windows/macOS paths), the guard that exits when it is missing, the `node_modules/@deepseek-ai` / `dsh/node_modules/@deepseek-ai` roots walked by the extraction scripts, and reading files out of its `app.asar` with a plain-`node` reader. |
 
 Conventions:
 

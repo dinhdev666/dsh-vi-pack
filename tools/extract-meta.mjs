@@ -5,17 +5,12 @@
 // package's locale files instead of reading a mounted archive path. Plain `node` runs it.
 // Set DSH_APP_ASAR to the installed app.asar when DSH lives somewhere else.
 import fs from 'node:fs'
-import { repoPath, writeJson } from './lib/repo.mjs'
-import { openAsarArchive, resolveAppAsar } from './lib/asar.mjs'
+import { extractPath, writeJson } from './lib/repo.mjs'
+import { openAsarArchive, requireAppAsar, UPSTREAM_ROOTS } from './lib/asar.mjs'
 import { readBinding } from './lib/bundle-text.mjs'
 
-const OUT = repoPath('extract')
-const appAsar = resolveAppAsar()
-if (!appAsar || !fs.existsSync(appAsar)) {
-  console.error('Could not find the installed DeepSeek Harness app.asar.')
-  console.error('Set DSH_APP_ASAR to its path when DSH lives somewhere else.')
-  process.exit(1)
-}
+const OUT = extractPath()
+const appAsar = requireAppAsar()
 
 const { nodeAt, readFile } = openAsarArchive(appAsar)
 
@@ -40,8 +35,6 @@ function readMeta(dir) {
 }
 
 /** Package directories DSH ships: the main tree and the generated dsh tree. */
-const ROOTS = ['node_modules/@deepseek-ai', 'dsh/node_modules/@deepseek-ai']
-
 const packages = []
 const seen = new Set()
 
@@ -61,7 +54,7 @@ function collect(dir) {
   for (const template of Object.keys(templates?.files ?? {})) collect(`${dir}/templates/${template}`)
 }
 
-for (const root of ROOTS) {
+for (const root of UPSTREAM_ROOTS) {
   const rootNode = nodeAt(root)
   if (!rootNode?.files) {
     console.error(`${root}: not found in app.asar`)
@@ -79,7 +72,7 @@ for (const root of ROOTS) {
  */
 function collectOnDemandCatalog() {
   let text
-  for (const root of ROOTS) {
+  for (const root of UPSTREAM_ROOTS) {
     text = readFile(`${root}/dsh-app-boot/lib/index.js`)
     if (typeof text === 'string') break
   }
@@ -120,7 +113,7 @@ packages.sort((a, b) => a.name.localeCompare(b.name))
 
 const version = JSON.parse(readFile('package.json') ?? '{}').version
 fs.mkdirSync(OUT, { recursive: true })
-writeJson(repoPath('extract/meta.json'), { appVersion: version ?? null, packages })
+writeJson(extractPath('meta.json'), { appVersion: version ?? null, packages })
 
 console.log(
   `packages=${packages.length} titles=${packages.filter((p) => p.title).length} ` +

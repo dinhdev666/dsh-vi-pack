@@ -1,5 +1,5 @@
 {
-  "appVersion": "0.2.1-rc.2",
+  "appVersion": "0.2.1-rc.5",
   "packages": [
     {
       "name": "@deepseek-ai/cordis-plugin-timer",
@@ -272,6 +272,17 @@
       "title": {
         "en": "ui-directory-picker-native",
         "zh": "系统目录选择界面"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-client-ui-entry-customization",
+      "title": {
+        "en": "Interface customization",
+        "zh": "界面自定义"
+      },
+      "description": {
+        "en": "Customize plugin entries in the left sidebar, conversation views, and right sidebar, and quickly create new plugins.",
+        "zh": "自定义左侧栏、会话视图和右侧栏显示的插件入口，并快捷创建新插件。"
       }
     },
     {

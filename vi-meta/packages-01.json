@@ -116,6 +116,10 @@
   "@deepseek-ai/dsh-client-ui-directory-picker-native": {
     "title": "Giao diện chọn thư mục hệ thống"
   },
+  "@deepseek-ai/dsh-client-ui-entry-customization": {
+    "title": "Tùy chỉnh giao diện",
+    "description": "Tùy chỉnh các mục plugin trong thanh bên trái, dạng xem hội thoại và thanh bên phải, và tạo nhanh plugin mới."
+  },
   "@deepseek-ai/dsh-client-ui-goal": {
     "title": "Thanh mục tiêu phiên"
   },

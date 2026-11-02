@@ -312,7 +312,7 @@ window.__ModuleLoader__.load({
         "number.thousand": "{value}K",
         "number.million": "{value}M"
       },
-      // conversation (373 keys)
+      // conversation (374 keys)
       "conversation": {
         "shortcut.newline": "Xuống dòng",
         "shortcut.complementary": "Dùng thao tác bổ trợ Xếp hàng / Điều hướng",
@@ -383,6 +383,7 @@ window.__ModuleLoader__.load({
         "hero.preview": "Xem trước",
         "hero.chooseWorkspace": "Chọn không gian làm việc",
         "session.hierarchy": "Phân cấp phiên",
+        "session.moreViews": "Thêm dạng xem hội thoại",
         "todo.title": "Việc cần làm",
         "todo.progress.done": "{done} đã xong",
         "todo.progress.active": "{active} đang làm",
@@ -873,6 +874,14 @@ window.__ModuleLoader__.load({
         "code.copy": "Sao chép",
         "code.copied": "Đã sao chép",
         "footnotes": "Chú thích cuối trang"
+      },
+      // entryCustomization (5 keys)
+      "entryCustomization": {
+        "install": "Duyệt plugin khác",
+        "create": "Tạo plugin của bạn",
+        "createPrompt.sidebar": "Tạo plugin DSH có mục thanh bên trái.",
+        "createPrompt.conversation": "Tạo plugin dạng xem hội thoại DSH.",
+        "createPrompt.rightbar": "Tạo plugin DSH có mục thanh bên phải."
       },
       // feedback (20 keys)
       "feedback": {
@@ -2356,13 +2365,14 @@ window.__ModuleLoader__.load({
       "shortcuts.layout": {
         "toggle": "Bật/tắt thanh bên trái"
       },
-      // sidebar (5 keys)
+      // sidebar (6 keys)
       "sidebar": {
         "session.new": "Phiên mới",
         "session.new.label": "Phiên mới",
         "toggle.open": "Mở thanh bên",
         "toggle.collapse": "Thu gọn thanh bên",
-        "panels.label": "Bảng toàn cục"
+        "panels.label": "Bảng toàn cục",
+        "panels.more": "Thêm"
       },
       // sidebarBrowser (26 keys)
       "sidebarBrowser": {
@@ -2512,7 +2522,7 @@ window.__ModuleLoader__.load({
         "unsupported": "Xem trước PDF cần toàn bộ nội dung tệp.",
         "retry": "Thử lại"
       },
-      // sidebarRight (34 keys)
+      // sidebarRight (35 keys)
       "sidebarRight": {
         "command.close": "Đóng trang hoặc cửa sổ hiện tại",
         "command.refresh": "Làm mới trang hiện tại",
@@ -2547,6 +2557,7 @@ window.__ModuleLoader__.load({
         "dock.drop.top": "Chia thêm bên trên",
         "dock.drop.bottom": "Chia thêm bên dưới",
         "tab.guide.title": "Bắt đầu",
+        "tab.guide.more": "Thêm công cụ",
         "tab.unavailable": "Chưa có gì ở đây có thể xem loại nội dung này."
       },
       // sidebarTerminal (28 keys)
@@ -3196,6 +3207,7 @@ window.__ModuleLoader__.load({
       "ui-deliverables": "Hiển thị thay đổi tệp và sản phẩm bàn giao",
       "ui-directory-picker-browse": "Giao diện chọn thư mục trong ứng dụng",
       "ui-directory-picker-native": "Giao diện chọn thư mục hệ thống",
+      "Interface customization": "Tùy chỉnh giao diện",
       "ui-goal": "Thanh mục tiêu phiên",
       "ui-input-trigger": "Dịch vụ gợi ý khi nhập",
       "ui-jobs": "Giao diện tác vụ nền",
@@ -3376,6 +3388,7 @@ window.__ModuleLoader__.load({
     };
     /** Vietnamese package descriptions keyed by the English original. */
     const META_DESCRIPTIONS = {
+      "Customize plugin entries in the left sidebar, conversation views, and right sidebar, and quickly create new plugins.": "Tùy chỉnh các mục plugin trong thanh bên trái, dạng xem hội thoại và thanh bên phải, và tạo nhanh plugin mới.",
       "The Automation tasks page in the sidebar, plus task cards and reminder marks in sessions.": "Trang tác vụ tự động trong thanh bên, cùng thẻ tác vụ và dấu nhắc trong phiên.",
       "Masks recognized keys, tokens, and passwords in sent messages.": "Che các khóa, token và mật khẩu được nhận diện trong tin nhắn đã gửi.",
       "Manage team members, member messages, and shared tasks.": "Quản lý thành viên nhóm, tin nhắn của thành viên và tác vụ nhóm.",
