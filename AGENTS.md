@@ -180,6 +180,44 @@ A change is complete only when all of the following hold:
   parsing, `vi-meta` discovery, or `app.asar` access imports it from `tools/lib/`; copying the block
   into a second script is what this layout exists to prevent.
 
+## Translation consistency across namespaces
+
+The same English source string can appear in several namespaces, and it must usually
+carry **the same Vietnamese wording** everywhere. Different namespaces were often
+translated in separate passes, so drift is common — e.g. `Full access` rendered as
+`Truy cập đầy đủ` in `permission.access` but `Toàn quyền truy cập` in
+`settings.permission`; `Workspace Write` as `Ghi vào không gian làm việc` vs
+`Ghi không gian làm việc`; `Daily` as `Hàng ngày` vs `Hằng ngày`; `Cron` as
+`Lịch cron` vs `Biểu thức cron`.
+
+**Rule.** When the English source string is identical, prefer the wording that is
+already used in the most places (the majority form) and change the outliers to it.
+Do not invent a third variant to settle a tie. Keep the chosen form consistent
+across every namespace that shares the English string.
+
+**Before declaring a batch done, run both checks.** `node tools/audit-vi.mjs` flags
+leftover English, glossary drift and spacing artifacts. Separately, group every
+namespace value by its English source and compare the Vietnamese wording across
+namespaces (a short script that walks `extract/en/<ns>.json` and
+`vi-packs/<ns>.json` and reports English strings with more than one distinct
+Vietnamese rendering) — that is the check that catches drift such as
+`Truy cập đầy đủ` vs `Toàn quyền truy cập`. Fix what your change introduced;
+leave pre-existing findings alone unless asked.
+
+**Contextual variants are legitimate and should stay.** Not every difference is a
+bug. The audit is a starting point for judgment, not a rule to flatten everything:
+
+- **Different meaning:** `Compact` → `Gọn` (a display setting) vs `Nén` (a compaction
+  command); `Remove` → `Gỡ` (a plugin) vs `Xóa` (a source) vs `Gỡ bỏ` (a shortcut).
+- **Different grammatical position:** weekdays are `Thứ 2` in a sentence but
+  `thứ 2` in a schedule label; `Enabled` is `Đã bật` (a status) but `Bật` (a tag).
+- **Different formatting:** `{minutes}m {seconds}s` stays compact in `job` but expands
+  to `{minutes} phút {seconds} giây` in `subagent`.
+- **Different sense of time:** `now` → `bây giờ` vs `vừa xong`.
+
+When a group is a genuine contextual variant, leave it and note it in the report —
+do not force a one-size-fits-all wording that reads worse in one namespace.
+
 ## License
 
 MIT — see [`LICENSE`](LICENSE). Copyright (c) 2026 Phạm Văn Định. Contributions are accepted under
