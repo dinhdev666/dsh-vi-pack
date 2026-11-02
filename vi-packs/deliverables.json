@@ -25,7 +25,7 @@
   "row.preparing": "Đang chuẩn bị sản phẩm bàn giao",
   "row.ok": "Đã bàn giao",
   "row.error": "Bàn giao thất bại",
-  "row.stopped": "Đã gián đoạn",
+  "row.stopped": "Bị gián đoạn",
   "row.inspect": "Kiểm tra lệnh gọi",
   "changes.title": "Đã sửa {count} tệp",
   "changes.singleTitle": "Đã sửa {name}",

@@ -26,7 +26,7 @@
   "table.location": "L/B",
   "table.time": "Thời gian (UTC)",
   "table.data": "Dữ liệu",
-  "table.older": "Tải mục cũ hơn",
+  "table.older": "Tải phần trước",
   "table.loading": "Đang tải…",
   "table.latest": "Theo dõi mục mới nhất",
   "table.empty": "Không có bản ghi",
@@ -49,6 +49,6 @@
   "object.empty": "Trống",
   "object.absent": "[Ô trống]",
   "object.properties": "Thuộc tính khác",
-  "object.more": "Hiển thị thêm",
+  "object.more": "Hiện thêm",
   "object.navigation": "Điều hướng dữ liệu thô"
 }

@@ -38,7 +38,7 @@
   "action.remove": "Gỡ",
   "action.retry": "Thử lại",
   "action.rollback": "Quay lại bản trước",
-  "action.inspect": "Xem chi tiết",
+  "action.inspect": "Kiểm tra",
   "render.failedAbdicated": "Hiển thị trong {slot} thất bại; giao diện mặc định đã được khôi phục:",
   "render.failedHeld": "Hiển thị trong {slot} thất bại:",
   "a11y.defining": "Đang định nghĩa plugin",

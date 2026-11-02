@@ -14,7 +14,7 @@
   "effort.providerDefault": "Mặc định",
   "status.loading": "Đang làm mới danh sách mô hình…",
   "error.action": "Thao tác mô hình thất bại: {message}",
-  "error.sessionInUse": "Phiên này đang được sử dụng, có thể bởi một instance DSH khác đang chạy (như dsh web hoặc ứng dụng desktop). Hãy thoát các instance DSH khác rồi thử lại.",
+  "error.sessionInUse": "Phiên này đang được sử dụng, có thể bởi một phiên bản DSH khác đang chạy (như dsh web hoặc ứng dụng máy tính). Hãy thoát các phiên bản DSH khác rồi thử lại.",
   "action.reload": "Tải lại",
   "warning.groupLoad": "Không tải được {name}: {message}",
   "search.placeholder": "Tìm kiếm mô hình…",

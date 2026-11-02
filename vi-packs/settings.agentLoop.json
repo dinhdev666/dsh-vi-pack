@@ -10,5 +10,5 @@
   "save": "Lưu",
   "saving": "Đang lưu…",
   "saveFailed": "Bản triển khai không chấp nhận các giá trị này; chúng được giữ lại để bạn sửa.",
-  "invalidNumber": "Nhập một số, hoặc để trống để dùng giá trị mặc định."
+  "invalidNumber": "Nhập một số, hoặc để trống để dùng mặc định."
 }

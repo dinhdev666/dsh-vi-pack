@@ -1,5 +1,5 @@
 {
-  "duration.seconds": "{seconds} giây",
+  "duration.seconds": "{seconds}s",
   "duration.minutes": "{minutes} phút {seconds} giây",
   "duration.hours": "{hours} giờ {minutes} phút {seconds} giây",
   "duration.days": "{days} ngày",

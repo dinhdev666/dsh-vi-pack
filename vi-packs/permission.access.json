@@ -2,7 +2,7 @@
   "mode": "Chế độ truy cập, hiện tại: {name}",
   "close": "Đóng",
   "preset.readOnly": "Chỉ đọc",
-  "preset.workspaceWrite": "Ghi vào không gian làm việc",
+  "preset.workspaceWrite": "Ghi không gian làm việc",
   "preset.fullAccess": "Truy cập đầy đủ",
   "confirm.title": "Bật truy cập đầy đủ?",
   "confirm.description": "Truy cập đầy đủ giảm bớt các bước xác nhận và cho phép agent thực hiện trực tiếp nhiều thao tác hơn, gồm cả thao tác nhạy cảm, thay đổi tệp hoặc lệnh bên ngoài. Chỉ dùng khi bạn tin tưởng tác vụ hiện tại.",

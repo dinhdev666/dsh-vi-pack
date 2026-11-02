@@ -20,11 +20,11 @@
   "presetProvidedDetail": "Bị tắt trên toàn cục; preset agent cung cấp theo từng phiên",
   "enabledIn": "Bật trong",
   "matchesInOtherPresets": "{count} kết quả khớp nữa trong preset khác: ",
-  "enabledTag": "Bật",
+  "enabledTag": "Đã bật",
   "disabledTag": "Tắt",
   "conditionalTag": "Có điều kiện",
   "presetEnabledTag": "Qua preset",
-  "failedTag": "Lỗi",
+  "failedTag": "Thất bại",
   "moduleLabel": "Mô-đun",
   "fromPreset": "Từ",
   "condition": "Tắt khi",
@@ -35,5 +35,5 @@
   "loadingPhase": "Đang tải",
   "active": "Đang chạy",
   "failed": "Khởi động thất bại",
-  "unloading": "Đang gỡ bỏ"
+  "unloading": "Đang gỡ tải"
 }
