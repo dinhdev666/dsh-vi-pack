@@ -96,6 +96,7 @@ node tools/validate-meta.mjs                  # strict check: package titles/des
 node tools/validate-meta.mjs --partial        # same checks, missing entries reported, not failed
 node tools/validate-manifest.mjs              # strict check: the two bundle manifests describe one bundle
 node tools/audit-vi.mjs                       # soft check: leftover English, glossary drift, spacing
+node tools/audit-consistency.mjs              # soft check: same English source, differing Vietnamese wording across namespaces
 node tools/build-client.mjs                   # regenerate plugin/client.js from vi-packs/ + vi-meta/
 node tools/test-client.mjs                    # smoke-test the bundle against a stubbed locale service
 node tools/extract-dicts.mjs                  # re-extract locales from the installed DSH build
@@ -153,8 +154,8 @@ A change is complete only when all of the following hold:
 4. `node tools/build-client.mjs` succeeds; `plugin/client.js` matches the current `vi-packs/` and
    `vi-meta/`.
 5. `node tools/test-client.mjs` prints `OK`.
-6. `node tools/audit-vi.mjs` raises no *new* findings versus the previous state; fix what your change
-   introduced, leave pre-existing findings alone unless asked.
+6. `node tools/audit-vi.mjs` and `node tools/audit-consistency.mjs` raise no *new* findings versus
+   the previous state; fix what your change introduced, leave pre-existing findings alone unless asked.
 7. Any prose that quotes counts, paths, or commands still matches reality.
 
 ## Pitfalls
@@ -196,13 +197,12 @@ Do not invent a third variant to settle a tie. Keep the chosen form consistent
 across every namespace that shares the English string.
 
 **Before declaring a batch done, run both checks.** `node tools/audit-vi.mjs` flags
-leftover English, glossary drift and spacing artifacts. Separately, group every
-namespace value by its English source and compare the Vietnamese wording across
-namespaces (a short script that walks `extract/en/<ns>.json` and
-`vi-packs/<ns>.json` and reports English strings with more than one distinct
-Vietnamese rendering) — that is the check that catches drift such as
-`Truy cập đầy đủ` vs `Toàn quyền truy cập`. Fix what your change introduced;
-leave pre-existing findings alone unless asked.
+leftover English, glossary drift and spacing artifacts. `node tools/audit-consistency.mjs`
+groups every namespace value by its English source and reports English strings with more
+than one distinct Vietnamese rendering across namespaces — that is the check that
+catches drift such as `Truy cập đầy đủ` vs `Toàn quyền truy cập`. Fix what your change
+introduced; leave pre-existing findings alone unless asked. Both accept namespace
+arguments to scope the check.
 
 **Contextual variants are legitimate and should stay.** Not every difference is a
 bug. The audit is a starting point for judgment, not a rule to flatten everything:
