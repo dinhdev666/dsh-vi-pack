@@ -202,7 +202,7 @@ Terminology settled during the final polish pass, applied across every pack:
 | Onboarding artwork locale | `en` | Artwork ships only for en/zh; keep `en` so the illustration resolves. |
 | Speech transcription | chuyển giọng nói thành văn bản | Not "phiên âm"; matches the `voice-input` strings. |
 | Team / team member / team task | nhóm / thành viên nhóm / tác vụ nhóm | Matches `agent-team.json` and the team tool titles in `conversation.json`. |
-| Badge | huy hiệu | |
+| Badge | huy hiệu | `“powered by dsh”` inside the badge text stays English. |
 | Worktree | worktree | Loanword, like `terminal`. |
 | Auto review (permission mode) | Tự động xem xét | Matches `permission.access.json` `auto.label`. |
 | Installed-package text | `vi-meta/` | Titles/descriptions resolve by English wording, not by package name. |
