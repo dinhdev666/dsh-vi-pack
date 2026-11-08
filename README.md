@@ -4,7 +4,7 @@ Gói ngôn ngữ tiếng Việt cho giao diện web **DeepSeek Harness (DSH)**: 
 **Settings → General → Language** và dịch giao diện bằng bộ từ điển phủ toàn bộ namespace locale
 mà Harness phát hành.
 
-- **72 namespace, 3.810 khóa** trên 62 gói client của DSH.
+- **74 namespace, 3.843 khóa** trên 62 gói client của DSH.
 - **264 tiêu đề và 75 mô tả gói** đã dịch cho danh sách plugin: **Plugin Manager** (kể cả mục
   *More* của các gói chưa cài) và **Settings → Plugins → Built-in plugins**. Phần chữ này do Host
   dựng từ `locale/en.json` của từng gói nên không nằm trong namespace nào; gói ngôn ngữ bổ sung bản
@@ -123,7 +123,7 @@ node tools/extract-host-text.mjs  # đọc lời nhắc phê duyệt vào extrac
 Các lệnh dùng hằng ngày (chạy từ thư mục gốc repo):
 
 ```bash
-node tools/validate-vi.mjs                       # toàn bộ 72 namespace
+node tools/validate-vi.mjs                       # toàn bộ 74 namespace
 node tools/validate-vi.mjs chat conversation     # chỉ định namespace
 node tools/validate-meta.mjs                     # toàn bộ 264 tiêu đề, 75 mô tả gói, 3 lời nhắc phê duyệt
 node tools/validate-meta.mjs --partial           # báo phần còn thiếu, không tính là lỗi
@@ -148,7 +148,7 @@ namespace, ngôn ngữ dự phòng, lớp phủ tên/mô tả gói và việc d�
   không dấu đáng ngờ.
 - Quy tắc chi tiết và glossary nằm trong [GUIDE.md](GUIDE.md).
 
-Trạng thái hiện tại: 72/72 namespace dịch đủ 3.810 khóa; 264/264 tiêu đề, 75/75 mô tả gói và 3/3 lời
+Trạng thái hiện tại: 74/74 namespace dịch đủ 3.843 khóa; 264/264 tiêu đề, 75/75 mô tả gói và 3/3 lời
 nhắc phê duyệt đã dịch; `validate-vi`, `validate-meta`, `test-client` và `build-client` đều qua.
 
 ## Ghi chú

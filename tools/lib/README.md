@@ -1,23 +1,18 @@
-# tools/lib — shared helpers
+# tools/lib — helper dùng chung
 
-Small ESM modules used by every script in `tools/`. They exist so that one piece of logic lives in
-exactly one place: a block that two scripts would otherwise repeat belongs here, not copy-pasted a
-second time. Only `node:` builtins are used — the project has no dependencies.
+Các module ESM nhỏ được mọi script trong `tools/` sử dụng. Mục đích là mỗi đoạn logic chỉ nằm ở **một** nơi duy nhất: phần mà hai script cùng cần sẽ đặt ở đây, thay vì sao chép lặp lại. Chỉ dùng `node:` builtins — dự án không có dependency.
 
-| Module | Exports | Used for |
+| Module | Export | Công dụng |
 |---|---|---|
-| `repo.mjs` | `BASE`, `repoPath()`, `readJson()`, `writeJson()`, `loadManifest()`, `EXTRACT_DIR`, `extractPath()`, `PACKS_DIR`, `packsPath()`, `META_DIR`, `metaPath()` | Repository root resolution, JSON I/O with the repo's hygiene rules (2-space indent, one trailing newline), the namespace manifest, and the `extract/`, `vi-packs/`, `vi-meta/` directory helpers. |
-| `text.mjs` | `placeholders()`, `placeholderKey()`, `stripPlaceholders()`, `CJK_VI`, `CJK_META` | Placeholder extraction (`{name}`, `{{x}}`) shared by the validators, the builder, and the dataset step. The two CJK constants differ **on purpose** (`validate-vi` starts at U+3000, `validate-meta` also rejects CJK radicals from U+2E80); do not unify them. |
-| `meta.mjs` | `loadMetaSource()`, `loadHostTextSource()`, `listMetaParts()`, `readMetaPart()`, `readHostTextPart()`, `HOST_TEXT_FILE` | The overlay sources: `extract/meta.json` plus the sorted `vi-meta/packages-*.json` part files, and `extract/host-text.json` plus `vi-meta/host-text.json`. |
-| `bundle-text.mjs` | `tokenize()`, `matchBrackets()`, `readBinding()`, `languageMaps()`, `MAX_LANGUAGES` | Reading the language maps that sit inside the installed build's JavaScript bundles (package display text, approval reasons): a tokenizer that survives minified source, a bracket matcher, and a reader for `const NAME = …` bindings. |
-| `bundle.mjs` | `BUNDLE_DIR`, `ROOT_MANIFEST`, `BUNDLE_MANIFEST`, `readRootManifest()`, `readBundleManifest()` | The shippable bundle folder and its two manifests: the repository-root `package.json` (a plain Git URL packages it) and `plugin/package.json` (the `<url>#path:/plugin` subdirectory spec packages it). |
-| `asar.mjs` | `resolveAppAsar()`, `requireAppAsar()`, `UPSTREAM_ROOTS`, `openAsarArchive()` | Locating the installed DSH build (`DSH_APP_ASAR`, then the default Windows/macOS paths), the guard that exits when it is missing, the `node_modules/@deepseek-ai` / `dsh/node_modules/@deepseek-ai` roots walked by the extraction scripts, and reading files out of its `app.asar` with a plain-`node` reader. |
+| `repo.mjs` | `BASE`, `repoPath()`, `readJson()`, `writeJson()`, `loadManifest()`, `EXTRACT_DIR`, `extractPath()`, `PACKS_DIR`, `packsPath()`, `META_DIR`, `metaPath()` | Xác định gốc kho, đọc/ghi JSON theo quy tắc hygiene của repo (thụt lề 2 khoảng trắng, đúng 1 dòng trống cuối), manifest namespace, và helper thư mục `extract/`, `vi-packs/`, `vi-meta/`. |
+| `text.mjs` | `placeholders()`, `placeholderKey()`, `stripPlaceholders()`, `CJK_VI`, `CJK_META` | Trích xuất placeholder (`{name}`, `{{x}}`) dùng chung cho validator, builder và bước dựng dataset. Hai hằng CJK **khác nhau có chủ đích** (`validate-vi` bắt đầu ở U+3000, `validate-meta` còn chặn CJK radicals từ U+2E80); không hợp nhất chúng. |
+| `meta.mjs` | `loadMetaSource()`, `loadHostTextSource()`, `listMetaParts()`, `readMetaPart()`, `readHostTextPart()`, `HOST_TEXT_FILE` | Nguồn lớp phủ: `extract/meta.json` + các tệp phần `vi-meta/packages-*.json` (đã sắp xếp), và `extract/host-text.json` + `vi-meta/host-text.json`. |
+| `bundle-text.mjs` | `tokenize()`, `matchBrackets()`, `readBinding()`, `languageMaps()`, `MAX_LANGUAGES` | Đọc language map nằm trong bundle JavaScript của bản dựng DSH đã cài (văn bản hiển thị gói, lý do phê duyệt): tokenizer chịu được mã đã minify, bộ khớp ngoặc, và bộ đọc binding `const NAME = …`. |
+| `bundle.mjs` | `BUNDLE_DIR`, `ROOT_MANIFEST`, `BUNDLE_MANIFEST`, `readRootManifest()`, `readBundleManifest()` | Thư mục bundle phát hành và hai manifest: `package.json` ở gốc kho (cài qua URL Git thuần) và `plugin/package.json` (cài qua spec thư mục con `<url>#path:/plugin`). |
+| `asar.mjs` | `resolveAppAsar()`, `requireAppAsar()`, `UPSTREAM_ROOTS`, `openAsarArchive()` | Định vị bản dựng DSH đã cài (`DSH_APP_ASAR`, rồi đường dẫn mặc định Windows/macOS), kiểm tra thoát khi thiếu, các gốc `node_modules/@deepseek-ai` / `dsh/node_modules/@deepseek-ai` mà script trích xuất duyệt, và đọc tệp từ `app.asar` bằng `node` thuần. |
 
-Conventions:
+Quy ước:
 
-- Nothing here runs at import time — the extraction scripts may be imported under the
-  Electron-as-node runtime with no side effects, and `resolveAppAsar()` only probes the filesystem
-  when it is called.
-- Every module resolves paths from its own location, so the checkout can live anywhere and the tools
-  run from any working directory.
-- Error messages and exit codes stay in the scripts that own a command; the helpers never print.
+- Không chạy tác dụng phụ khi import — script trích xuất có thể được import dưới runtime Electron-as-node; `resolveAppAsar()` chỉ dò filesystem khi được gọi.
+- Mọi module tự xác định đường dẫn từ vị trí của chính nó, nên checkout có thể ở bất kỳ đâu và công cụ chạy từ mọi thư mục làm việc.
+- Thông báo lỗi và mã thoát thuộc về script sở hữu lệnh; helper không in ra.

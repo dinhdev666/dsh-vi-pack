@@ -26,6 +26,31 @@ const REASON_PROPERTY = /reason/i
 const entries = []
 const seen = new Set()
 
+function pushEntry(pkg, file, property, template, params = []) {
+  if (typeof template !== 'string' || template.trim() === '') return
+  const computable = template.includes('${')
+  const key = `${pkg}|${template}`
+  if (seen.has(key)) return
+  seen.add(key)
+  entries.push({ pkg, file, property, template, params, computable })
+}
+
+// Known Host approval/reason templates that moved to function-valued locale maps (not static
+// string maps), so the generic languageMaps() scanner cannot see them. Extract from the source
+// template literals to keep the snapshot in sync with the installed build.
+function extractTemplateFunctions(text, pkg, file) {
+  if (pkg === 'dsh-sandbox' && text.includes('escalationDisplayReason')) {
+    const m = text.match(/escalation:\s*\(mode,\s*justification\)\s*=>\s*`([^`]+)`/)
+    if (m) pushEntry(pkg, file, 'displayReason', m[1].replace(/\$\{mode\}/g, '{mode}').replace(/\$\{justification\}/g, '{justification}'), ['mode', 'justification'])
+  }
+  if (pkg === 'dsh-experimental-auto-review') {
+    const m1 = text.match(/denied:\s*"([^"]*Auto review denied[^"]*)"/)
+    if (m1) pushEntry(pkg, file, 'displayReason', m1[1], [])
+    const m2 = text.match(/deniedWithReason:\s*\(reason\)\s*=>\s*`([^`]+)`/)
+    if (m2) pushEntry(pkg, file, 'displayReason', m2[1].replace(/\$\{reason\}/g, '{reason}'), ['reason'])
+  }
+}
+
 for (const root of UPSTREAM_ROOTS) {
   const rootNode = nodeAt(root)
   if (!rootNode?.files) continue
@@ -35,24 +60,10 @@ for (const root of UPSTREAM_ROOTS) {
       if (!file.endsWith('.js')) continue
       const text = readFile(`${root}/${pkg}/lib/${file}`)
       if (typeof text !== 'string' || text.length === 0) continue
+      extractTemplateFunctions(text, pkg, file)
       for (const map of languageMaps(text)) {
         if (!map.property || !REASON_PROPERTY.test(map.property)) continue
-        const template = map.english.value
-        if (typeof template !== 'string' || template.trim() === '') continue
-        // A computed interpolation stays in the template as `${…}`: it is not translatable, so it is
-        // reported as untranslatable instead of shipping a wrong translation.
-        const computable = template.includes('${')
-        const key = `${pkg}|${template}`
-        if (seen.has(key)) continue
-        seen.add(key)
-        entries.push({
-          pkg,
-          file,
-          property: map.property,
-          template,
-          params: map.english.params ?? [],
-          computable,
-        })
+        pushEntry(pkg, file, map.property, map.english.value, map.english.params ?? [])
       }
     }
   }

@@ -260,6 +260,37 @@ window.__ModuleLoader__.load({
         "clock.md": "{m}/{d}",
         "clock.ymd": "{y}-{m}-{d}"
       },
+      // command (28 keys)
+      "command": {
+        "section.add": "Thêm",
+        "section.commands": "Lệnh",
+        "label.goal": "Mục tiêu",
+        "label.plan": "Kế hoạch",
+        "label.feedback": "Phản hồi",
+        "label.compact": "Nén",
+        "label.permission": "Quyền",
+        "label.export": "Xuất",
+        "description.goal": "Đặt hoặc xem mục tiêu cho tác vụ chạy dài",
+        "description.plan": "Vào hoặc rời chế độ kế hoạch",
+        "description.feedback": "Ghi lại phản hồi về phiên này",
+        "description.compact": "Nén lịch sử hội thoại cũ hơn",
+        "description.permission": "Chuyển bộ quyền đặt sẵn (chế độ sandbox + chính sách phê duyệt)",
+        "description.export": "Tải nhật ký phiên này dưới dạng tệp ZIP",
+        "token.goal": "mục tiêu",
+        "token.plan": "kế hoạch",
+        "token.feedback": "phản hồi",
+        "token.compact": "nén",
+        "token.permission": "quyền",
+        "token.export": "xuất",
+        "search.placeholder": "Tìm kiếm…",
+        "search.aria": "Lọc tùy chọn",
+        "status.loading": "Đang tải tùy chọn…",
+        "status.applying": "Đang áp dụng…",
+        "status.empty": "Không có tùy chọn",
+        "overlay.aria": "/{command} tùy chọn",
+        "listbox.aria": "/{command} kết quả khớp",
+        "notice.attachmentsUnsupported": "/{command} không nhận tệp đính kèm; hãy xóa chúng trước"
+      },
       // common (41 keys)
       "common": {
         "ok": "OK",
@@ -1251,6 +1282,14 @@ window.__ModuleLoader__.load({
         "action.resume": "Tiếp tục mục tiêu",
         "action.edit": "Chỉnh sửa mục tiêu",
         "action.clear": "Xóa mục tiêu"
+      },
+      // inspectorPanel (5 keys)
+      "inspectorPanel": {
+        "title": "Trình kiểm tra NodeJS",
+        "toggle": "Bật/tắt trình kiểm tra NodeJS",
+        "close": "Thu gọn",
+        "resize": "Thay đổi kích thước bảng trình kiểm tra NodeJS",
+        "frameTitle": "Trình kiểm tra NodeJS"
       },
       // job (40 keys)
       "job": {

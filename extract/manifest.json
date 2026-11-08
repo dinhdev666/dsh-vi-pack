@@ -40,6 +40,16 @@
     "placeholderKeys": 39
   },
   {
+    "ns": "command",
+    "pkg": "dsh-client-ui-commands",
+    "file": "command.json",
+    "keys": 28,
+    "maxLength": 61,
+    "longestKey": "description.permission",
+    "multiLineKeys": 0,
+    "placeholderKeys": 3
+  },
+  {
     "ns": "common",
     "pkg": "dsh-client-locale",
     "file": "common.json",
@@ -196,6 +206,16 @@
     "keys": 12,
     "maxLength": 14,
     "longestKey": "objective.aria",
+    "multiLineKeys": 0,
+    "placeholderKeys": 0
+  },
+  {
+    "ns": "inspectorPanel",
+    "pkg": "dsh-experimental-inspector",
+    "file": "inspectorPanel.json",
+    "keys": 5,
+    "maxLength": 29,
+    "longestKey": "resize",
     "multiLineKeys": 0,
     "placeholderKeys": 0
   },

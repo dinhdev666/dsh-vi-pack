@@ -1,6 +1,6 @@
-entries=570
-EN KEYS=3810
-namespaces=72
+entries=586
+EN KEYS=3843
+namespaces=74
 actionCards|de = 14
 actionCards|en = 14
 actionCards|es = 14
@@ -33,6 +33,14 @@ chat|ja = 195
 chat|pt = 195
 chat|ru = 195
 chat|zh = 195
+command|de = 28
+command|en = 28
+command|es = 28
+command|fr = 28
+command|ja = 28
+command|pt = 28
+command|ru = 28
+command|zh = 28
 common|de = 41
 common|en = 41
 common|es = 41
@@ -155,6 +163,14 @@ goal|ja = 12
 goal|pt = 12
 goal|ru = 12
 goal|zh = 12
+inspectorPanel|de = 5
+inspectorPanel|en = 5
+inspectorPanel|es = 5
+inspectorPanel|fr = 5
+inspectorPanel|ja = 5
+inspectorPanel|pt = 5
+inspectorPanel|ru = 5
+inspectorPanel|zh = 5
 job|de = 40
 job|en = 40
 job|es = 40
@@ -572,13 +588,45 @@ workspace|pt = 119
 workspace|ru = 119
 workspace|zh = 119
 --- report ---
+cordis: NO locale.register site
+cordis-plugin-group: NO locale.register site
+cordis-plugin-include: NO locale.register site
+cordis-plugin-loader: NO locale.register site
+cordis-plugin-timer: NO locale.register site
+cosmokit: NO locale.register site
+dsh: NO locale.register site
+dsh-acp: NO locale.register site
+dsh-acp-app: NO locale.register site
+dsh-action-cards: NO locale.register site
+dsh-agent: NO locale.register site
+dsh-agent-default-model: NO locale.register site
+dsh-agent-instructions: NO locale.register site
+dsh-agent-loop: NO locale.register site
+dsh-agent-preset: NO locale.register site
+dsh-agent-preset-registry: NO locale.register site
+dsh-agent-tool-presentation: NO locale.register site
+dsh-anonymous-user-id: NO locale.register site
+dsh-api-account-controller: NO locale.register site
+dsh-api-gateway: NO locale.register site
 dsh-api-job-controller: NO locale.register site
 dsh-api-remote-access: NO locale.register site
 dsh-api-remotes: NO locale.register site
 dsh-api-session-controller: NO locale.register site
+dsh-api-settings-controller: NO locale.register site
 dsh-api-terminal-controller: NO locale.register site
 dsh-api-workspace-controller: NO locale.register site
 dsh-api-workspace-files: NO locale.register site
+dsh-app-boot: NO locale.register site
+dsh-atomic-write: NO locale.register site
+dsh-attachment: NO locale.register site
+dsh-attachment-local: NO locale.register site
+dsh-authorization: NO locale.register site
+dsh-base: NO locale.register site
+dsh-bash-local: NO locale.register site
+dsh-bash-sandbox: NO locale.register site
+dsh-brand: NO locale.register site
+dsh-chunked-list: NO locale.register site
+dsh-client-connection: NO locale.register site
 dsh-client-file-upload: NO locale.register site
 dsh-client-hmr: NO locale.register site
 dsh-client-modules: NO locale.register site
@@ -587,12 +635,222 @@ dsh-client-resources: NO locale.register site
 dsh-client-shortcuts: NO locale.register site
 dsh-client-ui-attachment: NO locale.register site
 dsh-client-ui-brand-official: NO locale.register site
-dsh-client-ui-commands@88527: unresolved identifier zh (expected , or } at 77976) at 88555
 dsh-client-ui-directory-picker-browse/directory-browser: recovered loop dictionaries (dictionaries)
 dsh-client-ui-directory-picker-native: NO locale.register site
 dsh-client-ui-renderer: NO locale.register site
 dsh-client-ui-session: NO locale.register site
 dsh-client-ui-settings: NO locale.register site
 dsh-client-ui-tool: NO locale.register site
+dsh-cmdline: NO locale.register site
+dsh-command-compact: NO locale.register site
+dsh-command-feedback: NO locale.register site
+dsh-command-goal: NO locale.register site
+dsh-commands: NO locale.register site
+dsh-compaction: NO locale.register site
+dsh-compaction-basic: NO locale.register site
+dsh-compaction-image-offload: NO locale.register site
+dsh-compaction-tool-result-pruner: NO locale.register site
+dsh-config-editor: NO locale.register site
 dsh-cordis-client-runner: NO locale.register site
-dsh-experimental-inspector: NO locale.register site
+dsh-cordis-host-runner: NO locale.register site
+dsh-creation-recommendations: NO locale.register site
+dsh-credentials: NO locale.register site
+dsh-credentials-local: NO locale.register site
+dsh-deepseek-account: NO locale.register site
+dsh-deepseek-account-platform: NO locale.register site
+dsh-deepseek-llm-api-extensions: NO locale.register site
+dsh-deliverable-file-references: NO locale.register site
+dsh-deque: NO locale.register site
+dsh-desktop-host: NO locale.register site
+dsh-experimental-agent-team: NO locale.register site
+dsh-experimental-agent-team-profile: NO locale.register site
+dsh-experimental-api-speech-to-text: NO locale.register site
+dsh-experimental-auto-review: NO locale.register site
+dsh-experimental-badge-skill-bundle: NO locale.register site
+dsh-experimental-cot-translation-bundle: NO locale.register site
+dsh-experimental-forge: NO locale.register site
+dsh-experimental-forge-bundle: NO locale.register site
+dsh-experimental-forge-github: NO locale.register site
+dsh-experimental-forge-session: NO locale.register site
+dsh-experimental-inspector-profile: NO locale.register site
+dsh-experimental-liveshare-protocol: NO locale.register site
+dsh-experimental-plugin-market-bundle: NO locale.register site
+dsh-experimental-ralph-bundle: NO locale.register site
+dsh-experimental-session-search: NO locale.register site
+dsh-experimental-session-titles-bundle: NO locale.register site
+dsh-experimental-speech-to-text: NO locale.register site
+dsh-experimental-speech-to-text-sensevoice: NO locale.register site
+dsh-experimental-terminal-bundle: NO locale.register site
+dsh-experimental-tool-agent-team: NO locale.register site
+dsh-experimental-tool-worktree: NO locale.register site
+dsh-experimental-translator: NO locale.register site
+dsh-experimental-voice-input-bundle: NO locale.register site
+dsh-experimental-worktree: NO locale.register site
+dsh-file-reference: NO locale.register site
+dsh-file-reference-local: NO locale.register site
+dsh-fs: NO locale.register site
+dsh-fs-local: NO locale.register site
+dsh-fs-observation-policy: NO locale.register site
+dsh-fs-patch: NO locale.register site
+dsh-fs-sandbox: NO locale.register site
+dsh-goal: NO locale.register site
+dsh-goal-round-driver: NO locale.register site
+dsh-harness-dev-context: NO locale.register site
+dsh-headless: NO locale.register site
+dsh-hmr: NO locale.register site
+dsh-home-paths: NO locale.register site
+dsh-host-directory-picker: NO locale.register site
+dsh-host-directory-picker-auto: NO locale.register site
+dsh-host-directory-picker-browse: NO locale.register site
+dsh-host-directory-picker-native: NO locale.register site
+dsh-host-frontend-static: NO locale.register site
+dsh-host-open-in-app: NO locale.register site
+dsh-host-plugin-inventory: NO locale.register site
+dsh-host-product-telemetry-otel: NO locale.register site
+dsh-host-webserver: NO locale.register site
+dsh-http-proxy: NO locale.register site
+dsh-jobs: NO locale.register site
+dsh-jobs-local: NO locale.register site
+dsh-launch-environment: NO locale.register site
+dsh-lazy-require: NO locale.register site
+dsh-llm: NO locale.register site
+dsh-llm-deepseek: NO locale.register site
+dsh-llm-deepseek-account: NO locale.register site
+dsh-llm-deepseek-api-key: NO locale.register site
+dsh-llm-pi-ai: NO locale.register site
+dsh-llm-retry: NO locale.register site
+dsh-mcp-client: NO locale.register site
+dsh-mcp-resources: NO locale.register site
+dsh-message-feedback: NO locale.register site
+dsh-native-command: NO locale.register site
+dsh-office-to-pdf: NO locale.register site
+dsh-official-bundles: NO locale.register site
+dsh-otel: NO locale.register site
+dsh-output-retention: NO locale.register site
+dsh-package-manifest: NO locale.register site
+dsh-permission-presets: NO locale.register site
+dsh-persona: NO locale.register site
+dsh-personalized-recommendations: NO locale.register site
+dsh-plan-mode: NO locale.register site
+dsh-plugin-detail: NO locale.register site
+dsh-plugin-manager: NO locale.register site
+dsh-plugin-market: NO locale.register site
+dsh-plugin-market-index: NO locale.register site
+dsh-plugin-package-inventory-deepseek: NO locale.register site
+dsh-plugin-recommendations: NO locale.register site
+dsh-ptc-runtime: NO locale.register site
+dsh-ptc-runtime-node: NO locale.register site
+dsh-pwsh-local: NO locale.register site
+dsh-pwsh-sandbox: NO locale.register site
+dsh-repeat-tool-reminder: NO locale.register site
+dsh-sandbox: NO locale.register site
+dsh-sandbox-local: NO locale.register site
+dsh-sandbox-policy: NO locale.register site
+dsh-sandbox-windows-acl: NO locale.register site
+dsh-schedule: NO locale.register site
+dsh-scope: NO locale.register site
+dsh-sdk-app: NO locale.register site
+dsh-sdk-jsonrpc-server: NO locale.register site
+dsh-sdk-minimal: NO locale.register site
+dsh-sdk-protocol: NO locale.register site
+dsh-session: NO locale.register site
+dsh-session-checkpoint-policy: NO locale.register site
+dsh-session-format: NO locale.register site
+dsh-session-format-catalog: NO locale.register site
+dsh-session-format-v0-to-v1: NO locale.register site
+dsh-session-format-v1-to-v2: NO locale.register site
+dsh-session-format-v2-to-v3: NO locale.register site
+dsh-session-format-v3-to-v4: NO locale.register site
+dsh-session-log-deepseek: NO locale.register site
+dsh-session-persistence: NO locale.register site
+dsh-session-persistence-jsonl: NO locale.register site
+dsh-session-projection: NO locale.register site
+dsh-session-projection-cache: NO locale.register site
+dsh-session-query: NO locale.register site
+dsh-session-query-sqlite: NO locale.register site
+dsh-session-reference: NO locale.register site
+dsh-session-stats: NO locale.register site
+dsh-session-telemetry: NO locale.register site
+dsh-session-telemetry-otel: NO locale.register site
+dsh-session-title: NO locale.register site
+dsh-session-title-all-prompts-llm: NO locale.register site
+dsh-session-title-first-prompt-llm: NO locale.register site
+dsh-session-title-llm: NO locale.register site
+dsh-session-turn-outline: NO locale.register site
+dsh-settings: NO locale.register site
+dsh-shell: NO locale.register site
+dsh-shell-env: NO locale.register site
+dsh-skill: NO locale.register site
+dsh-skill-badge: NO locale.register site
+dsh-skill-filesystem: NO locale.register site
+dsh-skill-office: NO locale.register site
+dsh-spill: NO locale.register site
+dsh-spill-local: NO locale.register site
+dsh-spill-policy: NO locale.register site
+dsh-storage: NO locale.register site
+dsh-storage-domain: NO locale.register site
+dsh-storage-json: NO locale.register site
+dsh-subagent: NO locale.register site
+dsh-subagent-fork-in-process: NO locale.register site
+dsh-subagent-spawn-in-process: NO locale.register site
+dsh-subprocess: NO locale.register site
+dsh-subprocess-local: NO locale.register site
+dsh-system-prompt: NO locale.register site
+dsh-terminal: NO locale.register site
+dsh-terminal-bash: NO locale.register site
+dsh-time-context: NO locale.register site
+dsh-timeout: NO locale.register site
+dsh-tmux-context: NO locale.register site
+dsh-token-meter: NO locale.register site
+dsh-tool-ask-user: NO locale.register site
+dsh-tool-bash: NO locale.register site
+dsh-tool-bash-persistent: NO locale.register site
+dsh-tool-call-timeout-policy: NO locale.register site
+dsh-tool-cordis: NO locale.register site
+dsh-tool-executor-native: NO locale.register site
+dsh-tool-executor-ptc: NO locale.register site
+dsh-tool-fs: NO locale.register site
+dsh-tool-fs-search: NO locale.register site
+dsh-tool-goal: NO locale.register site
+dsh-tool-jobs: NO locale.register site
+dsh-tool-present: NO locale.register site
+dsh-tool-pwsh: NO locale.register site
+dsh-tool-pwsh-persistent: NO locale.register site
+dsh-tool-ralph: NO locale.register site
+dsh-tool-schedule: NO locale.register site
+dsh-tool-session-query: NO locale.register site
+dsh-tool-skill: NO locale.register site
+dsh-tool-str-replace-editor: NO locale.register site
+dsh-tool-subagent: NO locale.register site
+dsh-tool-subagent-control: NO locale.register site
+dsh-tool-terminal: NO locale.register site
+dsh-tool-todo: NO locale.register site
+dsh-tool-web: NO locale.register site
+dsh-tool-workflow: NO locale.register site
+dsh-tool-working-directory: NO locale.register site
+dsh-tool-workspace-dependencies: NO locale.register site
+dsh-tools: NO locale.register site
+dsh-typert-loader: NO locale.register site
+dsh-typert-protocol: NO locale.register site
+dsh-typert-registry: NO locale.register site
+dsh-user-approval: NO locale.register site
+dsh-user-questions: NO locale.register site
+dsh-util-code-language: NO locale.register site
+dsh-util-crypto: NO locale.register site
+dsh-util-time: NO locale.register site
+dsh-util-values: NO locale.register site
+dsh-util-workspace-path: NO locale.register site
+dsh-web: NO locale.register site
+dsh-web-app: NO locale.register site
+dsh-web-deepseek-api: NO locale.register site
+dsh-web-fetch-http: NO locale.register site
+dsh-web-search-deepseek: NO locale.register site
+dsh-win32-process: NO locale.register site
+dsh-workflow: NO locale.register site
+dsh-workflow-ptc: NO locale.register site
+dsh-working-directory: NO locale.register site
+dsh-workspace: NO locale.register site
+dsh-workspace-changes: NO locale.register site
+libreoffice-kit: NO locale.register site
+node-addon-system: NO locale.register site
+schemastery: NO locale.register site

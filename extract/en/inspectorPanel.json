@@ -1,0 +1,7 @@
+{
+  "title": "NodeJS inspector",
+  "toggle": "Toggle NodeJS inspector",
+  "close": "Collapse",
+  "resize": "Resize NodeJS inspector panel",
+  "frameTitle": "NodeJS inspector"
+}

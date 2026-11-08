@@ -67,43 +67,64 @@ class Parser {
     }
     return left
   }
-  /** Apply simple postfix method calls such as `.join(sep)` on a parsed value. */
+  /** Apply postfix property access and simple method calls on a parsed value. */
   postfix(value) {
     const t = this.text
     for (;;) {
       this.skip()
-      if (t[this.pos] !== '.') return value
-      const m = /^\.([A-Za-z_$][\w$]*)\s*\(/.exec(t.slice(this.pos, this.pos + 80))
-      if (!m) return value
-      const method = m[1]
-      this.pos += m[0].length - 1 // now at '('
-      this.pos++
-      const args = []
-      for (;;) {
+      if (t[this.pos] === '[') {
+        this.pos++
+        const key = this.value()
         this.skip()
-        if (t[this.pos] === ')') {
-          this.pos++
-          break
-        }
-        args.push(this.value())
-        this.skip()
-        if (t[this.pos] === ',') {
-          this.pos++
-          continue
-        }
-        if (t[this.pos] === ')') {
-          this.pos++
-          break
-        }
-        this.fail('expected , or ) in ' + method)
+        if (t[this.pos] !== ']') this.fail('expected ]')
+        this.pos++
+        if (value && typeof value === 'object') value = value[String(key)]
+        else this.fail('unsupported computed access on ' + typeof value)
+        continue
       }
-      if (method === 'join' && Array.isArray(value)) value = value.join(args[0] ?? ',')
-      else if (method === 'trim' && typeof value === 'string') value = value.trim()
-      else if (method === 'concat' && typeof value === 'string') value = value + args.join('')
-      else if (method === 'replaceAll' && typeof value === 'string') value = value.split(String(args[0])).join(String(args[1]))
-      else if (method === 'toUpperCase' && typeof value === 'string') value = value.toUpperCase()
-      else if (method === 'toLowerCase' && typeof value === 'string') value = value.toLowerCase()
-      else this.fail('unsupported method ' + method)
+      if (t[this.pos] !== '.') return value
+      // method call: .name(
+      const m = /^\.([A-Za-z_$][\w$]*)\s*\(/.exec(t.slice(this.pos, this.pos + 80))
+      if (m) {
+        const method = m[1]
+        this.pos += m[0].length - 1 // now at '('
+        this.pos++
+        const args = []
+        for (;;) {
+          this.skip()
+          if (t[this.pos] === ')') {
+            this.pos++
+            break
+          }
+          args.push(this.value())
+          this.skip()
+          if (t[this.pos] === ',') {
+            this.pos++
+            continue
+          }
+          if (t[this.pos] === ')') {
+            this.pos++
+            break
+          }
+          this.fail('expected , or ) in ' + method)
+        }
+        if (method === 'join' && Array.isArray(value)) value = value.join(args[0] ?? ',')
+        else if (method === 'trim' && typeof value === 'string') value = value.trim()
+        else if (method === 'concat' && typeof value === 'string') value = value + args.join('')
+        else if (method === 'replaceAll' && typeof value === 'string') value = value.split(String(args[0])).join(String(args[1]))
+        else if (method === 'toUpperCase' && typeof value === 'string') value = value.toUpperCase()
+        else if (method === 'toLowerCase' && typeof value === 'string') value = value.toLowerCase()
+        else this.fail('unsupported method ' + method)
+        continue
+      }
+      // property access: .name
+      const p = /^\.([A-Za-z_$][\w$]*)/.exec(t.slice(this.pos, this.pos + 80))
+      if (!p) return value
+      this.pos += p[0].length
+      const prop = p[1]
+      if (value && typeof value === 'object') value = value[prop]
+      else if (typeof value === 'string' && prop === 'length') value = value.length
+      else this.fail('unsupported property access .' + prop + ' on ' + typeof value)
     }
   }
   primary() {
@@ -379,7 +400,20 @@ const dicts = []
 const pkgs = fs.readdirSync(ROOT)
 
 for (const pkg of pkgs) {
-  const file = path.join(ROOT, pkg, 'lib', 'client.js')
+  const libDir = path.join(ROOT, pkg, 'lib')
+  let files
+  try {
+    files = fs.readdirSync(libDir).filter((f) => f.endsWith('.js') && /^client(\.|$)/.test(f))
+  } catch {
+    continue
+  }
+  if (!files.length) {
+    report.push(`${pkg}: NO locale.register site`)
+    continue
+  }
+  let pkgHadSite = false
+  for (const name of files) {
+  const file = path.join(libDir, name)
   let text
   try {
     text = fs.readFileSync(file, 'utf8')
@@ -394,10 +428,8 @@ for (const pkg of pkgs) {
     sites.push(at)
     at = text.indexOf(needle, at + 1)
   }
-  if (!sites.length) {
-    report.push(`${pkg}: NO locale.register site`)
-    continue
-  }
+  if (!sites.length) continue
+  pkgHadSite = true
   for (const site of sites) {
     const openParen = site + needle.length - 1
     const parsed = readArgs(text, openParen)
@@ -502,6 +534,8 @@ for (const pkg of pkgs) {
       dicts.push({ pkg, ns, locale, dict })
     }
   }
+  }
+  if (!pkgHadSite) report.push(`${pkg}: NO locale.register site`)
 }
 
 fs.mkdirSync(OUT, { recursive: true })
