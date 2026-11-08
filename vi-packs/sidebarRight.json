@@ -1,4 +1,7 @@
 {
+  "menu.close": "Đóng",
+  "menu.closeOthers": "Đóng các tab khác",
+  "menu.closeRight": "Đóng các tab bên phải",
   "command.close": "Đóng trang hoặc cửa sổ hiện tại",
   "command.refresh": "Làm mới trang hiện tại",
   "command.noRefresh": "Không thể làm mới trang này",

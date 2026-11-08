@@ -1,5 +1,15 @@
 [
   {
+    "ns": "actionCards",
+    "pkg": "dsh-client-ui-action-cards",
+    "file": "actionCards.json",
+    "keys": 14,
+    "maxLength": 75,
+    "longestKey": "transport",
+    "multiLineKeys": 0,
+    "placeholderKeys": 0
+  },
+  {
     "ns": "agent-team",
     "pkg": "dsh-experimental-client-ui-agent-team",
     "file": "agent-team.json",
@@ -13,7 +23,7 @@
     "ns": "approval",
     "pkg": "dsh-client-ui-approval",
     "file": "approval.json",
-    "keys": 5,
+    "keys": 7,
     "maxLength": 45,
     "longestKey": "escalation",
     "multiLineKeys": 0,
@@ -23,21 +33,11 @@
     "ns": "chat",
     "pkg": "dsh-client-ui-chat",
     "file": "chat.json",
-    "keys": 191,
+    "keys": 195,
     "maxLength": 209,
     "longestKey": "message.failure.interrupted",
     "multiLineKeys": 0,
     "placeholderKeys": 39
-  },
-  {
-    "ns": "command",
-    "pkg": "dsh-client-ui-commands",
-    "file": "command.json",
-    "keys": 28,
-    "maxLength": 61,
-    "longestKey": "description.permission",
-    "multiLineKeys": 0,
-    "placeholderKeys": 3
   },
   {
     "ns": "common",
@@ -50,10 +50,20 @@
     "placeholderKeys": 4
   },
   {
+    "ns": "contextMenu",
+    "pkg": "dsh-client-ui-context-menu",
+    "file": "contextMenu.json",
+    "keys": 1,
+    "maxLength": 41,
+    "longestKey": "failed",
+    "multiLineKeys": 0,
+    "placeholderKeys": 0
+  },
+  {
     "ns": "conversation",
     "pkg": "dsh-client-ui-conversation",
     "file": "conversation.json",
-    "keys": 374,
+    "keys": 383,
     "maxLength": 158,
     "longestKey": "error.sessionInUse",
     "multiLineKeys": 0,
@@ -80,12 +90,12 @@
     "placeholderKeys": 1
   },
   {
-    "ns": "deepseek-model-label-1017",
-    "pkg": "dsh-client-ui-deepseek-model-label-1017",
-    "file": "deepseek-model-label-1017.json",
-    "keys": 1,
-    "maxLength": 4,
-    "longestKey": "badge.label",
+    "ns": "creationRecommendations",
+    "pkg": "dsh-client-ui-creation-recommendations",
+    "file": "creationRecommendations.json",
+    "keys": 55,
+    "maxLength": 85,
+    "longestKey": "sourceRetained",
     "multiLineKeys": 0,
     "placeholderKeys": 0
   },
@@ -93,7 +103,7 @@
     "ns": "deliverables",
     "pkg": "dsh-client-ui-deliverables",
     "file": "deliverables.json",
-    "keys": 60,
+    "keys": 57,
     "maxLength": 122,
     "longestKey": "presented.unavailable",
     "multiLineKeys": 0,
@@ -150,6 +160,36 @@
     "placeholderKeys": 0
   },
   {
+    "ns": "fileActions",
+    "pkg": "dsh-client-ui-file-actions",
+    "file": "fileActions.json",
+    "keys": 12,
+    "maxLength": 64,
+    "longestKey": "menu.copyFailed",
+    "multiLineKeys": 0,
+    "placeholderKeys": 0
+  },
+  {
+    "ns": "fileDrag",
+    "pkg": "dsh-client-ui-file-drag",
+    "file": "fileDrag.json",
+    "keys": 1,
+    "maxLength": 23,
+    "longestKey": "failed",
+    "multiLineKeys": 0,
+    "placeholderKeys": 0
+  },
+  {
+    "ns": "forgePanel",
+    "pkg": "dsh-experimental-client-ui-forge",
+    "file": "forgePanel.json",
+    "keys": 253,
+    "maxLength": 145,
+    "longestKey": "missing.recreated",
+    "multiLineKeys": 0,
+    "placeholderKeys": 71
+  },
+  {
     "ns": "goal",
     "pkg": "dsh-client-ui-goal",
     "file": "goal.json",
@@ -170,6 +210,26 @@
     "placeholderKeys": 19
   },
   {
+    "ns": "liveshare",
+    "pkg": "dsh-experimental-liveshare",
+    "file": "liveshare.json",
+    "keys": 225,
+    "maxLength": 255,
+    "longestKey": "dialog.sessionMode.hint.write",
+    "multiLineKeys": 0,
+    "placeholderKeys": 25
+  },
+  {
+    "ns": "messageQuotes",
+    "pkg": "dsh-message-quotes",
+    "file": "messageQuotes.json",
+    "keys": 1,
+    "maxLength": 10,
+    "longestKey": "quote.add",
+    "multiLineKeys": 0,
+    "placeholderKeys": 0
+  },
+  {
     "ns": "model",
     "pkg": "dsh-client-ui-model-selection",
     "file": "model.json",
@@ -183,9 +243,9 @@
     "ns": "open-in-app",
     "pkg": "dsh-client-ui-open-in-app",
     "file": "open-in-app.json",
-    "keys": 45,
-    "maxLength": 50,
-    "longestKey": "shortcut.unavailable",
+    "keys": 58,
+    "maxLength": 64,
+    "longestKey": "menu.copyFailed",
     "multiLineKeys": 0,
     "placeholderKeys": 2
   },
@@ -203,7 +263,7 @@
     "ns": "plan",
     "pkg": "dsh-client-ui-plan",
     "file": "plan.json",
-    "keys": 17,
+    "keys": 16,
     "maxLength": 80,
     "longestKey": "preview.expired",
     "multiLineKeys": 0,
@@ -213,21 +273,31 @@
     "ns": "pluginManager",
     "pkg": "dsh-client-ui-plugin-manager",
     "file": "pluginManager.json",
-    "keys": 221,
+    "keys": 291,
     "maxLength": 450,
     "longestKey": "installDoneOtherVersion",
     "multiLineKeys": 0,
-    "placeholderKeys": 45
+    "placeholderKeys": 72
   },
   {
     "ns": "pluginMarket",
     "pkg": "dsh-client-ui-plugin-market",
     "file": "pluginMarket.json",
-    "keys": 78,
+    "keys": 87,
     "maxLength": 116,
     "longestKey": "sourcesTrust",
     "multiLineKeys": 0,
     "placeholderKeys": 14
+  },
+  {
+    "ns": "pluginRecommendations",
+    "pkg": "dsh-client-ui-plugin-recommendations",
+    "file": "pluginRecommendations.json",
+    "keys": 25,
+    "maxLength": 75,
+    "longestKey": "management-error",
+    "multiLineKeys": 0,
+    "placeholderKeys": 1
   },
   {
     "ns": "question",
@@ -253,21 +323,21 @@
     "ns": "schedule.catalog",
     "pkg": "dsh-client-ui-schedule",
     "file": "schedule.catalog.json",
-    "keys": 70,
-    "maxLength": 48,
-    "longestKey": "cron.day.bothStarred",
+    "keys": 76,
+    "maxLength": 61,
+    "longestKey": "frequency.hostMonthlyInterval",
     "multiLineKeys": 0,
-    "placeholderKeys": 36
+    "placeholderKeys": 40
   },
   {
     "ns": "schedule.manager",
     "pkg": "dsh-client-ui-schedule",
     "file": "schedule.manager.json",
-    "keys": 188,
+    "keys": 215,
     "maxLength": 173,
     "longestKey": "delete.description",
-    "multiLineKeys": 0,
-    "placeholderKeys": 36
+    "multiLineKeys": 1,
+    "placeholderKeys": 43
   },
   {
     "ns": "secretMask",
@@ -293,9 +363,9 @@
     "ns": "session-log-download",
     "pkg": "dsh-session-log-export",
     "file": "session-log-download.json",
-    "keys": 10,
+    "keys": 14,
     "maxLength": 75,
-    "longestKey": "dialog.preparingDescription",
+    "longestKey": "toast.clipboardFailed",
     "multiLineKeys": 0,
     "placeholderKeys": 0
   },
@@ -303,7 +373,7 @@
     "ns": "settings",
     "pkg": "dsh-client-ui-settings-general",
     "file": "settings.json",
-    "keys": 41,
+    "keys": 42,
     "maxLength": 91,
     "longestKey": "desktop.update.stopFailed",
     "multiLineKeys": 1,
@@ -353,7 +423,7 @@
     "ns": "settings.models",
     "pkg": "dsh-client-ui-settings-models",
     "file": "settings.models.json",
-    "keys": 134,
+    "keys": 137,
     "maxLength": 756,
     "longestKey": "welcomeBody",
     "multiLineKeys": 1,
@@ -463,7 +533,7 @@
     "ns": "sidebar",
     "pkg": "dsh-client-ui-sidebar",
     "file": "sidebar.json",
-    "keys": 6,
+    "keys": 8,
     "maxLength": 16,
     "longestKey": "toggle.collapse",
     "multiLineKeys": 0,
@@ -513,7 +583,7 @@
     "ns": "sidebarFiles",
     "pkg": "dsh-client-ui-sidebar-files",
     "file": "sidebarFiles.json",
-    "keys": 17,
+    "keys": 21,
     "maxLength": 73,
     "longestKey": "error.outsideWorkspace",
     "multiLineKeys": 0,
@@ -553,7 +623,7 @@
     "ns": "sidebarRight",
     "pkg": "dsh-client-ui-sidebar-right",
     "file": "sidebarRight.json",
-    "keys": 35,
+    "keys": 38,
     "maxLength": 47,
     "longestKey": "tab.unavailable",
     "multiLineKeys": 0,
@@ -590,10 +660,20 @@
     "placeholderKeys": 0
   },
   {
+    "ns": "stats",
+    "pkg": "dsh-experimental-client-ui-stats",
+    "file": "stats.json",
+    "keys": 177,
+    "maxLength": 251,
+    "longestKey": "step.partial.title",
+    "multiLineKeys": 0,
+    "placeholderKeys": 51
+  },
+  {
     "ns": "subagent",
     "pkg": "dsh-client-ui-subagent",
     "file": "subagent.json",
-    "keys": 41,
+    "keys": 42,
     "maxLength": 79,
     "longestKey": "readonly.oneShot.body",
     "multiLineKeys": 0,
@@ -603,7 +683,7 @@
     "ns": "trajectory",
     "pkg": "dsh-client-ui-trajectory",
     "file": "trajectory.json",
-    "keys": 192,
+    "keys": 199,
     "maxLength": 52,
     "longestKey": "timeline.overviewAria",
     "multiLineKeys": 0,
@@ -613,7 +693,7 @@
     "ns": "voice-input",
     "pkg": "dsh-experimental-client-ui-voice-input",
     "file": "voice-input.json",
-    "keys": 109,
+    "keys": 114,
     "maxLength": 198,
     "longestKey": "local",
     "multiLineKeys": 0,

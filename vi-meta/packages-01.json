@@ -2,6 +2,18 @@
   "@deepseek-ai/cordis-plugin-timer": {
     "title": "Dịch vụ hẹn giờ"
   },
+  "@deepseek-ai/dsh-acp": {
+    "title": "Máy chủ ACP",
+    "description": "Chạy agent qua JSON-RPC qua đầu vào và đầu ra tiêu chuẩn cho tự động hoá."
+  },
+  "@deepseek-ai/dsh-acp-app": {
+    "title": "Hồ sơ ACP",
+    "description": "Cung cấp giao tiếp ACP và quản lý vòng đời tiến trình chỉ dành cho tự động hoá trên dsh-base."
+  },
+  "@deepseek-ai/dsh-action-cards": {
+    "title": "Thẻ hành động",
+    "description": "Hiển thị thẻ hành động tuỳ chọn bên dưới câu trả lời cho các thí nghiệm đã bật, và báo cáo lựa chọn của người dùng lại cho cuộc hội thoại."
+  },
   "@deepseek-ai/dsh-agent": {
     "title": "Quản lý agent"
   },
@@ -32,6 +44,10 @@
   "@deepseek-ai/dsh-api-job-controller": {
     "title": "API quan sát tác vụ nền"
   },
+  "@deepseek-ai/dsh-api-remote-access": {
+    "title": "Kiểm soát truy cập từ xa",
+    "description": "Kiểm soát những phương thức mà kết nối không phải chủ sở hữu có thể truy cập và lưu ảnh chụp quyền cho từng kết nối."
+  },
   "@deepseek-ai/dsh-api-remotes": {
     "title": "Tổng hợp API client"
   },
@@ -55,6 +71,10 @@
   },
   "@deepseek-ai/dsh-authorization": {
     "title": "Dịch vụ quy trình cấp quyền"
+  },
+  "@deepseek-ai/dsh-bash-local": {
+    "title": "Thực thi Bash cục bộ",
+    "description": "Chạy lệnh Bash trong các tiến trình con cục bộ."
   },
   "@deepseek-ai/dsh-bash-sandbox": {
     "title": "Thực thi Bash trong sandbox"
@@ -83,6 +103,10 @@
   "@deepseek-ai/dsh-client-shortcuts": {
     "title": "Dịch vụ phím tắt"
   },
+  "@deepseek-ai/dsh-client-ui-action-cards": {
+    "title": "Hiển thị thẻ hành động",
+    "description": "Hiển thị thẻ hành động tuỳ chọn bên dưới câu trả lời, với các điều khiển riêng của từng thí nghiệm."
+  },
   "@deepseek-ai/dsh-client-ui-agent-preset": {
     "title": "Giao diện preset agent"
   },
@@ -101,11 +125,18 @@
   "@deepseek-ai/dsh-client-ui-commands": {
     "title": "Giao diện chọn lệnh"
   },
+  "@deepseek-ai/dsh-client-ui-context-menu": {
+    "title": "Menu ngữ cảnh"
+  },
   "@deepseek-ai/dsh-client-ui-conversation": {
     "title": "Khung giao diện phiên"
   },
   "@deepseek-ai/dsh-client-ui-cordis": {
     "title": "Thẻ chạy plugin động"
+  },
+  "@deepseek-ai/dsh-client-ui-creation-recommendations": {
+    "title": "Thẻ trang cá nhân hoá",
+    "description": "Hiển thị thẻ đề xuất sau câu trả lời với lựa chọn vị trí, tiến trình tạo, giữ lại và hoàn tác."
   },
   "@deepseek-ai/dsh-client-ui-deliverables": {
     "title": "Hiển thị thay đổi tệp và sản phẩm bàn giao"
@@ -119,6 +150,13 @@
   "@deepseek-ai/dsh-client-ui-entry-customization": {
     "title": "Tùy chỉnh giao diện",
     "description": "Tùy chỉnh các mục plugin trong thanh bên trái, dạng xem hội thoại và thanh bên phải, và tạo nhanh plugin mới."
+  },
+  "@deepseek-ai/dsh-client-ui-file-actions": {
+    "title": "Thao tác tệp"
+  },
+  "@deepseek-ai/dsh-client-ui-file-drag": {
+    "title": "Kéo tệp",
+    "description": "Kéo tệp gốc vào khung soạn thảo hoặc ứng dụng khác, với phản hồi lỗi đã bản địa hoá."
   },
   "@deepseek-ai/dsh-client-ui-goal": {
     "title": "Thanh mục tiêu phiên"
@@ -149,6 +187,14 @@
   },
   "@deepseek-ai/dsh-client-ui-plugin-manager": {
     "title": "Giao diện quản lý plugin"
+  },
+  "@deepseek-ai/dsh-client-ui-plugin-market": {
+    "title": "Khám phá plugin",
+    "description": "Duyệt các chỉ mục plugin đã cấu hình và cài đặt các gói của chúng."
+  },
+  "@deepseek-ai/dsh-client-ui-plugin-recommendations": {
+    "title": "Thẻ đề xuất plugin",
+    "description": "Hiển thị thẻ Bật cho plugin chính thức được đề xuất sau câu trả lời, với chi tiết của nó và lựa chọn của bạn."
   },
   "@deepseek-ai/dsh-client-ui-reference": {
     "title": "Giao diện tham chiếu tệp và phiên"

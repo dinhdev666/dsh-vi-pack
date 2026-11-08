@@ -1,7 +1,11 @@
 {
   "header.more": "Thêm thao tác",
+  "menu.copyMarkdown": "Sao chép Phiên dưới dạng Markdown",
   "menu.download": "Tải nhật ký phiên",
   "menu.feedback": "Phản hồi",
+  "toast.copied": "Đã sao chép Phiên dưới dạng Markdown.",
+  "toast.preparationFailed": "Không thể đọc Phiên để sao chép. Thử lại.",
+  "toast.clipboardFailed": "Không thể ghi vào clipboard. Kiểm tra quyền clipboard và thử lại.",
   "dialog.preparingTitle": "Đang xuất phiên",
   "dialog.preparingDescription": "Đang chuẩn bị tệp ZIP chứa phiên này, các phiên con và tệp đính kèm.",
   "dialog.successTitle": "Đã bắt đầu tải phiên",

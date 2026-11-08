@@ -16,6 +16,7 @@
   "desktop.update.checkNetworkFailed": "Không thể kiểm tra cập nhật. Hãy kiểm tra kết nối và thử lại.",
   "desktop.update.downloadNetworkFailed": "Không thể tải bản cập nhật. Hãy kiểm tra kết nối và thử lại.",
   "desktop.update.installNetworkFailed": "Không thể cài bản cập nhật. Hãy kiểm tra kết nối và thử lại.",
+  "desktop.update.fullscreenTimeout": "Không thể thoát toàn màn hình. Thoát toàn màn hình, sau đó thử lại bản cập nhật.",
   "desktop.update.stopFailed": "Không thể dừng các tác vụ một cách an toàn. Bản cập nhật chưa được cài. Vui lòng thử lại sau.",
   "desktop.update.tasksChanged": "Đã có tác vụ mới bắt đầu. Hãy xác nhận lại để dừng các tác vụ và cập nhật.",
   "desktop.update.tasksUnavailable": "Không có trạng thái tác vụ. Hãy thử cập nhật lại khi không gian làm việc sẵn sàng.",

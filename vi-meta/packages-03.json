@@ -2,6 +2,10 @@
   "@deepseek-ai/dsh-message-feedback": {
     "title": "Phản hồi tin nhắn"
   },
+  "@deepseek-ai/dsh-message-quotes": {
+    "title": "Trích dẫn tin nhắn",
+    "description": "Trích dẫn văn bản đã chọn và hiển thị dưới dạng khối trích dẫn Markdown."
+  },
   "@deepseek-ai/dsh-office-to-pdf": {
     "title": "Chuyển Office sang PDF"
   },
@@ -14,17 +18,33 @@
   "@deepseek-ai/dsh-persona": {
     "title": "Vai trò agent"
   },
+  "@deepseek-ai/dsh-personalized-recommendations": {
+    "title": "Đề xuất cá nhân hoá",
+    "description": "Hiển thị thẻ đề xuất bên dưới câu trả lời cho những gì bạn muốn từ DSH: khi bạn muốn một trang hoặc công cụ nhỏ có thể giữ lại, đề xuất một trang cá nhân hoá mới được xây dựng ở nền sau khi bạn bấm Tạo; khi bạn hỏi cách làm điều gì trong ứng dụng này hoặc nói thiếu một khả năng, đề xuất plugin tích hợp cung cấp nó, được bật khi bạn bấm Bật."
+  },
   "@deepseek-ai/dsh-plan-mode": {
     "title": "Chế độ kế hoạch"
   },
   "@deepseek-ai/dsh-plugin-manager": {
     "title": "Trình quản lý plugin"
   },
+  "@deepseek-ai/dsh-plugin-market": {
+    "title": "Chỉ mục plugin",
+    "description": "Quản lý các chỉ mục plugin đã cấu hình cho khám phá plugin và công cụ plugin_market."
+  },
   "@deepseek-ai/dsh-plugin-package-inventory-deepseek": {
     "title": "Báo cáo danh mục plugin DeepSeek"
   },
+  "@deepseek-ai/dsh-plugin-recommendations": {
+    "title": "Đề xuất plugin",
+    "description": "Khi bạn hỏi cách làm điều gì trong ứng dụng này hoặc nói thiếu một khả năng, đề xuất plugin tích hợp cung cấp nó bên dưới câu trả lời; Bật sẽ bật cho mọi cuộc hội thoại, và bạn có thể tắt trên trang Plugin."
+  },
   "@deepseek-ai/dsh-ptc-runtime-node": {
     "title": "Runtime PTC trên Node"
+  },
+  "@deepseek-ai/dsh-pwsh-local": {
+    "title": "Thực thi PowerShell cục bộ",
+    "description": "Chạy lệnh qua PowerShell cục bộ."
   },
   "@deepseek-ai/dsh-pwsh-sandbox": {
     "title": "Chạy PowerShell trong sandbox"
@@ -41,6 +61,14 @@
   "@deepseek-ai/dsh-schedule": {
     "title": "Lập lịch tác vụ",
     "description": "Lưu các tác vụ tự động, chạy từng tác vụ trong phiên gốc khi đến hạn và cung cấp cho agent các công cụ để quản lý chúng."
+  },
+  "@deepseek-ai/dsh-sdk-app": {
+    "title": "Hồ sơ SDK",
+    "description": "Cung cấp JSON-RPC qua đầu vào và đầu ra tiêu chuẩn và quản lý vòng đời tiến trình trên dsh-base."
+  },
+  "@deepseek-ai/dsh-sdk-jsonrpc-server": {
+    "title": "Máy chủ SDK",
+    "description": "Phục vụ máy khách SDK trong các tiến trình riêng biệt qua JSON-RPC qua đầu vào và đầu ra tiêu chuẩn."
   },
   "@deepseek-ai/dsh-session": {
     "title": "Bản ghi phiên"
@@ -78,6 +106,10 @@
   "@deepseek-ai/dsh-session-title": {
     "title": "Tiêu đề phiên"
   },
+  "@deepseek-ai/dsh-session-title-all-prompts-llm": {
+    "title": "Tiêu đề phiên từ mọi tin nhắn",
+    "description": "Tạo tiêu đề phiên từ tất cả tin nhắn người dùng trong phiên."
+  },
   "@deepseek-ai/dsh-session-title-first-prompt-llm": {
     "title": "Tạo tiêu đề từ tin nhắn đầu"
   },
@@ -100,6 +132,10 @@
   "@deepseek-ai/dsh-skill-filesystem": {
     "title": "Tải kỹ năng cục bộ"
   },
+  "@deepseek-ai/dsh-skill-office": {
+    "title": "Kỹ năng Office",
+    "description": "Cung cấp quy trình làm việc tích hợp cho Word, PowerPoint và Excel cùng các thao tác LibreOffice Kit."
+  },
   "@deepseek-ai/dsh-spill-local": {
     "title": "Lưu kết quả dài cục bộ"
   },
@@ -117,14 +153,6 @@
   },
   "@deepseek-ai/dsh-subagent": {
     "title": "Agent con"
-  },
-  "@deepseek-ai/dsh-subagent-claude-code": {
-    "title": "Agent con Claude Code",
-    "description": "Giao một tác vụ cho Claude Code bằng xác thực và cài đặt gốc của nó."
-  },
-  "@deepseek-ai/dsh-subagent-codex": {
-    "title": "Agent con Codex",
-    "description": "Giao một tác vụ cho Codex bằng xác thực và cài đặt gốc của nó."
   },
   "@deepseek-ai/dsh-subagent-fork-in-process": {
     "title": "Agent con kế thừa ngữ cảnh"
@@ -148,6 +176,10 @@
     "title": "Nhận biết thời gian",
     "description": "Cho mô hình biết thời gian hiện tại, múi giờ của trình duyệt và khoảng thời gian kể từ tin nhắn trước ở mỗi bước."
   },
+  "@deepseek-ai/dsh-tmux-context": {
+    "title": "Ngữ cảnh tmux",
+    "description": "Lưu vị trí pane và cửa sổ tmux cho mỗi bước khi cần."
+  },
   "@deepseek-ai/dsh-token-meter": {
     "title": "Đo lường token"
   },
@@ -165,6 +197,14 @@
   },
   "@deepseek-ai/dsh-tool-cordis": {
     "title": "Công cụ tra cứu API plugin"
+  },
+  "@deepseek-ai/dsh-tool-executor-native": {
+    "title": "Thực thi công cụ gốc",
+    "description": "Thực thi trực tiếp các lệnh gọi công cụ của mô hình."
+  },
+  "@deepseek-ai/dsh-tool-executor-ptc": {
+    "title": "Thực thi công cụ PTC",
+    "description": "Thực thi công cụ qua chương trình run_code và tạo các ràng buộc SDK."
   },
   "@deepseek-ai/dsh-tool-fs": {
     "title": "Công cụ đọc ghi tệp"
@@ -190,14 +230,30 @@
   "@deepseek-ai/dsh-tool-ralph": {
     "title": "Công cụ lặp Ralph"
   },
+  "@deepseek-ai/dsh-tool-schedule": {
+    "title": "Công cụ tác vụ tự động",
+    "description": "Tạo, xem, cập nhật và xoá tác vụ tự động."
+  },
+  "@deepseek-ai/dsh-tool-session-query": {
+    "title": "Công cụ lịch sử phiên",
+    "description": "Tìm kiếm lịch sử phiên và đọc quỹ đạo cùng sự kiện theo quyền của không gian làm việc."
+  },
   "@deepseek-ai/dsh-tool-skill": {
     "title": "Công cụ tải kỹ năng"
+  },
+  "@deepseek-ai/dsh-tool-str-replace-editor": {
+    "title": "Công cụ soạn thảo văn bản",
+    "description": "Xem, tạo, thay thế và chèn văn bản qua dịch vụ hệ thống tệp."
   },
   "@deepseek-ai/dsh-tool-subagent": {
     "title": "Công cụ ủy thác agent con"
   },
   "@deepseek-ai/dsh-tool-subagent-control": {
     "title": "Công cụ điều khiển agent con"
+  },
+  "@deepseek-ai/dsh-tool-terminal": {
+    "title": "Công cụ terminal bền vững",
+    "description": "Cung cấp sáu công cụ PTY bền vững với quyền sở hữu phiên được cô lập và tích hợp tác vụ nền."
   },
   "@deepseek-ai/dsh-tool-todo": {
     "title": "Công cụ việc cần làm"
@@ -207,6 +263,14 @@
   },
   "@deepseek-ai/dsh-tool-workflow": {
     "title": "Công cụ quy trình"
+  },
+  "@deepseek-ai/dsh-tool-working-directory": {
+    "title": "Công cụ thư mục làm việc",
+    "description": "Đọc và thay đổi thư mục làm việc của phiên hiện tại."
+  },
+  "@deepseek-ai/dsh-tool-workspace-dependencies": {
+    "title": "Phụ thuộc không gian làm việc",
+    "description": "Cung cấp đường dẫn tuyệt đối đến các runtime Python, Node.js và pnpm được đóng gói."
   },
   "@deepseek-ai/dsh-tools": {
     "title": "Đăng ký và thực thi công cụ"
@@ -240,6 +304,10 @@
   },
   "@deepseek-ai/dsh-workflow-ptc": {
     "title": "Bộ máy thực thi quy trình"
+  },
+  "@deepseek-ai/dsh-working-directory": {
+    "title": "Thư mục làm việc phiên",
+    "description": "Quản lý thư mục làm việc của phiên, lưu thay đổi thư mục và cung cấp ngữ cảnh thư mục làm việc cho mô hình."
   },
   "@deepseek-ai/dsh-workspace": {
     "title": "Quản lý không gian làm việc"

@@ -34,6 +34,7 @@
   "switcher.aria": "Chuyển agent con: {title}",
   "tree.aria": "Các phiên của agent con",
   "open.sidebar": "Mở trong thanh bên",
+  "open.floatWindow": "Mở trong bảng nổi",
   "open.sidebar.aria": "Mở {label} trong thanh bên",
   "sidebar.chat": "Trò chuyện",
   "readonly.oneShot.title": "Bản ghi agent con chạy một lần",

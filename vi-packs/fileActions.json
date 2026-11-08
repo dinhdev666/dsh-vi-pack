@@ -1,0 +1,14 @@
+{
+  "menu.finder": "Xem trong Finder",
+  "menu.reveal": "Xem trong thư mục",
+  "menu.saveAs": "Lưu dưới dạng…",
+  "menu.copied": "Đã sao chép",
+  "menu.copyImage": "Sao chép hình ảnh",
+  "menu.download": "Tải xuống",
+  "menu.saveFailed": "Không thể lưu. Kiểm tra nguồn và đích, sau đó thử lại.",
+  "menu.copyFailed": "Không thể sao chép. Kiểm tra nội dung có sẵn không, sau đó thử lại.",
+  "menu.saved": "Đã lưu",
+  "menu.downloadStarted": "Đã bắt đầu tải xuống",
+  "menu.downloaded": "Tải xuống hoàn tất",
+  "path.revealError": "Không thể hiển thị vị trí tệp. Thử lại."
+}

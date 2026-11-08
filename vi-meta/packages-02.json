@@ -5,6 +5,10 @@
   "@deepseek-ai/dsh-cordis-host-runner": {
     "title": "Trình chạy plugin động trên máy chủ"
   },
+  "@deepseek-ai/dsh-creation-recommendations": {
+    "title": "Trang cá nhân hoá",
+    "description": "Khi bạn muốn một trang hoặc công cụ nhỏ có thể giữ lại lâu dài, đề xuất bên dưới câu trả lời; sau khi bạn bấm Tạo, trang sẽ được xây dựng ở nền dưới dạng trang plugin mà bạn có thể huỷ, hoàn tác và khôi phục. Một lần tạo mất vài phút và tiêu tốn nhiều token."
+  },
   "@deepseek-ai/dsh-credentials-local": {
     "title": "Kho thông tin xác thực cục bộ"
   },
@@ -14,21 +18,25 @@
   "@deepseek-ai/dsh-deepseek-llm-api-extensions": {
     "title": "Tiện ích mở rộng DeepSeek API"
   },
+  "@deepseek-ai/dsh-deliverable-file-references": {
+    "title": "Tham chiếu tệp giao nộp",
+    "description": "Cung cấp hướng dẫn mô hình chia sẻ về liên kết tệp và nội dung giao nộp giữa các môi trường ứng dụng."
+  },
   "@deepseek-ai/dsh-experimental-agent-team": {
     "title": "Cộng tác nhóm",
     "description": "Quản lý thành viên nhóm, tin nhắn của thành viên và tác vụ nhóm."
   },
   "@deepseek-ai/dsh-experimental-agent-team-profile": {
     "title": "Nhóm agent",
-    "description": "Bật cộng tác nhóm, công cụ nhóm, danh sách thành viên và bảng tác vụ nhóm."
+    "description": "Cho phép agent bạn đang nói chuyện chia công việc cho các đồng đội có tên, theo dõi trên bảng tác vụ chung và báo cáo kết quả của họ."
   },
   "@deepseek-ai/dsh-experimental-api-speech-to-text": {
     "title": "API chuyển giọng nói thành văn bản",
     "description": "Cung cấp khả năng chuyển giọng nói thành văn bản cho client trên trình duyệt."
   },
   "@deepseek-ai/dsh-experimental-auto-review": {
-    "title": "Tự động xem xét quyền",
-    "description": "Thêm chế độ quyền Tự động xem xét dùng mô hình đánh giá quyền trước mỗi lệnh gọi công cụ."
+    "title": "Xem xét uỷ quyền tự động",
+    "description": "Thêm chế độ truy cập Xem xét tự động: trước mỗi lệnh gọi công cụ, một mô hình đối chiếu với yêu cầu của bạn, chạy các lệnh gọi được phép ngay và giữ các lệnh bị từ chối để bạn phê duyệt."
   },
   "@deepseek-ai/dsh-experimental-badge-skill-bundle": {
     "title": "Kỹ năng huy hiệu DSH",
@@ -42,13 +50,37 @@
     "title": "Dịch máy phần suy luận",
     "description": "Hiển thị phần suy luận được mở rộng bằng ngôn ngữ khác nhờ dịch máy."
   },
+  "@deepseek-ai/dsh-experimental-client-ui-forge": {
+    "title": "Bảng yêu cầu thay đổi",
+    "description": "Hiển thị yêu cầu thay đổi của Phiên trong thẻ thanh bên và cho phép bắt đầu Phiên mới trong worktree."
+  },
+  "@deepseek-ai/dsh-experimental-client-ui-stats": {
+    "title": "Xem thống kê",
+    "description": "Hiển thị ngữ cảnh, thời gian, bộ nhớ đệm và chi phí công cụ cho từng lượt và từng bước bên cạnh Chat."
+  },
   "@deepseek-ai/dsh-experimental-client-ui-voice-input": {
     "title": "Ghi âm giọng nói",
     "description": "Ghi âm giọng nói và chèn văn bản có thể chỉnh sửa vào bản nháp hội thoại."
   },
   "@deepseek-ai/dsh-experimental-cot-translation-bundle": {
     "title": "Dịch máy phần suy luận",
-    "description": "Dịch máy phần suy luận được mở rộng; văn bản nguồn được gửi đến dịch vụ đã chọn"
+    "description": "Khi agent đang viết, dịch các hàng \"Suy nghĩ\" đã mở rộng sang ngôn ngữ bạn chọn, và nút \"Xem bản gốc\" chuyển lại."
+  },
+  "@deepseek-ai/dsh-experimental-forge": {
+    "title": "Yêu cầu thay đổi",
+    "description": "Đăng ký nhà cung cấp mã nguồn và theo dõi trạng thái yêu cầu thay đổi qua một dịch vụ độc lập với nhà cung cấp."
+  },
+  "@deepseek-ai/dsh-experimental-forge-bundle": {
+    "title": "Yêu cầu thay đổi & worktree",
+    "description": "Theo dõi các pull request GitHub liên kết bên cạnh cuộc hội thoại của bạn: theo dõi kiểm tra và đánh giá, xem diff và gửi phản hồi cho agent. Xem lại thay đổi cục bộ và dùng một worktree riêng để cô lập từng tác vụ. Các tính năng GitHub yêu cầu gh CLI đã cài đặt và đăng nhập trên máy chủ."
+  },
+  "@deepseek-ai/dsh-experimental-forge-github": {
+    "title": "Yêu cầu thay đổi GitHub",
+    "description": "Đọc yêu cầu thay đổi GitHub cho đăng ký forge qua gh CLI trên máy chủ."
+  },
+  "@deepseek-ai/dsh-experimental-forge-session": {
+    "title": "Yêu cầu thay đổi của Phiên",
+    "description": "Liên kết yêu cầu thay đổi với Phiên đã tạo, đẩy hoặc theo dõi chúng, và theo dõi trạng thái."
   },
   "@deepseek-ai/dsh-experimental-inspector": {
     "title": "Trình kiểm tra NodeJS",
@@ -56,15 +88,19 @@
   },
   "@deepseek-ai/dsh-experimental-inspector-profile": {
     "title": "Công cụ phát triển",
-    "description": "Kiểm tra và gỡ lỗi dữ liệu thô của phiên, tin nhắn trò chuyện đã nhóm và máy chủ NodeJS."
+    "description": "Dùng để xử lý sự cố: xem những gì DSH đã ghi cho một phiên trong Nhật ký phiên, xem xét thống kê cho từng lượt và bước trong thẻ Thống kê, và gỡ lỗi backend DSH trong Chrome DevTools."
+  },
+  "@deepseek-ai/dsh-experimental-liveshare": {
+    "title": "Chia sẻ Phiên LiveShare",
+    "description": "Chia sẻ Phiên hiện tại với đồng nghiệp, người đó có thể điều khiển trong trình duyệt, chỉnh sửa tệp trong không gian làm việc được cấp khi chia sẻ cho phép ghi, hoặc rẽ nhánh Phiên riêng từ lịch sử hoàn chỉnh."
   },
   "@deepseek-ai/dsh-experimental-plugin-market-bundle": {
-    "title": "Chợ plugin tùy chỉnh",
-    "description": "Thêm tab Khám phá vào Plugin để duyệt và cài đặt gói từ các chỉ mục chợ plugin do bạn thêm"
+    "title": "Chỉ mục plugin tuỳ chỉnh",
+    "description": "Thêm thẻ Khám phá vào Plugin, nơi bạn duyệt và cài đặt plugin từ các chỉ mục plugin bạn thêm vào."
   },
   "@deepseek-ai/dsh-experimental-ralph-bundle": {
     "title": "Vòng lặp Ralph",
-    "description": "Chạy công việc lặp lại khi được yêu cầu rõ ràng, bằng các agent mới."
+    "description": "Yêu cầu một vòng lặp Ralph với mục tiêu, và agent sẽ bắt đầu một agent mới xử lý nó từng vòng cho đến khi mục tiêu đạt được, báo cáo bị chặn hoặc đạt giới hạn vòng."
   },
   "@deepseek-ai/dsh-experimental-session-inspector": {
     "title": "Nhật ký phiên",
@@ -72,11 +108,11 @@
   },
   "@deepseek-ai/dsh-experimental-session-search": {
     "title": "Tìm kiếm phiên",
-    "description": "Cho agent công cụ để tìm kiếm và đọc các phiên trước trong không gian làm việc hiện tại."
+    "description": "Hỏi về công việc trước đây, ví dụ \"Tuần trước chúng ta đã sửa rò rỉ pool thế nào?\", và agent sẽ tìm kiếm các phiên trước đó trong cùng không gian làm việc để trả lời."
   },
   "@deepseek-ai/dsh-experimental-session-titles-bundle": {
     "title": "Tiêu đề theo hội thoại",
-    "description": "Làm mới tiêu đề phiên mỗi khi có lời nhắc mới từ người dùng."
+    "description": "Viết tiêu đề phiên từ tất cả tin nhắn của bạn và cập nhật khi nhiệm vụ chính thay đổi, thay vì chỉ từ tin nhắn đầu tiên."
   },
   "@deepseek-ai/dsh-experimental-speech-to-text": {
     "title": "Nhận dạng giọng nói",
@@ -88,7 +124,7 @@
   },
   "@deepseek-ai/dsh-experimental-terminal-bundle": {
     "title": "Terminal thường trực",
-    "description": "Giữ tiến trình shell luôn sống qua các lệnh gọi công cụ."
+    "description": "Cung cấp cho agent các terminal có tiến trình vẫn chạy ở nền giữa các lệnh gọi công cụ, để nó có thể khởi động máy chủ phát triển hoặc REPL và quay lại đọc đầu ra hoặc nhập liệu sau."
   },
   "@deepseek-ai/dsh-experimental-tool-agent-team": {
     "title": "Công cụ nhóm",
@@ -96,14 +132,26 @@
   },
   "@deepseek-ai/dsh-experimental-tool-worktree": {
     "title": "Worktree Git",
-    "description": "Cho phép agent tạo nhánh Git và worktree mới, rồi tiếp tục làm việc ở đó."
+    "description": "Khi bạn yêu cầu làm việc trên nhánh mới, agent sẽ tạo một worktree Git riêng và tiếp tục ở đó, giữ nguyên checkout hiện tại của bạn."
+  },
+  "@deepseek-ai/dsh-experimental-translator": {
+    "title": "Dịch vụ dịch thuật",
+    "description": "Dịch văn bản và tái sử dụng các bản dịch đã lưu trong phiên."
   },
   "@deepseek-ai/dsh-experimental-voice-input-bundle": {
     "title": "Nhập bằng giọng nói",
-    "description": "Chuyển bản ghi âm thành văn bản cục bộ bằng SenseVoice; lần đầu cần cài thư viện phụ thuộc"
+    "description": "Phiên âm bản ghi cục bộ bằng SenseVoice; lần đầu sử dụng cần cài đặt các phụ thuộc."
+  },
+  "@deepseek-ai/dsh-experimental-worktree": {
+    "title": "Dịch vụ worktree",
+    "description": "Tạo worktree Git có tên và thay đổi thư mục làm việc của phiên hiện tại."
   },
   "@deepseek-ai/dsh-file-reference-local": {
     "title": "Tham chiếu tệp cục bộ"
+  },
+  "@deepseek-ai/dsh-fs-local": {
+    "title": "Hệ thống tệp cục bộ",
+    "description": "Truy cập tệp qua hệ thống tệp cục bộ."
   },
   "@deepseek-ai/dsh-fs-observation-policy": {
     "title": "Bảo vệ chỉnh sửa tệp"
@@ -117,6 +165,14 @@
   "@deepseek-ai/dsh-goal-round-driver": {
     "title": "Tự động tiếp tục mục tiêu"
   },
+  "@deepseek-ai/dsh-harness-dev-context": {
+    "title": "Ngữ cảnh phát triển Harness",
+    "description": "Cung cấp thư mục mã nguồn Harness và URL Web cho mô hình mà không thay đổi system prompt."
+  },
+  "@deepseek-ai/dsh-headless": {
+    "title": "Hồ sơ không giao diện",
+    "description": "Chạy một tác vụ trực tiếp với bộ chạy Agent/Session cốt lõi trên dsh-base, không có Host, HTTP hay lớp trình duyệt."
+  },
   "@deepseek-ai/dsh-hmr": {
     "title": "Tải lại nóng"
   },
@@ -128,6 +184,10 @@
   },
   "@deepseek-ai/dsh-host-directory-picker-native": {
     "title": "Chọn thư mục hệ thống"
+  },
+  "@deepseek-ai/dsh-host-frontend-static": {
+    "title": "Máy chủ frontend tĩnh",
+    "description": "Cung cấp trang vào và các tệp tĩnh của ứng dụng Web, từ chối đường dẫn nằm ngoài thư mục và trả về 404 cho tài nguyên thiếu."
   },
   "@deepseek-ai/dsh-host-open-in-app": {
     "title": "Mở bằng ứng dụng ngoài"
@@ -158,6 +218,10 @@
   },
   "@deepseek-ai/dsh-llm-retry": {
     "title": "Thử lại yêu cầu mô hình"
+  },
+  "@deepseek-ai/dsh-mcp-client": {
+    "title": "Máy khách MCP",
+    "description": "Kết nối đến máy chủ MCP và làm cho công cụ của chúng khả dụng trong Harness."
   },
   "@deepseek-ai/dsh-mcp-resources": {
     "title": "Truy cập tài nguyên MCP"

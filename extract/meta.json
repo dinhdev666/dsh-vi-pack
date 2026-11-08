@@ -1,11 +1,44 @@
 {
-  "appVersion": "0.2.1-rc.5",
+  "appVersion": "0.2.2-rc.1",
   "packages": [
     {
       "name": "@deepseek-ai/cordis-plugin-timer",
       "title": {
         "en": "timer",
         "zh": "计时服务"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-acp",
+      "title": {
+        "en": "ACP server",
+        "zh": "ACP 服务"
+      },
+      "description": {
+        "en": "Run agents through JSON-RPC over standard input and output for automation.",
+        "zh": "通过 JSON-RPC 标准输入输出驱动智能体，仅供自动化使用。"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-acp-app",
+      "title": {
+        "en": "ACP profile",
+        "zh": "ACP 运行配置"
+      },
+      "description": {
+        "en": "Provide automation-only ACP communication and process lifecycle management over dsh-base.",
+        "zh": "在 dsh-base 上提供自动化专用的 ACP 通信与进程生命周期。"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-action-cards",
+      "title": {
+        "en": "Action cards",
+        "zh": "操作卡片"
+      },
+      "description": {
+        "en": "Show optional action cards below answers for enabled experiments, and report the user's choices back to the conversation.",
+        "zh": "为已启用的实验在回答下方显示可选操作卡片，并把用户的选择告知对话。"
       }
     },
     {
@@ -79,6 +112,17 @@
       }
     },
     {
+      "name": "@deepseek-ai/dsh-api-remote-access",
+      "title": {
+        "en": "Remote access control",
+        "zh": "远程访问控制"
+      },
+      "description": {
+        "en": "Control which methods non-owner connections can access and retain permission snapshots for each connection.",
+        "zh": "为非所有者连接提供方法级远程访问控制和各连接的权限快照。"
+      }
+    },
+    {
       "name": "@deepseek-ai/dsh-api-remotes",
       "title": {
         "en": "api-remotes",
@@ -132,6 +176,17 @@
       "title": {
         "en": "authorization",
         "zh": "授权流程服务"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-bash-local",
+      "title": {
+        "en": "Local Bash execution",
+        "zh": "本地 Bash 执行"
+      },
+      "description": {
+        "en": "Run Bash commands in local subprocesses.",
+        "zh": "通过本地子进程执行 Bash 命令。"
       }
     },
     {
@@ -198,6 +253,17 @@
       }
     },
     {
+      "name": "@deepseek-ai/dsh-client-ui-action-cards",
+      "title": {
+        "en": "Action card display",
+        "zh": "操作卡片显示"
+      },
+      "description": {
+        "en": "Show optional action cards below answers, with each experiment's own controls.",
+        "zh": "在回答下方显示可选操作卡片，卡片内容由各实验提供。"
+      }
+    },
+    {
       "name": "@deepseek-ai/dsh-client-ui-agent-preset",
       "title": {
         "en": "ui-agent-preset",
@@ -240,6 +306,13 @@
       }
     },
     {
+      "name": "@deepseek-ai/dsh-client-ui-context-menu",
+      "title": {
+        "en": "Context menus",
+        "zh": "右键菜单"
+      }
+    },
+    {
       "name": "@deepseek-ai/dsh-client-ui-conversation",
       "title": {
         "en": "ui-conversation",
@@ -251,6 +324,17 @@
       "title": {
         "en": "ui-cordis",
         "zh": "动态插件运行卡片"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-client-ui-creation-recommendations",
+      "title": {
+        "en": "Personalized page cards",
+        "zh": "个性化页面卡片"
+      },
+      "description": {
+        "en": "Show the proposal card after an answer with location choice, creation progress, retention and undo.",
+        "zh": "在回答末尾显示方案卡片，含位置选择、创建进度、保留和撤销。"
       }
     },
     {
@@ -283,6 +367,24 @@
       "description": {
         "en": "Customize plugin entries in the left sidebar, conversation views, and right sidebar, and quickly create new plugins.",
         "zh": "自定义左侧栏、会话视图和右侧栏显示的插件入口，并快捷创建新插件。"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-client-ui-file-actions",
+      "title": {
+        "en": "File actions",
+        "zh": "文件操作"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-client-ui-file-drag",
+      "title": {
+        "en": "File dragging",
+        "zh": "文件拖放"
+      },
+      "description": {
+        "en": "Drag original files into the composer or other applications, with localized failure feedback.",
+        "zh": "将原始文件拖入输入框或其他应用，并提供本地化失败提示。"
       }
     },
     {
@@ -353,6 +455,28 @@
       "title": {
         "en": "ui-plugin-manager",
         "zh": "插件管理界面"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-client-ui-plugin-market",
+      "title": {
+        "en": "Plugin discovery",
+        "zh": "插件发现界面"
+      },
+      "description": {
+        "en": "Browse configured plugin indexes and install their packages.",
+        "zh": "浏览已配置的插件索引，并安装其中的插件包。"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-client-ui-plugin-recommendations",
+      "title": {
+        "en": "Plugin recommendation cards",
+        "zh": "插件推荐卡片"
+      },
+      "description": {
+        "en": "Show the Enable card for a recommended official plugin after an answer, with its details and your choice.",
+        "zh": "在回答末尾显示推荐官方插件的启用卡片，含插件详情和你的选择。"
       }
     },
     {
@@ -651,6 +775,17 @@
       }
     },
     {
+      "name": "@deepseek-ai/dsh-creation-recommendations",
+      "title": {
+        "en": "Personalized pages",
+        "zh": "个性化页面"
+      },
+      "description": {
+        "en": "Proposes a page or small tool you can keep, below the answer; after you click Create it is built in the background as a plugin page that you can cancel, undo and restore. A build takes minutes and many tokens.",
+        "zh": "想要能长期使用的页面或小工具时，在回答下方提议方案；点击创建后在后台生成插件页面，可取消、撤销和恢复，生成需要几分钟并消耗较多 token。"
+      }
+    },
+    {
       "name": "@deepseek-ai/dsh-credentials-local",
       "title": {
         "en": "credentials-local",
@@ -672,9 +807,20 @@
       }
     },
     {
+      "name": "@deepseek-ai/dsh-deliverable-file-references",
+      "title": {
+        "en": "Deliverable file references",
+        "zh": "交付文件引用"
+      },
+      "description": {
+        "en": "Provide shared model guidance for file links and deliverables across application environments.",
+        "zh": "为不同运行端提供文件链接与交付内容的共享模型指引。"
+      }
+    },
+    {
       "name": "@deepseek-ai/dsh-experimental-agent-team",
       "title": {
-        "en": "Team Collaboration",
+        "en": "Team collaboration",
         "zh": "团队协作"
       },
       "description": {
@@ -685,12 +831,12 @@
     {
       "name": "@deepseek-ai/dsh-experimental-agent-team-profile",
       "title": {
-        "en": "Agent Teams",
+        "en": "Agent teams",
         "zh": "智能体团队"
       },
       "description": {
-        "en": "Enable team collaboration, team tools, the member roster, and the shared task board.",
-        "zh": "启用团队协作、团队工具、成员列表和共享任务看板。"
+        "en": "Lets the agent you talk to split a job among named teammates, track it on a shared task board, and report back with their results.",
+        "zh": "让与你对话的智能体把工作分给有名字的队友，在共享任务看板上跟踪进度，并汇总队友的结果向你汇报。"
       }
     },
     {
@@ -707,12 +853,12 @@
     {
       "name": "@deepseek-ai/dsh-experimental-auto-review",
       "title": {
-        "en": "Auto Authorization Review",
+        "en": "Auto authorization review",
         "zh": "自动授权审查"
       },
       "description": {
-        "en": "Add an Auto review permission mode that uses the model to assess authorization before each tool call.",
-        "zh": "提供自动审查权限模式，由模型在每次工具调用前判断是否授权。"
+        "en": "Adds an Auto review access mode: before each tool call, a model checks it against what you asked for, runs allowed calls at once, and holds denied calls for your approval.",
+        "zh": "提供“自动审查”访问模式：每次工具调用前，由模型对照你的要求检查，获准的调用立即运行，被拒绝的调用等你审批。"
       }
     },
     {
@@ -729,7 +875,7 @@
     {
       "name": "@deepseek-ai/dsh-experimental-client-ui-agent-team",
       "title": {
-        "en": "Team Panel",
+        "en": "Team panel",
         "zh": "团队面板"
       },
       "description": {
@@ -746,6 +892,28 @@
       "description": {
         "en": "Display expanded reasoning in another language using machine translation.",
         "zh": "将展开的思考内容机器翻译为其他语言。"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-experimental-client-ui-forge",
+      "title": {
+        "en": "Change request panel",
+        "zh": "变更请求面板"
+      },
+      "description": {
+        "en": "Shows a Session's change requests in a sidebar tab and lets a new Session start in a worktree.",
+        "zh": "在侧栏标签页中显示会话的变更请求，并让新会话可以在工作树中开始。"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-experimental-client-ui-stats",
+      "title": {
+        "en": "Statistics view",
+        "zh": "统计视图"
+      },
+      "description": {
+        "en": "Show per-turn and per-step context, timing, cache, and tool cost beside Chat.",
+        "zh": "在对话旁展示每轮/每步的上下文、耗时、缓存和工具成本。"
       }
     },
     {
@@ -766,14 +934,58 @@
         "zh": "思考过程机器翻译"
       },
       "description": {
-        "en": "Machine translation of expanded reasoning; source text is sent to the selected service",
-        "zh": "机器翻译展开的思考内容；原文会发送给所选服务"
+        "en": "Translates expanded Think rows into your chosen language as the agent writes them, and View original switches back.",
+        "zh": "智能体输出时，把展开的“思考”行翻译成你选择的语言，点击“查看原文”可切换回原文。"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-experimental-forge",
+      "title": {
+        "en": "Change requests",
+        "zh": "变更请求"
+      },
+      "description": {
+        "en": "Register code host providers and poll change request status through one provider-neutral service.",
+        "zh": "通过一个与提供方无关的服务注册代码托管提供方，并轮询变更请求状态。"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-experimental-forge-bundle",
+      "title": {
+        "en": "Change requests & worktrees",
+        "zh": "变更请求与工作树"
+      },
+      "description": {
+        "en": "Keep linked GitHub pull requests beside your conversation: follow checks and reviews, inspect diffs, and send feedback to the agent. Review local changes and use a separate worktree to isolate each task. GitHub features require the gh CLI installed and signed in on the host.",
+        "zh": "在会话侧栏集中跟踪关联的 GitHub PR：查看检查状态、评审意见与代码差异，并把修改建议交给智能体继续处理。也可查看本地改动，用独立工作树隔离任务。GitHub 功能需要本机安装 gh 并登录。"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-experimental-forge-github",
+      "title": {
+        "en": "GitHub change requests",
+        "zh": "GitHub 变更请求"
+      },
+      "description": {
+        "en": "Read GitHub change requests for the forge registry through the GitHub CLI on the host.",
+        "zh": "通过宿主上的 GitHub CLI 为 forge 注册表读取 GitHub 变更请求。"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-experimental-forge-session",
+      "title": {
+        "en": "Session change requests",
+        "zh": "会话变更请求"
+      },
+      "description": {
+        "en": "Bind change requests to the Session that created, pushed, or tracked them, and watch their status.",
+        "zh": "把变更请求绑定到创建、推送或跟踪它们的会话，并监听其状态。"
       }
     },
     {
       "name": "@deepseek-ai/dsh-experimental-inspector",
       "title": {
-        "en": "NodeJS Inspector",
+        "en": "NodeJS inspector",
         "zh": "NodeJS 诊断"
       },
       "description": {
@@ -784,23 +996,34 @@
     {
       "name": "@deepseek-ai/dsh-experimental-inspector-profile",
       "title": {
-        "en": "Developer Tools",
+        "en": "Developer tools",
         "zh": "开发者工具"
       },
       "description": {
-        "en": "Inspect and debug raw session data, grouped chat messages, and the NodeJS backend.",
-        "zh": "查看调试会话原始数据、聊天消息分组数据，以及调试 NodeJS 后端"
+        "en": "For troubleshooting: view what DSH recorded for a session in Session log, inspect per-turn and per-step statistics in the Statistics tab, and debug the DSH backend in Chrome DevTools.",
+        "zh": "用于排查问题：在「会话数据诊断」中查看 DSH 为会话记录的内容，在「统计」页签查看每轮/每步的上下文、耗时、缓存和工具成本，并在 Chrome DevTools 中调试 DSH 后端。"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-experimental-liveshare",
+      "title": {
+        "en": "LiveShare Session Sharing",
+        "zh": "LiveShare 会话分享"
+      },
+      "description": {
+        "en": "Share the current Session with a colleague, who can drive it in a browser, edit files inside the granted workspace when the share allows writes, or branch their own Session from the completed history.",
+        "zh": "把当前会话分享给同事，对方可在浏览器中驱动该会话、在分享允许写入时修改授权工作区内的文件，或从已完成历史分支出自己的会话。"
       }
     },
     {
       "name": "@deepseek-ai/dsh-experimental-plugin-market-bundle",
       "title": {
-        "en": "Custom plugin markets",
-        "zh": "自定义插件市场"
+        "en": "Custom plugin indexes",
+        "zh": "自定义插件索引"
       },
       "description": {
-        "en": "Adds a Discover tab to Plugins for browsing and installing bundles from plugin market indexes you add",
-        "zh": "在插件页添加「发现」标签页，从你添加的插件市场索引浏览和安装插件。"
+        "en": "Adds a Discover tab to Plugins, where you browse and install plugins from plugin indexes you add.",
+        "zh": "在插件页添加“发现”标签页，从你添加的插件索引中浏览和安装插件。"
       }
     },
     {
@@ -810,14 +1033,14 @@
         "zh": "Ralph 循环"
       },
       "description": {
-        "en": "Run explicitly requested repeated work with fresh agents.",
-        "zh": "使用新智能体执行用户明确要求的循环工作。"
+        "en": "Ask for a Ralph loop with a goal, and the agent starts a fresh agent on it round after round until the goal is met, a blocker is reported, or the round limit is reached.",
+        "zh": "要求用 Ralph 循环完成一个目标后，智能体会一轮接一轮地启动新的智能体处理它，直到目标达成、报告受阻或达到轮次上限。"
       }
     },
     {
       "name": "@deepseek-ai/dsh-experimental-session-inspector",
       "title": {
-        "en": "Session Log",
+        "en": "Session log",
         "zh": "会话数据诊断"
       },
       "description": {
@@ -832,8 +1055,8 @@
         "zh": "会话搜索"
       },
       "description": {
-        "en": "Give Agents tools to search and read earlier sessions from the current workspace.",
-        "zh": "为智能体提供搜索和读取当前工作区历史会话的工具。"
+        "en": "Ask about earlier work, such as “How did we fix the pool leak last week?”, and the agent searches your earlier sessions in the same workspace to answer.",
+        "zh": "询问以往的工作，例如“上周我们是怎么修好连接池泄漏的？”，智能体会搜索同一工作区的历史会话来回答。"
       }
     },
     {
@@ -843,8 +1066,8 @@
         "zh": "随对话更新的标题"
       },
       "description": {
-        "en": "Refresh session titles as new human prompts arrive.",
-        "zh": "在收到新的用户提示时更新会话标题。"
+        "en": "Writes a session's title from all of your messages and updates it when the main task changes, instead of only from the first message.",
+        "zh": "根据你的所有消息生成会话标题，并在主要任务变化时更新，而不是只根据第一条消息生成。"
       }
     },
     {
@@ -876,14 +1099,14 @@
         "zh": "持久终端"
       },
       "description": {
-        "en": "Keep shell processes alive across tool calls.",
-        "zh": "让 shell 进程在多次工具调用之间保持运行。"
+        "en": "Gives the agent terminals whose processes keep running in the background between tool calls, so it can start a dev server or REPL and come back later to read output or type input.",
+        "zh": "为智能体提供终端，进程在多次工具调用之间持续在后台运行，因此它可以启动开发服务器或 REPL，稍后再读取输出或继续输入。"
       }
     },
     {
       "name": "@deepseek-ai/dsh-experimental-tool-agent-team",
       "title": {
-        "en": "Team Tools",
+        "en": "Team tools",
         "zh": "团队工具"
       },
       "description": {
@@ -894,12 +1117,23 @@
     {
       "name": "@deepseek-ai/dsh-experimental-tool-worktree",
       "title": {
-        "en": "Git Worktrees",
+        "en": "Git worktrees",
         "zh": "Git 工作树"
       },
       "description": {
-        "en": "Let the agent create a new Git branch and worktree, then continue there.",
-        "zh": "让智能体创建新的 Git 分支与工作树，并在其中继续工作。"
+        "en": "Ask for work on a new branch, and the agent creates a separate Git worktree and continues there, leaving your current checkout as it is.",
+        "zh": "要求在新分支上工作时，智能体会创建单独的 Git 工作树并在其中继续，你当前的工作树保持原样。"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-experimental-translator",
+      "title": {
+        "en": "Translation service",
+        "zh": "翻译服务"
+      },
+      "description": {
+        "en": "Translate text and reuse translations saved in the session.",
+        "zh": "提供机器翻译，并复用会话中已保存的翻译结果。"
       }
     },
     {
@@ -909,8 +1143,19 @@
         "zh": "语音输入"
       },
       "description": {
-        "en": "Transcribe recordings locally with SenseVoice; first use requires installing dependencies",
+        "en": "Transcribe recordings locally with SenseVoice; first use requires installing dependencies.",
         "zh": "在本机使用 SenseVoice 转写录音，首次使用需安装依赖。"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-experimental-worktree",
+      "title": {
+        "en": "Worktree service",
+        "zh": "工作树服务"
+      },
+      "description": {
+        "en": "Create named Git worktrees and change the current session's working directory.",
+        "zh": "创建命名的 Git 工作树，并切换当前会话的工作目录。"
       }
     },
     {
@@ -918,6 +1163,17 @@
       "title": {
         "en": "file-reference-local",
         "zh": "本地文件引用"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-fs-local",
+      "title": {
+        "en": "Local filesystem",
+        "zh": "本地文件系统"
+      },
+      "description": {
+        "en": "Access files through the local filesystem.",
+        "zh": "使用本地文件系统实现文件访问服务。"
       }
     },
     {
@@ -949,6 +1205,28 @@
       }
     },
     {
+      "name": "@deepseek-ai/dsh-harness-dev-context",
+      "title": {
+        "en": "Harness development context",
+        "zh": "Harness 开发上下文"
+      },
+      "description": {
+        "en": "Give the model the Harness source directory and Web URL without changing its system prompt.",
+        "zh": "向模型提供 Harness 源码目录与 Web 地址，不因此改变系统提示词。"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-headless",
+      "title": {
+        "en": "Headless profile",
+        "zh": "无界面运行配置"
+      },
+      "description": {
+        "en": "Run a single task directly with the core Agent/Session runner over dsh-base, without a Host, HTTP, or browser layer.",
+        "zh": "在 dsh-base 上直接使用核心 Agent/Session 执行单次任务，不包含 Host、HTTP 或浏览器层。"
+      }
+    },
+    {
       "name": "@deepseek-ai/dsh-hmr",
       "title": {
         "en": "hmr",
@@ -974,6 +1252,17 @@
       "title": {
         "en": "directory-picker-native",
         "zh": "系统目录选择服务"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-host-frontend-static",
+      "title": {
+        "en": "Static frontend server",
+        "zh": "前端静态资源服务"
+      },
+      "description": {
+        "en": "Serve the Web application's entry page and static files, reject paths outside their directory, and return 404 for missing resources.",
+        "zh": "提供 Web 单页应用的入口与静态资源，拒绝路径越界并为缺失资源返回 404。"
       }
     },
     {
@@ -1047,6 +1336,17 @@
       }
     },
     {
+      "name": "@deepseek-ai/dsh-mcp-client",
+      "title": {
+        "en": "MCP client",
+        "zh": "MCP 客户端"
+      },
+      "description": {
+        "en": "Connect to MCP servers and make their tools available in Harness.",
+        "zh": "连接 MCP 服务器，并将其工具注册到 Harness。"
+      }
+    },
+    {
       "name": "@deepseek-ai/dsh-mcp-resources",
       "title": {
         "en": "mcp-resources",
@@ -1058,6 +1358,17 @@
       "title": {
         "en": "message-feedback",
         "zh": "消息反馈记录"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-message-quotes",
+      "title": {
+        "en": "Message quotes",
+        "zh": "消息引用"
+      },
+      "description": {
+        "en": "Quote selected text and display it as a Markdown block quote.",
+        "zh": "引用选中的文本，并用 Markdown 引用块展示。"
       }
     },
     {
@@ -1089,6 +1400,17 @@
       }
     },
     {
+      "name": "@deepseek-ai/dsh-personalized-recommendations",
+      "title": {
+        "en": "Personalized recommendations",
+        "zh": "个性化推荐"
+      },
+      "description": {
+        "en": "Shows recommendation cards below the answer for what you want from DSH: when you want a page or small tool you can keep, it proposes a new personalized page, built in the background after you click Create; when you ask how to do something in this app or say a capability is missing, it recommends the built-in plugin that provides it, turned on when you click Enable.",
+        "zh": "针对你对 DSH 的个性化需求，在回答下方展示推荐卡片：想要能长期使用的页面或小工具时，提议新增个性化页面，点击创建后在后台生成；问到本应用怎么做某件事或缺少某项能力时，推荐对应的内置插件，点击启用后开启。"
+      }
+    },
+    {
       "name": "@deepseek-ai/dsh-plan-mode",
       "title": {
         "en": "plan-mode",
@@ -1103,6 +1425,17 @@
       }
     },
     {
+      "name": "@deepseek-ai/dsh-plugin-market",
+      "title": {
+        "en": "Plugin indexes",
+        "zh": "插件索引"
+      },
+      "description": {
+        "en": "Manage configured plugin indexes for plugin discovery and the plugin_market tool.",
+        "zh": "为插件发现页面和 plugin_market 工具管理已配置的插件索引。"
+      }
+    },
+    {
       "name": "@deepseek-ai/dsh-plugin-package-inventory-deepseek",
       "title": {
         "en": "plugin-package-inventory-deepseek",
@@ -1110,10 +1443,32 @@
       }
     },
     {
+      "name": "@deepseek-ai/dsh-plugin-recommendations",
+      "title": {
+        "en": "Plugin recommendations",
+        "zh": "插件推荐"
+      },
+      "description": {
+        "en": "When you ask how to do something in this app or say a capability is missing, recommends the built-in plugin that provides it below the answer; Enable turns it on for every conversation, and you can turn it off on the Plugins page.",
+        "zh": "问到本应用怎么做某件事或缺少某项能力时，在回答下方推荐对应的内置插件；点击启用后对所有会话生效，可在插件页关闭。"
+      }
+    },
+    {
       "name": "@deepseek-ai/dsh-ptc-runtime-node",
       "title": {
         "en": "ptc-runtime-node",
         "zh": "Node PTC 运行时"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-pwsh-local",
+      "title": {
+        "en": "Local PowerShell execution",
+        "zh": "本地 PowerShell 执行"
+      },
+      "description": {
+        "en": "Run commands through local PowerShell.",
+        "zh": "使用本地 PowerShell 实现命令执行服务。"
       }
     },
     {
@@ -1153,6 +1508,28 @@
       "description": {
         "en": "Stores automation tasks, runs each in its original session when it is due, and gives the agent tools to manage them.",
         "zh": "保存自动化任务，到点后在原会话中执行，并为智能体提供管理任务的工具。"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-sdk-app",
+      "title": {
+        "en": "SDK profile",
+        "zh": "SDK 运行配置"
+      },
+      "description": {
+        "en": "Provide JSON-RPC over standard input and output and manage the process lifecycle over dsh-base.",
+        "zh": "在 dsh-base 上提供标准输入输出 JSON-RPC 与进程生命周期管理。"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-sdk-jsonrpc-server",
+      "title": {
+        "en": "SDK server",
+        "zh": "SDK 服务"
+      },
+      "description": {
+        "en": "Serve SDK clients in separate processes through JSON-RPC over standard input and output.",
+        "zh": "通过标准输入输出 JSON-RPC 为独立进程中的 SDK 客户端提供服务。"
       }
     },
     {
@@ -1240,6 +1617,17 @@
       }
     },
     {
+      "name": "@deepseek-ai/dsh-session-title-all-prompts-llm",
+      "title": {
+        "en": "All-message session titles",
+        "zh": "全部消息生成标题"
+      },
+      "description": {
+        "en": "Generate session titles from all user messages in the session.",
+        "zh": "使用会话中的全部用户消息生成标题。"
+      }
+    },
+    {
       "name": "@deepseek-ai/dsh-session-title-first-prompt-llm",
       "title": {
         "en": "session-title-first-prompt-llm",
@@ -1293,6 +1681,17 @@
       }
     },
     {
+      "name": "@deepseek-ai/dsh-skill-office",
+      "title": {
+        "en": "Office skills",
+        "zh": "Office 技能"
+      },
+      "description": {
+        "en": "Provide built-in Word, PowerPoint, and Excel workflows and LibreOffice Kit operations.",
+        "zh": "提供 Word、PowerPoint、Excel 的内置工作流和 LibreOffice Kit 操作。"
+      }
+    },
+    {
       "name": "@deepseek-ai/dsh-spill-local",
       "title": {
         "en": "spill-local",
@@ -1333,30 +1732,6 @@
         "en": "subagent",
         "zh": "子智能体服务"
       }
-    },
-    {
-      "name": "@deepseek-ai/dsh-subagent-claude-code",
-      "title": {
-        "en": "Claude Code subagent",
-        "zh": "Claude Code 子智能体"
-      },
-      "description": {
-        "en": "Delegate one task to Claude Code using its native authentication and settings.",
-        "zh": "使用 Claude Code 原生认证和设置委派单个任务。"
-      },
-      "icon": true
-    },
-    {
-      "name": "@deepseek-ai/dsh-subagent-codex",
-      "title": {
-        "en": "Codex subagent",
-        "zh": "Codex 子智能体"
-      },
-      "description": {
-        "en": "Delegate one task to Codex using its native authentication and settings.",
-        "zh": "使用 Codex 原生认证和设置委派单个任务。"
-      },
-      "icon": true
     },
     {
       "name": "@deepseek-ai/dsh-subagent-fork-in-process",
@@ -1412,6 +1787,17 @@
       }
     },
     {
+      "name": "@deepseek-ai/dsh-tmux-context",
+      "title": {
+        "en": "tmux context",
+        "zh": "tmux 上下文"
+      },
+      "description": {
+        "en": "Save tmux pane and window locations for each step when needed.",
+        "zh": "按需保存每一步的 tmux 窗格与窗口位置信息。"
+      }
+    },
+    {
       "name": "@deepseek-ai/dsh-token-meter",
       "title": {
         "en": "token-meter",
@@ -1451,6 +1837,28 @@
       "title": {
         "en": "tool-cordis",
         "zh": "插件 API 查询工具"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-tool-executor-native",
+      "title": {
+        "en": "Native tool execution",
+        "zh": "原生工具执行"
+      },
+      "description": {
+        "en": "Executes model tool calls directly.",
+        "zh": "直接执行模型发起的工具调用。"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-tool-executor-ptc",
+      "title": {
+        "en": "PTC tool execution",
+        "zh": "PTC 工具执行"
+      },
+      "description": {
+        "en": "Executes tools through run_code programs and generates SDK bindings.",
+        "zh": "通过 run_code 程序执行工具并生成 SDK 绑定。"
       }
     },
     {
@@ -1510,10 +1918,43 @@
       }
     },
     {
+      "name": "@deepseek-ai/dsh-tool-schedule",
+      "title": {
+        "en": "Scheduling tools",
+        "zh": "任务调度工具"
+      },
+      "description": {
+        "en": "Create, view, update, and delete automated tasks.",
+        "zh": "提供自动化任务的创建、查看、修改和删除工具。"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-tool-session-query",
+      "title": {
+        "en": "Session history tools",
+        "zh": "会话历史工具"
+      },
+      "description": {
+        "en": "Search session history and read trajectories and events according to workspace permissions.",
+        "zh": "按工作区权限搜索会话历史，并读取轨迹和事件。"
+      }
+    },
+    {
       "name": "@deepseek-ai/dsh-tool-skill",
       "title": {
         "en": "tool-skill",
         "zh": "技能加载工具"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-tool-str-replace-editor",
+      "title": {
+        "en": "Text editor tools",
+        "zh": "文本编辑工具"
+      },
+      "description": {
+        "en": "View, create, replace, and insert text through the filesystem service.",
+        "zh": "通过文件系统服务提供查看、创建、原文替换和按行插入工具。"
       }
     },
     {
@@ -1528,6 +1969,17 @@
       "title": {
         "en": "tool-subagent-control",
         "zh": "子智能体控制工具"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-tool-terminal",
+      "title": {
+        "en": "Persistent terminal tools",
+        "zh": "持久终端工具"
+      },
+      "description": {
+        "en": "Provide six persistent PTY tools with isolated session ownership and background task integration.",
+        "zh": "提供六个持久 PTY 工具，隔离会话所有权并集成后台任务。"
       }
     },
     {
@@ -1549,6 +2001,28 @@
       "title": {
         "en": "tool-workflow",
         "zh": "工作流工具"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-tool-working-directory",
+      "title": {
+        "en": "Working directory tools",
+        "zh": "工作目录工具"
+      },
+      "description": {
+        "en": "Read and change the current session's working directory.",
+        "zh": "读取和修改当前会话的工作目录。"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-tool-workspace-dependencies",
+      "title": {
+        "en": "Workspace dependencies",
+        "zh": "工作区依赖"
+      },
+      "description": {
+        "en": "Provide absolute paths to the bundled Python, Node.js, and pnpm runtimes.",
+        "zh": "提供内置 Python、Node.js 和 pnpm 的绝对路径。"
       }
     },
     {
@@ -1629,6 +2103,17 @@
       }
     },
     {
+      "name": "@deepseek-ai/dsh-working-directory",
+      "title": {
+        "en": "Session working directories",
+        "zh": "会话工作目录"
+      },
+      "description": {
+        "en": "Manage session working directories, save directory changes, and provide the model with working-directory context.",
+        "zh": "管理会话工作目录，保存目录变更并向模型提供上下文。"
+      }
+    },
+    {
       "name": "@deepseek-ai/dsh-workspace",
       "title": {
         "en": "workspace",
@@ -1645,7 +2130,7 @@
     {
       "name": "@local/demo-mcp",
       "title": {
-        "en": "Demo MCP Connection"
+        "en": "Demo MCP connection"
       },
       "description": {
         "en": "Connects a remote MCP server to make its tools available to the agent."
@@ -1654,7 +2139,7 @@
     {
       "name": "@local/my-decoration",
       "title": {
-        "en": "Composer Decoration"
+        "en": "Composer decoration"
       },
       "description": {
         "en": "Displays a blue circle below the message composer."

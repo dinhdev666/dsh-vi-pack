@@ -34,6 +34,7 @@
   "switcher.aria": "Switch subagent: {title}",
   "tree.aria": "Subagent sessions",
   "open.sidebar": "Open in sidebar",
+  "open.floatWindow": "Open in floating panel",
   "open.sidebar.aria": "Open {label} in sidebar",
   "sidebar.chat": "Chat",
   "readonly.oneShot.title": "One-shot subagent record",

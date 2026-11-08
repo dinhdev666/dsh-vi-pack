@@ -4,5 +4,7 @@
   "toggle.open": "Open sidebar",
   "toggle.collapse": "Collapse sidebar",
   "panels.label": "Global panels",
-  "panels.more": "More"
+  "navigation.label": "Navigation",
+  "panels.more": "More",
+  "version.copied": "Version copied"
 }

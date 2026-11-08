@@ -16,6 +16,7 @@
   "desktop.update.checkNetworkFailed": "Could not check for updates. Check your connection and try again.",
   "desktop.update.downloadNetworkFailed": "Could not download the update. Check your connection and try again.",
   "desktop.update.installNetworkFailed": "Could not install the update. Check your connection and try again.",
+  "desktop.update.fullscreenTimeout": "Could not exit fullscreen. Exit fullscreen, then retry the update.",
   "desktop.update.stopFailed": "Could not safely stop the tasks. The update has not been installed. Please try again later.",
   "desktop.update.tasksChanged": "New tasks have started. Confirm again to stop the tasks and update.",
   "desktop.update.tasksUnavailable": "Task status is unavailable. Try updating again when the workspace is ready.",

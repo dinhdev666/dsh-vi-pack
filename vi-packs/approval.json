@@ -3,5 +3,7 @@
   "detail.aria": "Chi tiết phê duyệt",
   "escalation": "Công cụ {toolName} yêu cầu thực thi đặc quyền",
   "reject": "Từ chối",
-  "allowOnce": "Cho phép một lần"
+  "allow": "Cho phép",
+  "allowOnce": "Cho phép một lần",
+  "allowAlways": "Luôn cho phép"
 }
