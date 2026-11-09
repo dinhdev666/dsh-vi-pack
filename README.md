@@ -23,7 +23,7 @@ mà Harness phát hành.
 |---|---|
 | `extract/` | Dữ liệu trích xuất từ DSH chỉ dùng cho pipeline: `en/<namespace>.json` (nguồn chuẩn), `manifest.json`, `meta.json` (tên/mô tả gói), `host-text.json` (lời nhắc phê duyệt), `dicts-v2.json`, `summary-v2.txt`, `validation.txt` |
 | `extract/reference/` | Bản dump bundle gốc của DSH để tham chiếu khi bảo trì (`README.md` của thư mục này giải thích nguồn gốc); không sinh tự động, không script nào đọc |
-| `vi-packs/` | **Bản dịch tiếng Việt** — 72 tệp JSON cùng tên, cùng thứ tự khóa với `extract/en/` |
+| `vi-packs/` | **Bản dịch tiếng Việt** — 74 tệp JSON cùng tên, cùng thứ tự khóa với `extract/en/` |
 | `vi-meta/` | **Bản dịch phần chữ Host không đi qua namespace** — `packages-*.json` (tên/mô tả gói, khóa theo tên gói, đối chiếu `extract/meta.json`) và `host-text.json` (lời nhắc phê duyệt, khóa theo câu tiếng Anh, đối chiếu `extract/host-text.json`) |
 | `plugin/` | Plugin đóng gói để cài vào DSH: `client.js` (sinh tự động), `index.js` (host no-op), `cordis.patch.yml`, `locale/*.json`, `icon.svg` |
 | `package.json` | Manifest cài đặt ở **gọc repository** — mặt cài đặt của địa chỉ Git thuần: khai báo `dsh.bundle` trỏ vào `plugin/cordis.patch.yml` và `exports` trỏ vào `plugin/`; giữ đồng bộ tên, version, mô tả với `plugin/package.json` |
