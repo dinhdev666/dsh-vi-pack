@@ -33,8 +33,8 @@ five different kinds of files, and each has a different edit policy:
    (`<repository-url>#path:/plugin`), which downloads this folder alone;
    `node tools/validate-manifest.mjs` keeps the two in sync.
 
-Current baseline: **74 namespaces, 3,843 keys**, plus **264 package titles and 75 descriptions**
-(262 and 75 distinct English strings — two pairs of packages share one English title, and the
+Current baseline: **76 namespaces, 4,246 keys**, plus **271 package titles and 83 descriptions**
+(269 and 83 distinct English strings — two pairs of packages share one English title, and the
 overlay keys translations by that English string) and **3 Host reason texts**. Treat any deviation
 from these numbers as a signal to investigate, not to "fix" by editing counts in prose.
 
@@ -48,7 +48,8 @@ This is a settled decision — do not ask again.
 | `AGENTS.md` | English |
 | `CONTRIBUTING.md` | English |
 | `GUIDE.md` | English (the glossary table stays bilingual by design) |
-| `plugin/README.md` | English |
+| `plugin/README.md` | **Vietnamese** |
+| `tools/lib/README.md`, `extract/reference/README.md` | **Vietnamese** |
 | Code comments, commit messages, task notes | English |
 | User-facing UI copy in `vi-packs/` | Vietnamese |
 

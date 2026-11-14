@@ -4,8 +4,8 @@ Gói ngôn ngữ tiếng Việt cho giao diện web **DeepSeek Harness (DSH)**: 
 **Settings → General → Language** và dịch giao diện bằng bộ từ điển phủ toàn bộ namespace locale
 mà Harness phát hành.
 
-- **74 namespace, 3.843 khóa** trên 62 gói client của DSH.
-- **264 tiêu đề và 75 mô tả gói** đã dịch cho danh sách plugin: **Plugin Manager** (kể cả mục
+- **76 namespace, 4.246 khóa** trên 66 gói client của DSH.
+- **271 tiêu đề và 83 mô tả gói** đã dịch cho danh sách plugin: **Plugin Manager** (kể cả mục
   *More* của các gói chưa cài) và **Settings → Plugins → Built-in plugins**. Phần chữ này do Host
   dựng từ `locale/en.json` của từng gói nên không nằm trong namespace nào; gói ngôn ngữ bổ sung bản
   dịch trong `vi-meta/` và phủ lên `ctx.locale.resolveText`.
@@ -23,12 +23,12 @@ mà Harness phát hành.
 |---|---|
 | `extract/` | Dữ liệu trích xuất từ DSH chỉ dùng cho pipeline: `en/<namespace>.json` (nguồn chuẩn), `manifest.json`, `meta.json` (tên/mô tả gói), `host-text.json` (lời nhắc phê duyệt), `dicts-v2.json`, `summary-v2.txt`, `validation.txt` |
 | `extract/reference/` | Bản dump bundle gốc của DSH để tham chiếu khi bảo trì (`README.md` của thư mục này giải thích nguồn gốc); không sinh tự động, không script nào đọc |
-| `vi-packs/` | **Bản dịch tiếng Việt** — 74 tệp JSON cùng tên, cùng thứ tự khóa với `extract/en/` |
+| `vi-packs/` | **Bản dịch tiếng Việt** — 76 tệp JSON cùng tên, cùng thứ tự khóa với `extract/en/` |
 | `vi-meta/` | **Bản dịch phần chữ Host không đi qua namespace** — `packages-*.json` (tên/mô tả gói, khóa theo tên gói, đối chiếu `extract/meta.json`) và `host-text.json` (lời nhắc phê duyệt, khóa theo câu tiếng Anh, đối chiếu `extract/host-text.json`) |
 | `plugin/` | Plugin đóng gói để cài vào DSH: `client.js` (sinh tự động), `index.js` (host no-op), `cordis.patch.yml`, `locale/*.json`, `icon.svg` |
 | `package.json` | Manifest cài đặt ở **gọc repository** — mặt cài đặt của địa chỉ Git thuần: khai báo `dsh.bundle` trỏ vào `plugin/cordis.patch.yml` và `exports` trỏ vào `plugin/`; giữ đồng bộ tên, version, mô tả với `plugin/package.json` |
 | `tools/` | Toàn bộ pipeline: trích xuất, dựng dataset, build, kiểm tra, audit, test |
-| `tools/lib/` | Helper dùng chung của `tools/`: gốc repo và đọc/ghi JSON (`repo.mjs`), regex placeholder & CJK (`text.mjs`), dữ liệu `vi-meta` (`meta.mjs`), đọc `app.asar` (`asar.mjs`), thư mục bundle và hai manifest (`bundle.mjs`) |
+| `tools/lib/` | Helper dùng chung của `tools/`: gốc repo và đọc/ghi JSON (`repo.mjs`), regex placeholder & CJK (`text.mjs`), dữ liệu `vi-meta` (`meta.mjs`), đọc `app.asar` (`asar.mjs`), thư mục bundle và hai manifest (`bundle.mjs`), đọc bản đồ ngôn ngữ trong bundle JavaScript (`bundle-text.mjs`) |
 | `GUIDE.md` | Quy tắc dịch, định dạng, glossary thuật ngữ thống nhất |
 | `AGENTS.md` | Quy ước cho agent lập trình làm việc trong repo này |
 | `CONTRIBUTING.md` | Hướng dẫn đóng góp |
@@ -123,9 +123,9 @@ node tools/extract-host-text.mjs  # đọc lời nhắc phê duyệt vào extrac
 Các lệnh dùng hằng ngày (chạy từ thư mục gốc repo):
 
 ```bash
-node tools/validate-vi.mjs                       # toàn bộ 74 namespace
+node tools/validate-vi.mjs                       # toàn bộ 76 namespace
 node tools/validate-vi.mjs chat conversation     # chỉ định namespace
-node tools/validate-meta.mjs                     # toàn bộ 264 tiêu đề, 75 mô tả gói, 3 lời nhắc phê duyệt
+node tools/validate-meta.mjs                     # toàn bộ 271 tiêu đề, 83 mô tả gói, 3 lời nhắc phê duyệt
 node tools/validate-meta.mjs --partial           # báo phần còn thiếu, không tính là lỗi
 node tools/audit-vi.mjs                          # soát tiếng Anh sót, glossary, khoảng trắng
 node tools/build-client.mjs                      # sinh lại plugin/client.js
@@ -148,12 +148,12 @@ namespace, ngôn ngữ dự phòng, lớp phủ tên/mô tả gói và việc d�
   không dấu đáng ngờ.
 - Quy tắc chi tiết và glossary nằm trong [GUIDE.md](GUIDE.md).
 
-Trạng thái hiện tại: 74/74 namespace dịch đủ 3.843 khóa; 264/264 tiêu đề, 75/75 mô tả gói và 3/3 lời
+Trạng thái hiện tại: 76/76 namespace dịch đủ 4.246 khóa; 271/271 tiêu đề, 83/83 mô tả gói và 3/3 lời
 nhắc phê duyệt đã dịch; `validate-vi`, `validate-meta`, `test-client` và `build-client` đều qua.
 
 ## Ghi chú
 
-- Không sửa tay `plugin/client.js` — tệp này sinh từ `vi-packs/*.json` và `vi-meta/packages-*.json`
+- Không sửa tay `plugin/client.js` — tệp này sinh từ `vi-packs/*.json` và `vi-meta/*.json`
   qua `build-client.mjs`.
 - Tên và mô tả gói được tra theo **đúng chuỗi tiếng Anh** mà Host trả về, không theo tên gói: khi DSH
   đổi câu chữ gốc, chạy lại `extract-meta.mjs` rồi cập nhật `vi-meta/` (validator sẽ báo gói thiếu).
@@ -161,9 +161,9 @@ nhắc phê duyệt đã dịch; `validate-vi`, `validate-meta`, `test-client` v
   để thấy bản dịch mới.
 - `tools/*.mjs` tự suy ra gốc repo từ vị trí script (qua `tools/lib/repo.mjs`) nên clone ở đâu cũng
   chạy được và chạy được từ mọi thư mục; helper dùng chung nằm ở `tools/lib/`, các script chỉ giữ
-  logic riêng. Riêng `extract-dicts.mjs` và `extract-meta.mjs` cần bản DSH đã cài: hai script tự dò
-  bản cài mặc định trên Windows/macOS (code trong `tools/lib/asar.mjs`), nếu DSH nằm chỗ khác thì đặt
-  biến môi trường `DSH_APP_ASAR` trỏ tới `app.asar`.
+  logic riêng. Riêng `extract-dicts.mjs`, `extract-meta.mjs` và `extract-host-text.mjs` cần bản DSH
+  đã cài: các script tự dò bản cài mặc định trên Windows/macOS (code trong `tools/lib/asar.mjs`), nếu
+  DSH nằm chỗ khác thì đặt biến môi trường `DSH_APP_ASAR` trỏ tới `app.asar`.
 - Tên sản phẩm, thuật ngữ kỹ thuật (`JSON`, `Markdown`, `MCP`, tổ hợp phím, tên model…) được giữ
   nguyên tiếng Anh theo quy ước trong `GUIDE.md`.
 - Id row mà bundle chèn vào cây Loader là `dsh-vi-pack` (trước là `locale-vi`); Plugin Manager hiện
