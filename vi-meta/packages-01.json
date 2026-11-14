@@ -32,11 +32,12 @@
   "@deepseek-ai/dsh-agent-preset-registry": {
     "title": "Quản lý preset agent"
   },
+  "@deepseek-ai/dsh-agent-team": {
+    "title": "Cộng tác nhóm",
+    "description": "Quản lý bảng tác vụ chia sẻ cho cây agent con."
+  },
   "@deepseek-ai/dsh-agent-tool-presentation": {
     "title": "Cách hiển thị lệnh gọi công cụ"
-  },
-  "@deepseek-ai/dsh-api-account-controller": {
-    "title": "API thao tác tài khoản"
   },
   "@deepseek-ai/dsh-api-gateway": {
     "title": "Cổng gọi từ xa"
@@ -103,12 +104,19 @@
   "@deepseek-ai/dsh-client-shortcuts": {
     "title": "Dịch vụ phím tắt"
   },
+  "@deepseek-ai/dsh-client-ui-account-notifications": {
+    "title": "Thông báo tài khoản"
+  },
   "@deepseek-ai/dsh-client-ui-action-cards": {
     "title": "Hiển thị thẻ hành động",
     "description": "Hiển thị thẻ hành động tuỳ chọn bên dưới câu trả lời, với các điều khiển riêng của từng thí nghiệm."
   },
   "@deepseek-ai/dsh-client-ui-agent-preset": {
     "title": "Giao diện preset agent"
+  },
+  "@deepseek-ai/dsh-client-ui-agent-team": {
+    "title": "Bảng tác vụ",
+    "description": "Xem tác vụ chia sẻ của cây agent con."
   },
   "@deepseek-ai/dsh-client-ui-approval": {
     "title": "Giao diện phê duyệt thao tác"
@@ -311,6 +319,10 @@
   },
   "@deepseek-ai/dsh-compaction-tool-result-pruner": {
     "title": "Rút gọn kết quả công cụ"
+  },
+  "@deepseek-ai/dsh-computer-use": {
+    "title": "Danh bạ nhà cung cấp Computer Use",
+    "description": "Đăng ký nhà cung cấp Computer Use theo tên, mỗi tên một nhà cung cấp."
   },
   "@deepseek-ai/dsh-config-editor": {
     "title": "Chỉnh sửa cấu hình plugin"

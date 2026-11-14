@@ -47,6 +47,8 @@
   "install": "Cài đặt",
   "installTitle": "Cài đặt {name}",
   "installVersionTitle": "Cài đặt {name} {version}",
+  "update": "Cập nhật",
+  "updateTitle": "Cập nhật {name} lên {version}",
   "openInstalled": "Xem {name} trong Đã cài đặt",
   "statusInstalled": "Đã cài đặt",
   "statusUpdate": "Có bản cập nhật",

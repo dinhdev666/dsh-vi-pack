@@ -6,8 +6,9 @@
     "title": "Trích dẫn tin nhắn",
     "description": "Trích dẫn văn bản đã chọn và hiển thị dưới dạng khối trích dẫn Markdown."
   },
-  "@deepseek-ai/dsh-office-to-pdf": {
-    "title": "Chuyển Office sang PDF"
+  "@deepseek-ai/dsh-office-kit": {
+    "title": "Bộ công cụ Office",
+    "description": "Kết xuất, chuyển đổi và tính lại tài liệu Word, Excel, PowerPoint cho bản xem trước và các công cụ Office."
   },
   "@deepseek-ai/dsh-otel": {
     "title": "Báo cáo OpenTelemetry"
@@ -172,6 +173,10 @@
   "@deepseek-ai/dsh-terminal-bash": {
     "title": "Shell thường trực"
   },
+  "@deepseek-ai/dsh-terminal-panel": {
+    "title": "Phần nền terminal thanh bên",
+    "description": "Chạy các terminal thường trực của agent thành thẻ trên thanh bên để người dùng theo dõi và tiếp quản, đồng thời cho agent đọc terminal của chính người dùng."
+  },
   "@deepseek-ai/dsh-time-context": {
     "title": "Nhận biết thời gian",
     "description": "Cho mô hình biết thời gian hiện tại, múi giờ của trình duyệt và khoảng thời gian kể từ tin nhắn trước ở mỗi bước."
@@ -182,6 +187,10 @@
   },
   "@deepseek-ai/dsh-token-meter": {
     "title": "Đo lường token"
+  },
+  "@deepseek-ai/dsh-tool-agent-team": {
+    "title": "Công cụ nhóm",
+    "description": "Cung cấp cho agent công cụ quản lý bảng tác vụ chia sẻ."
   },
   "@deepseek-ai/dsh-tool-ask-user": {
     "title": "Công cụ hỏi người dùng"
@@ -217,6 +226,10 @@
   },
   "@deepseek-ai/dsh-tool-jobs": {
     "title": "Công cụ tác vụ nền"
+  },
+  "@deepseek-ai/dsh-tool-office": {
+    "title": "Công cụ Office",
+    "description": "Cho phép agent xem các trang tài liệu dưới dạng ảnh, chuyển tài liệu sang định dạng khác và tính lại bảng tính."
   },
   "@deepseek-ai/dsh-tool-present": {
     "title": "Công cụ bàn giao tệp"

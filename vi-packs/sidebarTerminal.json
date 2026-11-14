@@ -26,5 +26,10 @@
   "inputFull": "Bộ đệm đầu vào đã đầy. Hãy kết nối lại và thử lại.",
   "attachmentEnded": "Kết nối terminal đã kết thúc. Hãy kết nối lại để tiếp tục.",
   "invalidOutput": "Không thể nhận màn hình terminal. Hãy kết nối lại để khôi phục.",
-  "terminalLimit": "Đã đạt giới hạn terminal. Hãy đóng các terminal không dùng và thử lại. Terminal đã thoát cũng được tính vào giới hạn."
+  "terminalLimit": "Đã đạt giới hạn terminal. Hãy đóng các terminal không dùng và thử lại. Terminal đã thoát cũng được tính vào giới hạn.",
+  "badge.agent": "Agent",
+  "badge.agentHint": "Được agent mở. Gõ tại đây sẽ tiếp quản; sau đó agent chỉ có thể đọc nó.",
+  "badge.sandbox": "Cách ly",
+  "badge.readOnlyHint": "Các lệnh chạy trong sandbox chỉ đọc của agent, kể cả lệnh bạn gõ tại đây.",
+  "badge.workspaceWriteHint": "Các lệnh chạy trong sandbox không gian làm việc của agent, kể cả lệnh bạn gõ tại đây."
 }

@@ -1,4 +1,10 @@
 {
+  "section.title": "Agent con",
+  "section.empty": "Không có agent con",
+  "progress.completed": "{count} hoàn tất",
+  "progress.active": "{count} đang làm",
+  "progress.inactive": "{count} không chạy",
+  "progress.external": "{count} bên ngoài",
   "duration.seconds": "{seconds}s",
   "duration.minutes": "{minutes} phút {seconds} giây",
   "duration.hours": "{hours} giờ {minutes} phút {seconds} giây",
@@ -14,8 +20,8 @@
   "tokens.million": "{value}M",
   "tokens.total": "{value} token",
   "loading.label": "Đang tải agent con…",
+  "load.idle": "Agent con chưa được tải",
   "load.error": "Không thể tải agent con",
-  "catalog.migrationRequired": "Cần di trú dữ liệu",
   "retry": "Thử lại",
   "mode.external": "Tác vụ bên ngoài",
   "mode.oneShot": "chạy một lần",
@@ -39,6 +45,5 @@
   "sidebar.chat": "Trò chuyện",
   "readonly.oneShot.title": "Bản ghi agent con chạy một lần",
   "readonly.title": "Agent con này hiện chỉ cho phép đọc",
-  "readonly.oneShot.body": "Tác vụ chạy một lần không nhận tin nhắn tiếp theo; hãy xem bản ghi đầy đủ về quá trình thực thi tại đây.",
-  "readonly.body": "Phiên chính đang ngoại tuyến; hãy mở lại để tiếp tục gửi tin nhắn."
+  "readonly.oneShot.body": "Tác vụ chạy một lần không nhận tin nhắn tiếp theo; hãy xem bản ghi đầy đủ về quá trình thực thi tại đây."
 }

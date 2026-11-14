@@ -91,6 +91,5 @@
   "topUp": "Nạp thêm",
   "quotaTitle": "Không có số dư khả dụng",
   "quotaDescription": "DeepSeek Harness không thể bắt đầu tác vụ mới bằng tài khoản này khi không có số dư. Bạn có muốn nạp thêm? Bạn cũng có thể nạp sau trong Cài đặt → Tài khoản.",
-  "quotaTopUp": "Nạp thêm",
-  "bonusNoticeTitle": "Đã cộng tiền thưởng"
+  "quotaTopUp": "Nạp thêm"
 }

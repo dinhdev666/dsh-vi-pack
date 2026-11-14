@@ -1,4 +1,6 @@
 {
+  "panels.unpinTooltip": "Bỏ ghim khỏi thanh bên trái",
+  "panels.unpin": "Bỏ ghim {name} khỏi thanh bên",
   "session.new": "Phiên mới",
   "session.new.label": "Phiên mới",
   "toggle.open": "Mở thanh bên",

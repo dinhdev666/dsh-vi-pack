@@ -1,4 +1,6 @@
 {
+  "pinTooltip": "Ghim vào thanh bên trái",
+  "pin": "Ghim {name} vào thanh bên",
   "install": "Duyệt plugin khác",
   "create": "Tạo plugin của bạn",
   "createPrompt.sidebar": "Tạo plugin DSH có mục thanh bên trái.",
