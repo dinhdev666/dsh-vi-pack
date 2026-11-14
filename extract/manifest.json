@@ -1,5 +1,15 @@
 [
   {
+    "ns": "account.notifications",
+    "pkg": "dsh-client-ui-account-notifications",
+    "file": "account.notifications.json",
+    "keys": 1,
+    "maxLength": 5,
+    "longestKey": "close",
+    "multiLineKeys": 0,
+    "placeholderKeys": 0
+  },
+  {
     "ns": "actionCards",
     "pkg": "dsh-client-ui-action-cards",
     "file": "actionCards.json",
@@ -11,13 +21,13 @@
   },
   {
     "ns": "agent-team",
-    "pkg": "dsh-experimental-client-ui-agent-team",
+    "pkg": "dsh-client-ui-agent-team",
     "file": "agent-team.json",
-    "keys": 25,
-    "maxLength": 58,
-    "longestKey": "empty",
+    "keys": 30,
+    "maxLength": 145,
+    "longestKey": "mode.description",
     "multiLineKeys": 0,
-    "placeholderKeys": 1
+    "placeholderKeys": 6
   },
   {
     "ns": "approval",
@@ -33,7 +43,7 @@
     "ns": "chat",
     "pkg": "dsh-client-ui-chat",
     "file": "chat.json",
-    "keys": 195,
+    "keys": 207,
     "maxLength": 209,
     "longestKey": "message.failure.interrupted",
     "multiLineKeys": 0,
@@ -63,7 +73,7 @@
     "ns": "contextMenu",
     "pkg": "dsh-client-ui-context-menu",
     "file": "contextMenu.json",
-    "keys": 1,
+    "keys": 2,
     "maxLength": 41,
     "longestKey": "failed",
     "multiLineKeys": 0,
@@ -73,7 +83,7 @@
     "ns": "conversation",
     "pkg": "dsh-client-ui-conversation",
     "file": "conversation.json",
-    "keys": 383,
+    "keys": 392,
     "maxLength": 158,
     "longestKey": "error.sessionInUse",
     "multiLineKeys": 0,
@@ -103,11 +113,31 @@
     "ns": "creationRecommendations",
     "pkg": "dsh-client-ui-creation-recommendations",
     "file": "creationRecommendations.json",
-    "keys": 55,
+    "keys": 53,
     "maxLength": 85,
     "longestKey": "sourceRetained",
     "multiLineKeys": 0,
     "placeholderKeys": 0
+  },
+  {
+    "ns": "cuaPermissions",
+    "pkg": "dsh-cua",
+    "file": "cuaPermissions.json",
+    "keys": 66,
+    "maxLength": 353,
+    "longestKey": "approvalRiskNotice",
+    "multiLineKeys": 1,
+    "placeholderKeys": 8
+  },
+  {
+    "ns": "deepseekChatImport",
+    "pkg": "dsh-deepseek-chat-import",
+    "file": "deepseekChatImport.json",
+    "keys": 31,
+    "maxLength": 122,
+    "longestKey": "dialog.description",
+    "multiLineKeys": 0,
+    "placeholderKeys": 11
   },
   {
     "ns": "deliverables",
@@ -118,16 +148,6 @@
     "longestKey": "presented.unavailable",
     "multiLineKeys": 0,
     "placeholderKeys": 14
-  },
-  {
-    "ns": "directory-browser",
-    "pkg": "dsh-client-ui-directory-picker-browse",
-    "file": "directory-browser.json",
-    "keys": 13,
-    "maxLength": 54,
-    "longestKey": "browser.truncated",
-    "multiLineKeys": 0,
-    "placeholderKeys": 1
   },
   {
     "ns": "documentHtml",
@@ -153,11 +173,11 @@
     "ns": "entryCustomization",
     "pkg": "dsh-client-ui-entry-customization",
     "file": "entryCustomization.json",
-    "keys": 5,
+    "keys": 7,
     "maxLength": 47,
     "longestKey": "createPrompt.rightbar",
     "multiLineKeys": 0,
-    "placeholderKeys": 0
+    "placeholderKeys": 1
   },
   {
     "ns": "feedback",
@@ -193,11 +213,11 @@
     "ns": "forgePanel",
     "pkg": "dsh-experimental-client-ui-forge",
     "file": "forgePanel.json",
-    "keys": 253,
-    "maxLength": 145,
-    "longestKey": "missing.recreated",
+    "keys": 425,
+    "maxLength": 148,
+    "longestKey": "settings.retainOnArchive.description",
     "multiLineKeys": 0,
-    "placeholderKeys": 71
+    "placeholderKeys": 117
   },
   {
     "ns": "goal",
@@ -223,21 +243,21 @@
     "ns": "job",
     "pkg": "dsh-client-ui-jobs",
     "file": "job.json",
-    "keys": 40,
+    "keys": 38,
     "maxLength": 39,
     "longestKey": "output.error",
     "multiLineKeys": 0,
-    "placeholderKeys": 19
+    "placeholderKeys": 17
   },
   {
     "ns": "liveshare",
     "pkg": "dsh-experimental-liveshare",
     "file": "liveshare.json",
-    "keys": 225,
+    "keys": 223,
     "maxLength": 255,
     "longestKey": "dialog.sessionMode.hint.write",
     "multiLineKeys": 0,
-    "placeholderKeys": 25
+    "placeholderKeys": 23
   },
   {
     "ns": "messageQuotes",
@@ -263,7 +283,7 @@
     "ns": "open-in-app",
     "pkg": "dsh-client-ui-open-in-app",
     "file": "open-in-app.json",
-    "keys": 58,
+    "keys": 59,
     "maxLength": 64,
     "longestKey": "menu.copyFailed",
     "multiLineKeys": 0,
@@ -293,7 +313,7 @@
     "ns": "pluginManager",
     "pkg": "dsh-client-ui-plugin-manager",
     "file": "pluginManager.json",
-    "keys": 291,
+    "keys": 293,
     "maxLength": 450,
     "longestKey": "installDoneOtherVersion",
     "multiLineKeys": 0,
@@ -303,11 +323,11 @@
     "ns": "pluginMarket",
     "pkg": "dsh-client-ui-plugin-market",
     "file": "pluginMarket.json",
-    "keys": 87,
+    "keys": 89,
     "maxLength": 116,
     "longestKey": "sourcesTrust",
     "multiLineKeys": 0,
-    "placeholderKeys": 14
+    "placeholderKeys": 15
   },
   {
     "ns": "pluginRecommendations",
@@ -384,18 +404,18 @@
     "pkg": "dsh-session-log-export",
     "file": "session-log-download.json",
     "keys": 14,
-    "maxLength": 75,
-    "longestKey": "toast.clipboardFailed",
+    "maxLength": 83,
+    "longestKey": "dialog.preparingDescription",
     "multiLineKeys": 0,
-    "placeholderKeys": 0
+    "placeholderKeys": 1
   },
   {
     "ns": "settings",
     "pkg": "dsh-client-ui-settings-general",
     "file": "settings.json",
-    "keys": 42,
-    "maxLength": 91,
-    "longestKey": "desktop.update.stopFailed",
+    "keys": 65,
+    "maxLength": 105,
+    "longestKey": "desktop.channel.description",
     "multiLineKeys": 1,
     "placeholderKeys": 4
   },
@@ -403,7 +423,7 @@
     "ns": "settings.account",
     "pkg": "dsh-client-ui-settings-account",
     "file": "settings.account.json",
-    "keys": 94,
+    "keys": 93,
     "maxLength": 226,
     "longestKey": "onboardingIntroduction",
     "multiLineKeys": 0,
@@ -443,11 +463,11 @@
     "ns": "settings.models",
     "pkg": "dsh-client-ui-settings-models",
     "file": "settings.models.json",
-    "keys": 137,
+    "keys": 173,
     "maxLength": 756,
     "longestKey": "welcomeBody",
     "multiLineKeys": 1,
-    "placeholderKeys": 14
+    "placeholderKeys": 18
   },
   {
     "ns": "settings.permission",
@@ -523,11 +543,11 @@
     "ns": "settings.webSearch",
     "pkg": "dsh-client-ui-settings-web-search",
     "file": "settings.webSearch.json",
-    "keys": 27,
-    "maxLength": 170,
-    "longestKey": "countHint",
+    "keys": 43,
+    "maxLength": 126,
+    "longestKey": "billingAutoHint",
     "multiLineKeys": 0,
-    "placeholderKeys": 0
+    "placeholderKeys": 4
   },
   {
     "ns": "shortcuts",
@@ -553,11 +573,11 @@
     "ns": "sidebar",
     "pkg": "dsh-client-ui-sidebar",
     "file": "sidebar.json",
-    "keys": 8,
-    "maxLength": 16,
-    "longestKey": "toggle.collapse",
+    "keys": 10,
+    "maxLength": 25,
+    "longestKey": "panels.unpin",
     "multiLineKeys": 0,
-    "placeholderKeys": 0
+    "placeholderKeys": 1
   },
   {
     "ns": "sidebarBrowser",
@@ -603,11 +623,11 @@
     "ns": "sidebarFiles",
     "pkg": "dsh-client-ui-sidebar-files",
     "file": "sidebarFiles.json",
-    "keys": 21,
-    "maxLength": 73,
-    "longestKey": "error.outsideWorkspace",
+    "keys": 53,
+    "maxLength": 116,
+    "longestKey": "search.emptyHint.all",
     "multiLineKeys": 0,
-    "placeholderKeys": 1
+    "placeholderKeys": 6
   },
   {
     "ns": "sidebarImage",
@@ -653,7 +673,7 @@
     "ns": "sidebarTerminal",
     "pkg": "dsh-client-ui-sidebar-terminal",
     "file": "sidebarTerminal.json",
-    "keys": 28,
+    "keys": 33,
     "maxLength": 120,
     "longestKey": "terminalLimit",
     "multiLineKeys": 0,
@@ -693,11 +713,11 @@
     "ns": "subagent",
     "pkg": "dsh-client-ui-subagent",
     "file": "subagent.json",
-    "keys": 42,
+    "keys": 47,
     "maxLength": 79,
     "longestKey": "readonly.oneShot.body",
     "multiLineKeys": 0,
-    "placeholderKeys": 22
+    "placeholderKeys": 26
   },
   {
     "ns": "trajectory",

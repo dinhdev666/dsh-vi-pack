@@ -1,4 +1,6 @@
 {
+  "panels.unpinTooltip": "Unpin from left sidebar",
+  "panels.unpin": "Unpin {name} from sidebar",
   "session.new": "New Session",
   "session.new.label": "New session",
   "toggle.open": "Open sidebar",

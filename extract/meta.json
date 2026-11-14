@@ -1,5 +1,5 @@
 {
-  "appVersion": "0.2.2-rc.1",
+  "appVersion": "0.2.2-rc.3",
   "packages": [
     {
       "name": "@deepseek-ai/cordis-plugin-timer",
@@ -84,17 +84,21 @@
       }
     },
     {
+      "name": "@deepseek-ai/dsh-agent-team",
+      "title": {
+        "en": "Team collaboration",
+        "zh": "团队协作"
+      },
+      "description": {
+        "en": "Manage the shared task board for a subagent tree.",
+        "zh": "管理子代理树的共享任务看板。"
+      }
+    },
+    {
       "name": "@deepseek-ai/dsh-agent-tool-presentation",
       "title": {
         "en": "agent-tool-presentation",
         "zh": "工具调用方式"
-      }
-    },
-    {
-      "name": "@deepseek-ai/dsh-api-account-controller",
-      "title": {
-        "en": "api-account-controller",
-        "zh": "账号操作接口"
       }
     },
     {
@@ -253,6 +257,13 @@
       }
     },
     {
+      "name": "@deepseek-ai/dsh-client-ui-account-notifications",
+      "title": {
+        "en": "Account notifications",
+        "zh": "账号通知"
+      }
+    },
+    {
       "name": "@deepseek-ai/dsh-client-ui-action-cards",
       "title": {
         "en": "Action card display",
@@ -268,6 +279,17 @@
       "title": {
         "en": "ui-agent-preset",
         "zh": "Agent 预设界面"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-client-ui-agent-team",
+      "title": {
+        "en": "Task board",
+        "zh": "任务板"
+      },
+      "description": {
+        "en": "View shared tasks for the subagent tree.",
+        "zh": "查看子智能体树的共享任务。"
       }
     },
     {
@@ -333,8 +355,8 @@
         "zh": "个性化页面卡片"
       },
       "description": {
-        "en": "Show the proposal card after an answer with location choice, creation progress, retention and undo.",
-        "zh": "在回答末尾显示方案卡片，含位置选择、创建进度、保留和撤销。"
+        "en": "Show the proposal card after an answer with location choice, creation progress, undo and restore.",
+        "zh": "在回答末尾显示方案卡片，含位置选择、创建进度、撤销和恢复。"
       }
     },
     {
@@ -596,7 +618,7 @@
       "name": "@deepseek-ai/dsh-client-ui-settings-web-search",
       "title": {
         "en": "ui-settings-web-search",
-        "zh": "网页搜索设置"
+        "zh": "网页搜索与获取设置"
       }
     },
     {
@@ -754,6 +776,17 @@
       }
     },
     {
+      "name": "@deepseek-ai/dsh-computer-use",
+      "title": {
+        "en": "Computer provider registry",
+        "zh": "电脑操作服务注册"
+      },
+      "description": {
+        "en": "Register Computer Use providers by name, with one provider per name.",
+        "zh": "按名称注册独占的电脑操作提供方。"
+      }
+    },
+    {
       "name": "@deepseek-ai/dsh-config-editor",
       "title": {
         "en": "config-editor",
@@ -793,10 +826,43 @@
       }
     },
     {
-      "name": "@deepseek-ai/dsh-deepseek-account-platform",
+      "name": "@deepseek-ai/dsh-cua",
       "title": {
-        "en": "deepseek-account-platform",
-        "zh": "DeepSeek 账号登录"
+        "en": "Computer Use service",
+        "zh": "Computer Use服务"
+      },
+      "description": {
+        "en": "Manage application access, permissions, and logged tool execution for Computer Use.",
+        "zh": "管理Computer Use的应用对象、授权和带日志的工具执行。"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-cua-bundle",
+      "title": {
+        "en": "Computer use",
+        "zh": "Computer Use"
+      },
+      "description": {
+        "en": "Currently supports macOS; Windows support is in development. Loads computer use for existing and new PTC sessions. Switch to PTC mode and grant Accessibility and Screen Recording permissions to use it.",
+        "zh": "目前仅支持 macOS，Windows 支持正在开发中。为已有及新建 PTC 会话加载 Computer Use。请切换到 PTC 模式来使用，并授予辅助功能和屏幕录制权限。"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-deepseek-account",
+      "title": {
+        "en": "DeepSeek account",
+        "zh": "DeepSeek 账号"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-deepseek-chat-import",
+      "title": {
+        "en": "DeepSeek chat import",
+        "zh": "DeepSeek 会话导入"
+      },
+      "description": {
+        "en": "Upload a chat export ZIP from the DeepSeek website with the button next to New session; each conversation becomes a session in the workspace you choose.",
+        "zh": "点击“新建会话”旁的按钮上传 DeepSeek 官网导出的 ZIP 文件，每段对话都会成为所选工作区中的一个会话。"
       }
     },
     {
@@ -815,28 +881,6 @@
       "description": {
         "en": "Provide shared model guidance for file links and deliverables across application environments.",
         "zh": "为不同运行端提供文件链接与交付内容的共享模型指引。"
-      }
-    },
-    {
-      "name": "@deepseek-ai/dsh-experimental-agent-team",
-      "title": {
-        "en": "Team collaboration",
-        "zh": "团队协作"
-      },
-      "description": {
-        "en": "Manage team members, member messages, and shared tasks.",
-        "zh": "管理团队成员、成员消息和共享任务。"
-      }
-    },
-    {
-      "name": "@deepseek-ai/dsh-experimental-agent-team-profile",
-      "title": {
-        "en": "Agent teams",
-        "zh": "智能体团队"
-      },
-      "description": {
-        "en": "Lets the agent you talk to split a job among named teammates, track it on a shared task board, and report back with their results.",
-        "zh": "让与你对话的智能体把工作分给有名字的队友，在共享任务看板上跟踪进度，并汇总队友的结果向你汇报。"
       }
     },
     {
@@ -870,17 +914,6 @@
       "description": {
         "en": "Let agents add a “powered by dsh” badge to documents, pull requests, and other outputs.",
         "zh": "让 Agent 为文档、PR 等产出添加「powered by dsh」徽章。"
-      }
-    },
-    {
-      "name": "@deepseek-ai/dsh-experimental-client-ui-agent-team",
-      "title": {
-        "en": "Team panel",
-        "zh": "团队面板"
-      },
-      "description": {
-        "en": "View team members and shared tasks, and navigate to member conversations.",
-        "zh": "查看团队成员和共享任务，并切换到成员会话。"
       }
     },
     {
@@ -936,6 +969,17 @@
       "description": {
         "en": "Translates expanded Think rows into your chosen language as the agent writes them, and View original switches back.",
         "zh": "智能体输出时，把展开的“思考”行翻译成你选择的语言，点击“查看原文”可切换回原文。"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-experimental-cua-macos",
+      "title": {
+        "en": "macOS Computer Use provider",
+        "zh": "macOS Computer Use后端"
+      },
+      "description": {
+        "en": "Provide native macOS applications and windows for the shared Computer Use service.",
+        "zh": "为共享Computer Use服务提供 macOS 原生应用与窗口对象。"
       }
     },
     {
@@ -1099,19 +1143,8 @@
         "zh": "持久终端"
       },
       "description": {
-        "en": "Gives the agent terminals whose processes keep running in the background between tool calls, so it can start a dev server or REPL and come back later to read output or type input.",
-        "zh": "为智能体提供终端，进程在多次工具调用之间持续在后台运行，因此它可以启动开发服务器或 REPL，稍后再读取输出或继续输入。"
-      }
-    },
-    {
-      "name": "@deepseek-ai/dsh-experimental-tool-agent-team",
-      "title": {
-        "en": "Team tools",
-        "zh": "团队工具"
-      },
-      "description": {
-        "en": "Give agents tools to coordinate members, exchange messages, and manage shared tasks.",
-        "zh": "为智能体提供成员协调、消息通信和共享任务管理工具。"
+        "en": "Gives the agent terminals that open as sidebar tabs you can watch and take over by typing in them. Processes keep running between tool calls, so it can start a dev server or REPL and come back later to read output; it can also read terminals you open yourself.",
+        "zh": "为智能体提供以侧栏标签页打开的终端，你可以旁观，也可以直接在其中键入来接管。进程在多次工具调用之间持续运行，因此它可以启动开发服务器或 REPL，稍后再读取输出；它也能读取你自己打开的终端。"
       }
     },
     {
@@ -1347,6 +1380,17 @@
       }
     },
     {
+      "name": "@deepseek-ai/dsh-mcp-manager",
+      "title": {
+        "en": "MCP server manager",
+        "zh": "MCP 服务器管理"
+      },
+      "description": {
+        "en": "Manage the MCP servers configured in Settings or registered by plugins, and report their connection status.",
+        "zh": "管理在设置中配置或由插件注册的 MCP 服务器，并报告它们的连接状态。"
+      }
+    },
+    {
       "name": "@deepseek-ai/dsh-mcp-resources",
       "title": {
         "en": "mcp-resources",
@@ -1372,10 +1416,14 @@
       }
     },
     {
-      "name": "@deepseek-ai/dsh-office-to-pdf",
+      "name": "@deepseek-ai/dsh-office-kit",
       "title": {
-        "en": "office-to-pdf",
-        "zh": "Office 转 PDF"
+        "en": "Office kit",
+        "zh": "Office 套件"
+      },
+      "description": {
+        "en": "Renders, converts, and recalculates Word, Excel, and PowerPoint documents for previews and the Office tools.",
+        "zh": "为预览和 Office 工具渲染、转换 Word、Excel 和 PowerPoint 文档，并重算工作簿。"
       }
     },
     {
@@ -1776,6 +1824,17 @@
       }
     },
     {
+      "name": "@deepseek-ai/dsh-terminal-panel",
+      "title": {
+        "en": "Sidebar terminal backend",
+        "zh": "侧栏终端后端"
+      },
+      "description": {
+        "en": "Run the agent's persistent terminals as sidebar tabs the user can watch and take over, and let the agent read the user's own terminals.",
+        "zh": "让智能体的持久终端以用户可旁观、可接管的侧栏标签页运行，并允许智能体读取用户自己的终端。"
+      }
+    },
+    {
       "name": "@deepseek-ai/dsh-time-context",
       "title": {
         "en": "Time awareness",
@@ -1802,6 +1861,17 @@
       "title": {
         "en": "token-meter",
         "zh": "Token 计量"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-tool-agent-team",
+      "title": {
+        "en": "Team tools",
+        "zh": "团队工具"
+      },
+      "description": {
+        "en": "Give agents tools to manage their shared task board.",
+        "zh": "为智能体提供共享任务板管理工具。"
       }
     },
     {
@@ -1887,6 +1957,17 @@
       "title": {
         "en": "tool-jobs",
         "zh": "后台任务工具"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-tool-office",
+      "title": {
+        "en": "Office tools",
+        "zh": "Office 工具"
+      },
+      "description": {
+        "en": "Lets the agent view document pages as images, convert documents to other formats, and recalculate spreadsheets.",
+        "zh": "让智能体以图片查看文档页面、将文档转换为其他格式，并重算电子表格。"
       }
     },
     {

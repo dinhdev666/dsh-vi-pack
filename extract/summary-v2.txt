@@ -1,6 +1,14 @@
-entries=586
-EN KEYS=3843
-namespaces=74
+entries=608
+EN KEYS=4246
+namespaces=76
+account.notifications|de = 1
+account.notifications|en = 1
+account.notifications|es = 1
+account.notifications|fr = 1
+account.notifications|ja = 1
+account.notifications|pt = 1
+account.notifications|ru = 1
+account.notifications|zh = 1
 actionCards|de = 14
 actionCards|en = 14
 actionCards|es = 14
@@ -9,14 +17,14 @@ actionCards|ja = 14
 actionCards|pt = 14
 actionCards|ru = 14
 actionCards|zh = 14
-agent-team|de = 25
-agent-team|en = 25
-agent-team|es = 25
-agent-team|fr = 25
-agent-team|ja = 25
-agent-team|pt = 25
-agent-team|ru = 25
-agent-team|zh = 25
+agent-team|de = 30
+agent-team|en = 30
+agent-team|es = 30
+agent-team|fr = 30
+agent-team|ja = 30
+agent-team|pt = 30
+agent-team|ru = 30
+agent-team|zh = 30
 approval|de = 7
 approval|en = 7
 approval|es = 7
@@ -25,14 +33,14 @@ approval|ja = 7
 approval|pt = 7
 approval|ru = 7
 approval|zh = 7
-chat|de = 195
-chat|en = 195
-chat|es = 195
-chat|fr = 195
-chat|ja = 195
-chat|pt = 195
-chat|ru = 195
-chat|zh = 195
+chat|de = 207
+chat|en = 207
+chat|es = 207
+chat|fr = 207
+chat|ja = 207
+chat|pt = 207
+chat|ru = 207
+chat|zh = 207
 command|de = 28
 command|en = 28
 command|es = 28
@@ -49,22 +57,22 @@ common|ja = 41
 common|pt = 41
 common|ru = 41
 common|zh = 41
-contextMenu|de = 1
-contextMenu|en = 1
-contextMenu|es = 1
-contextMenu|fr = 1
-contextMenu|ja = 1
-contextMenu|pt = 1
-contextMenu|ru = 1
-contextMenu|zh = 1
-conversation|de = 383
-conversation|en = 383
-conversation|es = 383
-conversation|fr = 383
-conversation|ja = 383
-conversation|pt = 383
-conversation|ru = 383
-conversation|zh = 383
+contextMenu|de = 2
+contextMenu|en = 2
+contextMenu|es = 2
+contextMenu|fr = 2
+contextMenu|ja = 2
+contextMenu|pt = 2
+contextMenu|ru = 2
+contextMenu|zh = 2
+conversation|de = 392
+conversation|en = 392
+conversation|es = 392
+conversation|fr = 392
+conversation|ja = 392
+conversation|pt = 392
+conversation|ru = 392
+conversation|zh = 392
 cordis|de = 51
 cordis|en = 51
 cordis|es = 51
@@ -81,14 +89,30 @@ cotTranslation|ja = 32
 cotTranslation|pt = 32
 cotTranslation|ru = 32
 cotTranslation|zh = 32
-creationRecommendations|de = 55
-creationRecommendations|en = 55
-creationRecommendations|es = 55
-creationRecommendations|fr = 55
-creationRecommendations|ja = 55
-creationRecommendations|pt = 55
-creationRecommendations|ru = 55
-creationRecommendations|zh = 55
+creationRecommendations|de = 53
+creationRecommendations|en = 53
+creationRecommendations|es = 53
+creationRecommendations|fr = 53
+creationRecommendations|ja = 53
+creationRecommendations|pt = 53
+creationRecommendations|ru = 53
+creationRecommendations|zh = 53
+cuaPermissions|de = 66
+cuaPermissions|en = 66
+cuaPermissions|es = 66
+cuaPermissions|fr = 66
+cuaPermissions|ja = 66
+cuaPermissions|pt = 66
+cuaPermissions|ru = 66
+cuaPermissions|zh = 66
+deepseekChatImport|de = 31
+deepseekChatImport|en = 31
+deepseekChatImport|es = 31
+deepseekChatImport|fr = 31
+deepseekChatImport|ja = 31
+deepseekChatImport|pt = 31
+deepseekChatImport|ru = 31
+deepseekChatImport|zh = 31
 deliverables|de = 57
 deliverables|en = 57
 deliverables|es = 57
@@ -97,8 +121,6 @@ deliverables|ja = 57
 deliverables|pt = 57
 deliverables|ru = 57
 deliverables|zh = 57
-directory-browser|en = 13
-directory-browser|zh = 13
 documentHtml|de = 4
 documentHtml|en = 4
 documentHtml|es = 4
@@ -115,14 +137,14 @@ documentMarkdown|ja = 4
 documentMarkdown|pt = 4
 documentMarkdown|ru = 4
 documentMarkdown|zh = 4
-entryCustomization|de = 5
-entryCustomization|en = 5
-entryCustomization|es = 5
-entryCustomization|fr = 5
-entryCustomization|ja = 5
-entryCustomization|pt = 5
-entryCustomization|ru = 5
-entryCustomization|zh = 5
+entryCustomization|de = 7
+entryCustomization|en = 7
+entryCustomization|es = 7
+entryCustomization|fr = 7
+entryCustomization|ja = 7
+entryCustomization|pt = 7
+entryCustomization|ru = 7
+entryCustomization|zh = 7
 feedback|de = 20
 feedback|en = 20
 feedback|es = 20
@@ -147,14 +169,14 @@ fileDrag|ja = 1
 fileDrag|pt = 1
 fileDrag|ru = 1
 fileDrag|zh = 1
-forgePanel|de = 253
-forgePanel|en = 253
-forgePanel|es = 253
-forgePanel|fr = 253
-forgePanel|ja = 253
-forgePanel|pt = 253
-forgePanel|ru = 253
-forgePanel|zh = 253
+forgePanel|de = 425
+forgePanel|en = 425
+forgePanel|es = 425
+forgePanel|fr = 425
+forgePanel|ja = 425
+forgePanel|pt = 425
+forgePanel|ru = 425
+forgePanel|zh = 425
 goal|de = 12
 goal|en = 12
 goal|es = 12
@@ -171,22 +193,22 @@ inspectorPanel|ja = 5
 inspectorPanel|pt = 5
 inspectorPanel|ru = 5
 inspectorPanel|zh = 5
-job|de = 40
-job|en = 40
-job|es = 40
-job|fr = 40
-job|ja = 40
-job|pt = 40
-job|ru = 40
-job|zh = 40
-liveshare|de = 225
-liveshare|en = 225
-liveshare|es = 225
-liveshare|fr = 225
-liveshare|ja = 225
-liveshare|pt = 225
-liveshare|ru = 225
-liveshare|zh = 225
+job|de = 38
+job|en = 38
+job|es = 38
+job|fr = 38
+job|ja = 38
+job|pt = 38
+job|ru = 38
+job|zh = 38
+liveshare|de = 223
+liveshare|en = 223
+liveshare|es = 223
+liveshare|fr = 223
+liveshare|ja = 223
+liveshare|pt = 223
+liveshare|ru = 223
+liveshare|zh = 223
 messageQuotes|de = 1
 messageQuotes|en = 1
 messageQuotes|es = 1
@@ -203,14 +225,14 @@ model|ja = 23
 model|pt = 23
 model|ru = 23
 model|zh = 23
-open-in-app|de = 58
-open-in-app|en = 58
-open-in-app|es = 58
-open-in-app|fr = 58
-open-in-app|ja = 58
-open-in-app|pt = 58
-open-in-app|ru = 58
-open-in-app|zh = 58
+open-in-app|de = 59
+open-in-app|en = 59
+open-in-app|es = 59
+open-in-app|fr = 59
+open-in-app|ja = 59
+open-in-app|pt = 59
+open-in-app|ru = 59
+open-in-app|zh = 59
 permission.access|de = 17
 permission.access|en = 17
 permission.access|es = 17
@@ -227,22 +249,22 @@ plan|ja = 16
 plan|pt = 16
 plan|ru = 16
 plan|zh = 16
-pluginManager|de = 291
-pluginManager|en = 291
-pluginManager|es = 291
-pluginManager|fr = 291
-pluginManager|ja = 291
-pluginManager|pt = 291
-pluginManager|ru = 291
-pluginManager|zh = 291
-pluginMarket|de = 87
-pluginMarket|en = 87
-pluginMarket|es = 87
-pluginMarket|fr = 87
-pluginMarket|ja = 87
-pluginMarket|pt = 87
-pluginMarket|ru = 87
-pluginMarket|zh = 87
+pluginManager|de = 293
+pluginManager|en = 293
+pluginManager|es = 293
+pluginManager|fr = 293
+pluginManager|ja = 293
+pluginManager|pt = 293
+pluginManager|ru = 293
+pluginManager|zh = 293
+pluginMarket|de = 89
+pluginMarket|en = 89
+pluginMarket|es = 89
+pluginMarket|fr = 89
+pluginMarket|ja = 89
+pluginMarket|pt = 89
+pluginMarket|ru = 89
+pluginMarket|zh = 89
 pluginRecommendations|de = 25
 pluginRecommendations|en = 25
 pluginRecommendations|es = 25
@@ -307,14 +329,14 @@ session-log-download|ja = 14
 session-log-download|pt = 14
 session-log-download|ru = 14
 session-log-download|zh = 14
-settings.account|de = 94
-settings.account|en = 94
-settings.account|es = 94
-settings.account|fr = 94
-settings.account|ja = 94
-settings.account|pt = 94
-settings.account|ru = 94
-settings.account|zh = 94
+settings.account|de = 93
+settings.account|en = 93
+settings.account|es = 93
+settings.account|fr = 93
+settings.account|ja = 93
+settings.account|pt = 93
+settings.account|ru = 93
+settings.account|zh = 93
 settings.agentLoop|de = 12
 settings.agentLoop|en = 12
 settings.agentLoop|es = 12
@@ -339,14 +361,14 @@ settings.locale|ja = 1
 settings.locale|pt = 1
 settings.locale|ru = 1
 settings.locale|zh = 1
-settings.models|de = 137
-settings.models|en = 137
-settings.models|es = 137
-settings.models|fr = 137
-settings.models|ja = 137
-settings.models|pt = 137
-settings.models|ru = 137
-settings.models|zh = 137
+settings.models|de = 173
+settings.models|en = 173
+settings.models|es = 173
+settings.models|fr = 173
+settings.models|ja = 173
+settings.models|pt = 173
+settings.models|ru = 173
+settings.models|zh = 173
 settings.permission|de = 12
 settings.permission|en = 12
 settings.permission|es = 12
@@ -403,22 +425,22 @@ settings.theme|ja = 25
 settings.theme|pt = 25
 settings.theme|ru = 25
 settings.theme|zh = 25
-settings.webSearch|de = 27
-settings.webSearch|en = 27
-settings.webSearch|es = 27
-settings.webSearch|fr = 27
-settings.webSearch|ja = 27
-settings.webSearch|pt = 27
-settings.webSearch|ru = 27
-settings.webSearch|zh = 27
-settings|de = 42
-settings|en = 42
-settings|es = 42
-settings|fr = 42
-settings|ja = 42
-settings|pt = 42
-settings|ru = 42
-settings|zh = 42
+settings.webSearch|de = 43
+settings.webSearch|en = 43
+settings.webSearch|es = 43
+settings.webSearch|fr = 43
+settings.webSearch|ja = 43
+settings.webSearch|pt = 43
+settings.webSearch|ru = 43
+settings.webSearch|zh = 43
+settings|de = 65
+settings|en = 65
+settings|es = 65
+settings|fr = 65
+settings|ja = 65
+settings|pt = 65
+settings|ru = 65
+settings|zh = 65
 shortcuts.layout|de = 1
 shortcuts.layout|en = 1
 shortcuts.layout|es = 1
@@ -467,14 +489,14 @@ sidebarExcel|ja = 15
 sidebarExcel|pt = 15
 sidebarExcel|ru = 15
 sidebarExcel|zh = 15
-sidebarFiles|de = 21
-sidebarFiles|en = 21
-sidebarFiles|es = 21
-sidebarFiles|fr = 21
-sidebarFiles|ja = 21
-sidebarFiles|pt = 21
-sidebarFiles|ru = 21
-sidebarFiles|zh = 21
+sidebarFiles|de = 53
+sidebarFiles|en = 53
+sidebarFiles|es = 53
+sidebarFiles|fr = 53
+sidebarFiles|ja = 53
+sidebarFiles|pt = 53
+sidebarFiles|ru = 53
+sidebarFiles|zh = 53
 sidebarImage|de = 11
 sidebarImage|en = 11
 sidebarImage|es = 11
@@ -507,22 +529,22 @@ sidebarRight|ja = 38
 sidebarRight|pt = 38
 sidebarRight|ru = 38
 sidebarRight|zh = 38
-sidebarTerminal|de = 28
-sidebarTerminal|en = 28
-sidebarTerminal|es = 28
-sidebarTerminal|fr = 28
-sidebarTerminal|ja = 28
-sidebarTerminal|pt = 28
-sidebarTerminal|ru = 28
-sidebarTerminal|zh = 28
-sidebar|de = 8
-sidebar|en = 8
-sidebar|es = 8
-sidebar|fr = 8
-sidebar|ja = 8
-sidebar|pt = 8
-sidebar|ru = 8
-sidebar|zh = 8
+sidebarTerminal|de = 33
+sidebarTerminal|en = 33
+sidebarTerminal|es = 33
+sidebarTerminal|fr = 33
+sidebarTerminal|ja = 33
+sidebarTerminal|pt = 33
+sidebarTerminal|ru = 33
+sidebarTerminal|zh = 33
+sidebar|de = 10
+sidebar|en = 10
+sidebar|es = 10
+sidebar|fr = 10
+sidebar|ja = 10
+sidebar|pt = 10
+sidebar|ru = 10
+sidebar|zh = 10
 skill|de = 8
 skill|en = 8
 skill|es = 8
@@ -547,14 +569,14 @@ stats|ja = 177
 stats|pt = 177
 stats|ru = 177
 stats|zh = 177
-subagent|de = 42
-subagent|en = 42
-subagent|es = 42
-subagent|fr = 42
-subagent|ja = 42
-subagent|pt = 42
-subagent|ru = 42
-subagent|zh = 42
+subagent|de = 47
+subagent|en = 47
+subagent|es = 47
+subagent|fr = 47
+subagent|ja = 47
+subagent|pt = 47
+subagent|ru = 47
+subagent|zh = 47
 trajectory|de = 199
 trajectory|en = 199
 trajectory|es = 199
@@ -604,9 +626,9 @@ dsh-agent-instructions: NO locale.register site
 dsh-agent-loop: NO locale.register site
 dsh-agent-preset: NO locale.register site
 dsh-agent-preset-registry: NO locale.register site
+dsh-agent-team: NO locale.register site
 dsh-agent-tool-presentation: NO locale.register site
 dsh-anonymous-user-id: NO locale.register site
-dsh-api-account-controller: NO locale.register site
 dsh-api-gateway: NO locale.register site
 dsh-api-job-controller: NO locale.register site
 dsh-api-remote-access: NO locale.register site
@@ -635,7 +657,7 @@ dsh-client-resources: NO locale.register site
 dsh-client-shortcuts: NO locale.register site
 dsh-client-ui-attachment: NO locale.register site
 dsh-client-ui-brand-official: NO locale.register site
-dsh-client-ui-directory-picker-browse/directory-browser: recovered loop dictionaries (dictionaries)
+dsh-client-ui-directory-picker-browse@31443: unresolved identifier locale at 31475
 dsh-client-ui-directory-picker-native: NO locale.register site
 dsh-client-ui-renderer: NO locale.register site
 dsh-client-ui-session: NO locale.register site
@@ -650,24 +672,25 @@ dsh-compaction: NO locale.register site
 dsh-compaction-basic: NO locale.register site
 dsh-compaction-image-offload: NO locale.register site
 dsh-compaction-tool-result-pruner: NO locale.register site
+dsh-computer-use: NO locale.register site
 dsh-config-editor: NO locale.register site
 dsh-cordis-client-runner: NO locale.register site
 dsh-cordis-host-runner: NO locale.register site
 dsh-creation-recommendations: NO locale.register site
 dsh-credentials: NO locale.register site
 dsh-credentials-local: NO locale.register site
+dsh-cua-bundle: NO locale.register site
 dsh-deepseek-account: NO locale.register site
-dsh-deepseek-account-platform: NO locale.register site
 dsh-deepseek-llm-api-extensions: NO locale.register site
 dsh-deliverable-file-references: NO locale.register site
 dsh-deque: NO locale.register site
 dsh-desktop-host: NO locale.register site
-dsh-experimental-agent-team: NO locale.register site
-dsh-experimental-agent-team-profile: NO locale.register site
+dsh-error: NO locale.register site
 dsh-experimental-api-speech-to-text: NO locale.register site
 dsh-experimental-auto-review: NO locale.register site
 dsh-experimental-badge-skill-bundle: NO locale.register site
 dsh-experimental-cot-translation-bundle: NO locale.register site
+dsh-experimental-cua-macos: NO locale.register site
 dsh-experimental-forge: NO locale.register site
 dsh-experimental-forge-bundle: NO locale.register site
 dsh-experimental-forge-github: NO locale.register site
@@ -681,7 +704,6 @@ dsh-experimental-session-titles-bundle: NO locale.register site
 dsh-experimental-speech-to-text: NO locale.register site
 dsh-experimental-speech-to-text-sensevoice: NO locale.register site
 dsh-experimental-terminal-bundle: NO locale.register site
-dsh-experimental-tool-agent-team: NO locale.register site
 dsh-experimental-tool-worktree: NO locale.register site
 dsh-experimental-translator: NO locale.register site
 dsh-experimental-voice-input-bundle: NO locale.register site
@@ -720,10 +742,11 @@ dsh-llm-deepseek-api-key: NO locale.register site
 dsh-llm-pi-ai: NO locale.register site
 dsh-llm-retry: NO locale.register site
 dsh-mcp-client: NO locale.register site
+dsh-mcp-manager: NO locale.register site
 dsh-mcp-resources: NO locale.register site
 dsh-message-feedback: NO locale.register site
 dsh-native-command: NO locale.register site
-dsh-office-to-pdf: NO locale.register site
+dsh-office-kit: NO locale.register site
 dsh-official-bundles: NO locale.register site
 dsh-otel: NO locale.register site
 dsh-output-retention: NO locale.register site
@@ -798,10 +821,12 @@ dsh-subprocess-local: NO locale.register site
 dsh-system-prompt: NO locale.register site
 dsh-terminal: NO locale.register site
 dsh-terminal-bash: NO locale.register site
+dsh-terminal-panel: NO locale.register site
 dsh-time-context: NO locale.register site
 dsh-timeout: NO locale.register site
 dsh-tmux-context: NO locale.register site
 dsh-token-meter: NO locale.register site
+dsh-tool-agent-team: NO locale.register site
 dsh-tool-ask-user: NO locale.register site
 dsh-tool-bash: NO locale.register site
 dsh-tool-bash-persistent: NO locale.register site
@@ -813,6 +838,7 @@ dsh-tool-fs: NO locale.register site
 dsh-tool-fs-search: NO locale.register site
 dsh-tool-goal: NO locale.register site
 dsh-tool-jobs: NO locale.register site
+dsh-tool-office: NO locale.register site
 dsh-tool-present: NO locale.register site
 dsh-tool-pwsh: NO locale.register site
 dsh-tool-pwsh-persistent: NO locale.register site
@@ -837,6 +863,7 @@ dsh-user-approval: NO locale.register site
 dsh-user-questions: NO locale.register site
 dsh-util-code-language: NO locale.register site
 dsh-util-crypto: NO locale.register site
+dsh-util-ripgrep: NO locale.register site
 dsh-util-time: NO locale.register site
 dsh-util-values: NO locale.register site
 dsh-util-workspace-path: NO locale.register site
