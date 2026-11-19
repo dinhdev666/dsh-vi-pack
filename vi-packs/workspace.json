@@ -25,7 +25,7 @@
   "viewOptions.showArchived": "Tất cả hội thoại (hiện mục đã lưu trữ)",
   "viewOptions.onlyArchived": "Chỉ mục đã lưu trữ",
   "sessions.expand": "Hiện thêm {n} phiên",
-  "sessions.collapse": "Hiện ít hơn",
+  "sessions.collapse": "Thu gọn",
   "empty.none": "Chưa có phiên nào",
   "empty.noneArchived": "Chưa có phiên lưu trữ nào",
   "empty.viewOthers": "Xem các phiên khác",

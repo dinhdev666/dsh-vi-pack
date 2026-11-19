@@ -1,5 +1,5 @@
 {
-  "appVersion": "0.2.2-rc.3",
+  "appVersion": "0.2.2-rc.5",
   "packages": [
     {
       "name": "@deepseek-ai/cordis-plugin-timer",
@@ -969,17 +969,6 @@
       "description": {
         "en": "Translates expanded Think rows into your chosen language as the agent writes them, and View original switches back.",
         "zh": "智能体输出时，把展开的“思考”行翻译成你选择的语言，点击“查看原文”可切换回原文。"
-      }
-    },
-    {
-      "name": "@deepseek-ai/dsh-experimental-cua-macos",
-      "title": {
-        "en": "macOS Computer Use provider",
-        "zh": "macOS Computer Use后端"
-      },
-      "description": {
-        "en": "Provide native macOS applications and windows for the shared Computer Use service.",
-        "zh": "为共享Computer Use服务提供 macOS 原生应用与窗口对象。"
       }
     },
     {

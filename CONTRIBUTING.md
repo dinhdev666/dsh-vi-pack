@@ -134,7 +134,8 @@ If the namespace or key count changed, update the numbers quoted in `README.md` 
 `tools/` is plain ESM with no dependencies. Keep it that way unless a dependency is clearly
 justified and discussed first.
 
-- `extract-dicts.mjs` — parse locale dictionaries out of the installed DSH client bundles.
+- `extract-dicts.mjs` — parse locale dictionaries out of the installed DSH client bundles (needs the
+  Electron-as-node interpreter to open `app.asar`).
 - `extract-meta.mjs` — read package titles/descriptions from the same `app.asar` into `extract/meta.json`
   (it also reads the official on-demand catalog, whose bundles are not installed yet but do appear in
   the Plugin Manager).
@@ -142,8 +143,10 @@ justified and discussed first.
 - `prepare-dataset.mjs` — split `dicts-v2.json` into per-namespace English sources plus the manifest.
 - `build-client.mjs` — generate `plugin/client.js` from `vi-packs/` and `vi-meta/`.
 - `validate-vi.mjs` — strict structural validation of the dictionaries.
-- `validate-meta.mjs` — strict coverage validation of the package titles/descriptions.
-- `audit-vi.mjs` — advisory quality audit.
+- `validate-meta.mjs` — strict coverage validation of the package titles/descriptions and Host copy.
+- `validate-manifest.mjs` — check that both bundle manifests describe one bundle.
+- `audit-vi.mjs` — advisory quality audit (leftover English, glossary drift, spacing).
+- `audit-consistency.mjs` — advisory audit of one English source rendered differently across namespaces.
 - `test-client.mjs` — load the generated bundle in `node:vm` against a stub locale service.
 
 `tools/lib/` holds what more than one script needs, so nothing is copy-pasted between them:
@@ -154,17 +157,17 @@ detection, the `app.asar` reader). If two scripts start repeating a block, move 
 `tools/lib/README.md`.
 
 The scripts resolve the repository root from their own location (through `tools/lib/repo.mjs`), so
-they run from any working directory and the checkout can live anywhere. `extract-dicts.mjs` and
-`extract-meta.mjs` and `extract-host-text.mjs` are the only tools that read outside the repository: they
-auto-detect the default
+they run from any working directory and the checkout can live anywhere. The three `extract-*.mjs`
+scripts are the only tools that read outside the repository: they auto-detect the default
 Windows/macOS DSH install and take `DSH_APP_ASAR` (path to the installed `app.asar`) when DSH lives
 elsewhere. Do not commit machine-specific paths.
 
 ## Documentation
 
-Documentation follows a fixed split: user-facing `README.md` is Vietnamese; `AGENTS.md`,
-`CONTRIBUTING.md`, `GUIDE.md`, and `plugin/README.md` are English. When you change behavior, counts,
-paths, or commands, update the affected prose in the same change.
+Documentation follows a fixed split: the user-facing `README.md`, `plugin/README.md`,
+`tools/lib/README.md`, and `extract/reference/README.md` are Vietnamese; `AGENTS.md`,
+`CONTRIBUTING.md`, and `GUIDE.md` are English. When you change behavior, counts, paths, or commands,
+update the affected prose in the same change.
 
 ## Sending a change
 

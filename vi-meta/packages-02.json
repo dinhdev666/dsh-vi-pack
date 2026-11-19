@@ -66,10 +66,6 @@
     "title": "Dịch máy phần suy luận",
     "description": "Khi agent đang viết, dịch các hàng \"Suy nghĩ\" đã mở rộng sang ngôn ngữ bạn chọn, và nút \"Xem bản gốc\" chuyển lại."
   },
-  "@deepseek-ai/dsh-experimental-cua-macos": {
-    "title": "Nhà cung cấp Computer Use cho macOS",
-    "description": "Cung cấp ứng dụng và cửa sổ gốc của macOS cho dịch vụ Computer Use dùng chung."
-  },
   "@deepseek-ai/dsh-experimental-forge": {
     "title": "Yêu cầu thay đổi",
     "description": "Đăng ký nhà cung cấp mã nguồn và theo dõi trạng thái yêu cầu thay đổi qua một dịch vụ độc lập với nhà cung cấp."

@@ -11,7 +11,7 @@
   "description.plan": "Vào hoặc rời chế độ kế hoạch",
   "description.feedback": "Ghi lại phản hồi về phiên này",
   "description.compact": "Nén lịch sử hội thoại cũ hơn",
-  "description.permission": "Chuyển bộ quyền đặt sẵn (chế độ sandbox + chính sách phê duyệt)",
+  "description.permission": "Chuyển preset quyền (chế độ sandbox + chính sách phê duyệt)",
   "description.export": "Tải nhật ký phiên này dưới dạng tệp ZIP",
   "token.goal": "mục tiêu",
   "token.plan": "kế hoạch",

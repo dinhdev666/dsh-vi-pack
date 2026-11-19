@@ -594,7 +594,7 @@ var ClientModuleRegistry = class extends Service {
 	constructor(ctx) {
 		super(ctx, "clientModules");
 		const { version } = createRequire(import.meta.url)("../package.json");
-		const commit = "6b729fe";
+		const commit = "3f85d88";
 		this.release = {
 			version,
 			commit

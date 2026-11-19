@@ -543,9 +543,9 @@
     "ns": "settings.webSearch",
     "pkg": "dsh-client-ui-settings-web-search",
     "file": "settings.webSearch.json",
-    "keys": 43,
-    "maxLength": 126,
-    "longestKey": "billingAutoHint",
+    "keys": 44,
+    "maxLength": 152,
+    "longestKey": "searchAutoHint",
     "multiLineKeys": 0,
     "placeholderKeys": 4
   },

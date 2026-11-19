@@ -107,7 +107,7 @@
   "record.resultJson": "JSON kết quả",
   "record.rawResult": "Kết quả gốc",
   "record.renderedResult": "Kết quả được hiển thị",
-  "record.rawResultUnavailable": "Kết quả gốc chỉ có sẵn cho lệnh gọi công cụ đang sống",
+  "record.rawResultUnavailable": "Kết quả gốc chỉ có sẵn cho lệnh gọi công cụ đang diễn ra",
   "record.json": "JSON",
   "record.parametersJson": "JSON tham số",
   "record.namedParametersJson": "JSON tham số {name}",

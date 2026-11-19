@@ -1,9 +1,9 @@
 {
-  "menu.copyMarkdown": "Sao chép Phiên dưới dạng Markdown",
+  "menu.copyMarkdown": "Sao chép phiên dưới dạng Markdown",
   "menu.download": "Tải nhật ký phiên",
   "menu.feedback": "Phản hồi",
-  "toast.copied": "Đã sao chép Phiên dưới dạng Markdown.",
-  "toast.preparationFailed": "Không thể đọc Phiên để sao chép. Thử lại.",
+  "toast.copied": "Đã sao chép phiên dưới dạng Markdown.",
+  "toast.preparationFailed": "Không thể đọc phiên để sao chép. Thử lại.",
   "toast.clipboardFailed": "Không thể ghi vào clipboard. Kiểm tra quyền clipboard và thử lại.",
   "dialog.session": "Phiên: {sessionId}",
   "dialog.preparingTitle": "Đang xuất phiên",

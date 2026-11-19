@@ -162,7 +162,7 @@
   "bar.start": "bắt đầu {clock}",
   "turn.started": "lượt này bắt đầu lúc {time}",
   "turn.images": "{count} ảnh",
-  "imagePreview.hint": "Di chuột hoặc focus để xem trước ảnh của lượt này; bấm để mở ảnh đầy đủ",
+  "imagePreview.hint": "Di chuột hoặc đưa vào tiêu điểm để xem trước ảnh của lượt này; bấm để mở ảnh đầy đủ",
   "imagePreview.dialog": "Xem trước ảnh",
   "imagePreview.open": "Xem ảnh {index} trong {count}",
   "imagePreview.alt": "Ảnh {index}",

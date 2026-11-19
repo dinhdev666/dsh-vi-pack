@@ -12,6 +12,6 @@
   "tooLarge": "Tệp Office hoặc PDF đã chuyển đổi vượt quá giới hạn kích thước xem trước. Hãy giảm kích thước tệp hoặc điều chỉnh cấu hình xem trước.",
   "failed": "Chuyển đổi Office không tạo ra PDF dùng được. Hãy kiểm tra tệp và thử lại.",
   "timeout": "Chuyển đổi Office quá thời gian. Hãy thử lại.",
-  "busy": "Bản xem trước Office đang bận. Hãy thử lại sau ít phút.",
+  "busy": "Bản xem trước Office đang bận. Hãy thử lại sau một lát.",
   "changed": "Tệp đã thay đổi trong khi đang đọc. Hãy mở lại bản xem trước."
 }

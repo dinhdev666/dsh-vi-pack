@@ -23,7 +23,7 @@
   "error.missing-manifest": "Đây không phải bản xuất DeepSeek: thiếu manifest.json.",
   "error.missing-index": "Đây không phải bản xuất DeepSeek: thiếu chat_session_index.json hoặc không đọc được.",
   "error.unsupported-version": "Không hỗ trợ phiên bản định dạng xuất này.",
-  "error.unreadable-archive": "Tệp không phải kho lưu trữ ZIP đọc được.",
+  "error.unreadable-archive": "Không đọc được tệp ZIP này.",
   "error.no-conversations": "Bản xuất không có cuộc trò chuyện nào có thể nhập.",
   "error.too-large": "Tệp quá lớn: giới hạn là {limit}.",
   "error.workspace-not-found": "Không gian làm việc đã chọn không còn tồn tại. Hãy chọn không gian làm việc khác.",

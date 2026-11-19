@@ -3,7 +3,7 @@
 Bản sao tham chiếu (chỉ đọc) của các bundle web client upstream của DeepSeek Harness, được trích ra từ `app.asar` của bản dựng DSH đã cài và giữ lại **chỉ cho maintainer**. Không có phần nào trong pipeline đọc chúng.
 
 - **Không được `tools/` tạo lại.** `extract-dicts.mjs` và `extract-meta.mjs` đọc trực tiếp `app.asar` và chỉ ghi output của chính chúng; không script nào sinh, kiểm tra hay diff thư mục này. Để làm mới, hãy sao chép lại các đường dẫn trong archive dưới đây từ `app.asar` mới hơn.
-- **Không chỉnh sửa.** Coi mỗi tệp là snapshot đóng băng của bundle upstream tại phiên bản tham chiếu **DSH 0.2.2-rc.3** (theo bản dựng đã cài dùng để đối chiếu; trường `version` trong các bản dump `package.json` phản ánh phiên bản gói upstream tương ứng).
+- **Không chỉnh sửa.** Coi mỗi tệp là snapshot đóng băng của bundle upstream tại phiên bản tham chiếu **DSH 0.2.2-rc.5** (theo bản dựng đã cài dùng để đối chiếu; trường `version` trong các bản dump `package.json` phản ánh phiên bản gói upstream tương ứng).
 - Các bản sao `.txt` trùng nội dung (`locale-client.txt` có dòng header `SIZE=…`, `module-loader.txt` là bản cắt ngắn của `client-modules-client.js`) đã bị xoá trong lần tái tổ chức tạo thư mục này; bảng dưới chỉ liệt kê các bản còn lại.
 
 ## Nội dung
@@ -23,4 +23,4 @@ Bản sao tham chiếu (chỉ đọc) của các bundle web client upstream củ
 
 Sao chép từ `app.asar` đã cài (bản cài mặc định Windows/macOS, hoặc đường dẫn do `DSH_APP_ASAR` chỉ định).
 
-Các tệp là snapshot, **không phải** chế độ xem trực tiếp: sau khi DSH cập nhật, hãy sao chép lại các đường dẫn archive ở trên trước khi tin dùng chúng. (Ghi chú lịch sử: bộ dump trước đó được đối chiếu với DSH 0.2.1-rc.2 rồi 0.2.2-rc.1; khi làm mới từ bản dựng mới, cập nhật phiên bản tham chiếu và kiểm chứng byte-for-byte.)
+Các tệp là snapshot, **không phải** chế độ xem trực tiếp: sau khi DSH cập nhật, hãy sao chép lại các đường dẫn archive ở trên trước khi tin dùng chúng. (Ghi chú lịch sử: bộ dump trước đó được đối chiếu với DSH 0.2.1-rc.2, rồi 0.2.2-rc.1 và 0.2.2-rc.3; khi làm mới từ bản dựng mới, cập nhật phiên bản tham chiếu và kiểm chứng byte-for-byte.)

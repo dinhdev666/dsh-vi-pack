@@ -10,7 +10,7 @@
   "trigger.ariaEffort": "Chọn mô hình, hiện tại {model}, mức nỗ lực suy luận {effort}",
   "menu.aria": "Mô hình và mức nỗ lực suy luận",
   "menu.model": "Mô hình",
-  "menu.effort": "Nỗ lực",
+  "menu.effort": "Mức nỗ lực",
   "effort.providerDefault": "Mặc định",
   "status.loading": "Đang làm mới danh sách mô hình…",
   "error.action": "Thao tác mô hình thất bại: {message}",

@@ -3,7 +3,7 @@
   "error.unanswered": "Vui lòng chọn một tùy chọn hoặc nhập câu trả lời riêng.",
   "error.unavailable": "Hiện không thể gửi; hãy thử lại sau giây lát.",
   "error.resubmit": "Câu trả lời chưa đến trước khi công việc tiếp tục; hãy gửi lại.",
-  "status.sent": "Đã gửi trả lời; không thể đóng bảng.",
+  "status.sent": "Đã gửi trả lời; bảng không thể đóng.",
   "wait.takeTime": "Thêm thời gian",
   "wait.countdown": "Tiếp tục sau {seconds} giây",
   "wait.paused": "Đã tạm dừng · còn {seconds} giây",

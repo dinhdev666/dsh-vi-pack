@@ -88,8 +88,8 @@
   "accountInfo": "Thêm thông tin tài khoản",
   "more": "Thêm",
   "usage": "Xem mức sử dụng",
-  "topUp": "Nạp thêm",
+  "topUp": "Nạp tiền",
   "quotaTitle": "Không có số dư khả dụng",
   "quotaDescription": "DeepSeek Harness không thể bắt đầu tác vụ mới bằng tài khoản này khi không có số dư. Bạn có muốn nạp thêm? Bạn cũng có thể nạp sau trong Cài đặt → Tài khoản.",
-  "quotaTopUp": "Nạp thêm"
+  "quotaTopUp": "Nạp tiền"
 }

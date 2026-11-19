@@ -42,7 +42,7 @@
   "desktop.update.fullscreenTimeout": "Không thể thoát toàn màn hình. Thoát toàn màn hình, sau đó thử lại bản cập nhật.",
   "desktop.update.stopFailed": "Không thể dừng các tác vụ một cách an toàn. Bản cập nhật chưa được cài. Vui lòng thử lại sau.",
   "desktop.update.tasksChanged": "Đã có tác vụ mới bắt đầu. Hãy xác nhận lại để dừng các tác vụ và cập nhật.",
-  "desktop.update.tasksUnavailable": "Không có trạng thái tác vụ. Hãy thử cập nhật lại khi không gian làm việc sẵn sàng.",
+  "desktop.update.tasksUnavailable": "Không có thông tin trạng thái tác vụ. Hãy thử cập nhật lại khi không gian làm việc sẵn sàng.",
   "title": "Cài đặt",
   "close": "Đóng",
   "openDocument": "Mở tệp cấu hình",
