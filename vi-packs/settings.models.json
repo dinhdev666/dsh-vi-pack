@@ -37,7 +37,7 @@
   "keyReveal": "Hiện bí mật",
   "keyHide": "Ẩn bí mật",
   "keyPlaceholder": "Nhập khóa API của bạn",
-  "keyPlaceholderFallback": "Để trống để dùng biến môi trường làm xác thực ({hint})",
+  "keyPlaceholderFallback": "Để trống để xác thực qua biến môi trường ({hint})",
   "keySaved": "Dùng khóa API đã lưu.",
   "keyReplacePending": "Áp dụng để thay thế khóa API đã lưu.",
   "keyRemovePending": "Áp dụng để xóa khóa API đã lưu và dùng xác thực từ môi trường.",

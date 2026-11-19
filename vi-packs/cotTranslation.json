@@ -2,7 +2,7 @@
   "provider": "Dịch vụ dịch",
   "google": "Google",
   "bing": "Bing",
-  "deepseekAccount": "DeepSeek Flash — Tài khoản (trả phí)",
+  "deepseekAccount": "DeepSeek Flash — tài khoản (trả phí)",
   "deepseekOfficial": "DeepSeek Flash — API chính thức (trả phí)",
   "providerUnavailableOption": "{provider} — không khả dụng",
   "providerUnavailable": "Nhà cung cấp này không khả dụng. Hãy cấu hình tài khoản DeepSeek hoặc nhà cung cấp API chính thức, hoặc chọn một dịch vụ khả dụng.",

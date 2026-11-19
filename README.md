@@ -5,7 +5,7 @@ Gói ngôn ngữ tiếng Việt cho giao diện web **DeepSeek Harness (DSH)**: 
 mà Harness phát hành.
 
 - **76 namespace, 4.247 khóa** trên 66 gói client của DSH.
-- **270 tiêu đề và 82 mô tả gói** đã dịch cho danh sách plugin: **Plugin Manager** (kể cả mục
+- **271 tiêu đề và 83 mô tả gói** đã dịch cho danh sách plugin: **Plugin Manager** (kể cả mục
   *More* của các gói chưa cài) và **Settings → Plugins → Built-in plugins**. Phần chữ này do Host
   dựng từ `locale/en.json` của từng gói nên không nằm trong namespace nào; gói ngôn ngữ bổ sung bản
   dịch trong `vi-meta/` và phủ lên `ctx.locale.resolveText`.
@@ -125,7 +125,7 @@ Các lệnh dùng hằng ngày (chạy từ thư mục gốc repo):
 ```bash
 node tools/validate-vi.mjs                       # toàn bộ 76 namespace
 node tools/validate-vi.mjs chat conversation     # chỉ định namespace
-node tools/validate-meta.mjs                     # toàn bộ 270 tiêu đề, 82 mô tả gói, 3 lời nhắc phê duyệt
+node tools/validate-meta.mjs                     # toàn bộ 271 tiêu đề, 83 mô tả gói, 3 lời nhắc phê duyệt
 node tools/validate-meta.mjs --partial           # báo phần còn thiếu, không tính là lỗi
 node tools/audit-vi.mjs                          # soát tiếng Anh sót, glossary, khoảng trắng
 node tools/audit-consistency.mjs                 # soát cùng một câu tiếng Anh nhưng dịch khác nhau giữa các namespace
@@ -152,7 +152,7 @@ namespace, ngôn ngữ dự phòng, lớp phủ tên/mô tả gói và việc d�
 - Quy tắc chi tiết và glossary nằm trong [GUIDE.md](GUIDE.md).
 
 Trạng thái hiện tại: đối chiếu với **DSH 0.2.2-rc.5** — 76/76 namespace dịch đủ 4.247 khóa;
-270/270 tiêu đề, 82/82 mô tả gói và 3/3 lời nhắc phê duyệt đã dịch; `validate-vi`, `validate-meta`,
+271/271 tiêu đề, 83/83 mô tả gói và 3/3 lời nhắc phê duyệt đã dịch; `validate-vi`, `validate-meta`,
 `test-client` và `build-client` đều qua.
 
 ## Ghi chú

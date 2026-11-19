@@ -33,8 +33,8 @@ five different kinds of files, and each has a different edit policy:
    (`<repository-url>#path:/plugin`), which downloads this folder alone;
    `node tools/validate-manifest.mjs` keeps the two in sync.
 
-Current baseline: **76 namespaces, 4,247 keys**, plus **270 package titles and 82 descriptions**
-(268 and 82 distinct English strings — two pairs of packages share one English title, and the
+Current baseline: **76 namespaces, 4,247 keys**, plus **271 package titles and 83 descriptions**
+(269 and 83 distinct English strings — two pairs of packages share one English title, and the
 overlay keys translations by that English string) and **3 Host reason texts**. Treat any deviation
 from these numbers as a signal to investigate, not to "fix" by editing counts in prose.
 

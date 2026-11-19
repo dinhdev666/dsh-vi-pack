@@ -4,7 +4,7 @@
   },
   "@deepseek-ai/dsh-acp": {
     "title": "Máy chủ ACP",
-    "description": "Chạy agent qua JSON-RPC qua đầu vào và đầu ra tiêu chuẩn cho tự động hoá."
+    "description": "Chạy agent qua JSON-RPC trên đầu vào và đầu ra tiêu chuẩn cho tự động hoá."
   },
   "@deepseek-ai/dsh-acp-app": {
     "title": "Hồ sơ ACP",
@@ -12,7 +12,7 @@
   },
   "@deepseek-ai/dsh-action-cards": {
     "title": "Thẻ hành động",
-    "description": "Hiển thị thẻ hành động tuỳ chọn bên dưới câu trả lời cho các thí nghiệm đã bật, và báo cáo lựa chọn của người dùng lại cho cuộc hội thoại."
+    "description": "Hiển thị thẻ hành động tuỳ chọn bên dưới câu trả lời cho các thí nghiệm đã bật, và báo lại lựa chọn của người dùng cho cuộc hội thoại."
   },
   "@deepseek-ai/dsh-agent": {
     "title": "Quản lý agent"
@@ -144,7 +144,7 @@
   },
   "@deepseek-ai/dsh-client-ui-creation-recommendations": {
     "title": "Thẻ trang cá nhân hoá",
-    "description": "Hiển thị thẻ đề xuất sau câu trả lời với lựa chọn vị trí, tiến trình tạo, giữ lại và hoàn tác."
+    "description": "Hiển thị thẻ đề xuất sau câu trả lời với lựa chọn vị trí, tiến trình tạo, hoàn tác và khôi phục."
   },
   "@deepseek-ai/dsh-client-ui-deliverables": {
     "title": "Hiển thị thay đổi tệp và sản phẩm bàn giao"
@@ -202,7 +202,7 @@
   },
   "@deepseek-ai/dsh-client-ui-plugin-recommendations": {
     "title": "Thẻ đề xuất plugin",
-    "description": "Hiển thị thẻ Bật cho plugin chính thức được đề xuất sau câu trả lời, với chi tiết của nó và lựa chọn của bạn."
+    "description": "Hiển thị thẻ Bật cho plugin chính thức được đề xuất sau câu trả lời, kèm chi tiết plugin và lựa chọn của bạn."
   },
   "@deepseek-ai/dsh-client-ui-reference": {
     "title": "Giao diện tham chiếu tệp và phiên"
@@ -252,7 +252,7 @@
     "title": "Cài đặt agent con"
   },
   "@deepseek-ai/dsh-client-ui-settings-web-search": {
-    "title": "Cài đặt tìm kiếm web"
+    "title": "Cài đặt tìm kiếm và truy cập web"
   },
   "@deepseek-ai/dsh-client-ui-shortcuts": {
     "title": "Giao diện cài đặt phím tắt"
@@ -294,7 +294,7 @@
     "title": "Giao diện hỏi đáp người dùng"
   },
   "@deepseek-ai/dsh-client-ui-workflow-run": {
-    "title": "Hiển thị chạy quy trình"
+    "title": "Hiển thị khi chạy quy trình"
   },
   "@deepseek-ai/dsh-client-ui-workspace": {
     "title": "Giao diện chọn không gian làm việc"
@@ -321,7 +321,7 @@
     "title": "Rút gọn kết quả công cụ"
   },
   "@deepseek-ai/dsh-computer-use": {
-    "title": "Danh bạ nhà cung cấp Computer Use",
+    "title": "Sổ đăng ký nhà cung cấp Computer Use",
     "description": "Đăng ký nhà cung cấp Computer Use theo tên, mỗi tên một nhà cung cấp."
   },
   "@deepseek-ai/dsh-config-editor": {

@@ -1,6 +1,6 @@
 {
   "presented.nativeUnavailable": "Tệp này không có đường dẫn Host khả dụng. Hãy xem trước trong thanh bên.",
-  "presented.revealError": "Không thể hiện trong trình quản lý tệp. Hãy thử lại.",
+  "presented.revealError": "Không thể hiển thị trong trình quản lý tệp. Hãy thử lại.",
   "presented.directoryError": "Không thể mở thư mục chứa. Hãy thử lại.",
   "presented.directoryOpening": "Đang mở thư mục chứa…",
   "presented.revealing": "Đang hiển thị trong trình quản lý tệp…",

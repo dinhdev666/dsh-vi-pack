@@ -183,7 +183,7 @@
   "rule.invalidTime": "Chọn một ngày và giờ hợp lệ trong múi giờ đã chọn.",
   "rule.invalidZone": "Chọn một múi giờ hợp lệ.",
   "rule.tooComplex": "Quy tắc này quá thường xuyên hoặc phức tạp. Chọn một lựa chọn lặp lại hoặc yêu cầu agent đơn giản hóa nó.",
-  "rule.cancel": "Bỏ qua",
+  "rule.cancel": "Bỏ thay đổi",
   "rule.once": "Một lần",
   "rule.everyMinutes": "Mỗi N phút",
   "rule.everyHours": "Mỗi N giờ",

@@ -972,6 +972,17 @@
       }
     },
     {
+      "name": "@deepseek-ai/dsh-experimental-cua-macos",
+      "title": {
+        "en": "macOS Computer Use provider",
+        "zh": "macOS Computer Use后端"
+      },
+      "description": {
+        "en": "Provide native macOS applications and windows for the shared Computer Use service.",
+        "zh": "为共享Computer Use服务提供 macOS 原生应用与窗口对象。"
+      }
+    },
+    {
       "name": "@deepseek-ai/dsh-experimental-forge",
       "title": {
         "en": "Change requests",

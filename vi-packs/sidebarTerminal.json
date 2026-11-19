@@ -13,7 +13,7 @@
   "connecting": "Đang kết nối…",
   "disconnected": "Đã ngắt kết nối.",
   "reconnect": "Kết nối lại",
-  "readonly": "Dạng xem này chỉ đọc.",
+  "readonly": "Chế độ xem này chỉ đọc.",
   "control": "Nhận quyền điều khiển",
   "closed": "Terminal đã đóng.",
   "exited": "Tiến trình đã thoát ({code})",

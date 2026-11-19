@@ -657,7 +657,7 @@ dsh-client-resources: NO locale.register site
 dsh-client-shortcuts: NO locale.register site
 dsh-client-ui-attachment: NO locale.register site
 dsh-client-ui-brand-official: NO locale.register site
-dsh-client-ui-directory-picker-browse@31542: unresolved identifier locale at 31574
+dsh-client-ui-directory-picker-browse@31443: unresolved identifier locale at 31475
 dsh-client-ui-directory-picker-native: NO locale.register site
 dsh-client-ui-renderer: NO locale.register site
 dsh-client-ui-session: NO locale.register site
@@ -690,6 +690,7 @@ dsh-experimental-api-speech-to-text: NO locale.register site
 dsh-experimental-auto-review: NO locale.register site
 dsh-experimental-badge-skill-bundle: NO locale.register site
 dsh-experimental-cot-translation-bundle: NO locale.register site
+dsh-experimental-cua-macos: NO locale.register site
 dsh-experimental-forge: NO locale.register site
 dsh-experimental-forge-bundle: NO locale.register site
 dsh-experimental-forge-github: NO locale.register site

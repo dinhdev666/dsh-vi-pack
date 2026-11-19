@@ -1,6 +1,6 @@
 {
   "name": "@dinhdev666/dsh-vi-pack",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "private": true,
   "description": "Adds the Vietnamese (vi) language to the DeepSeek Harness Web GUI, including installed-package titles and descriptions.",
   "type": "module",

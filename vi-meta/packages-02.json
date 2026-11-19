@@ -31,8 +31,8 @@
     "title": "Tiện ích mở rộng DeepSeek API"
   },
   "@deepseek-ai/dsh-deliverable-file-references": {
-    "title": "Tham chiếu tệp giao nộp",
-    "description": "Cung cấp hướng dẫn mô hình chia sẻ về liên kết tệp và nội dung giao nộp giữa các môi trường ứng dụng."
+    "title": "Tham chiếu tệp bàn giao",
+    "description": "Cung cấp hướng dẫn mô hình chia sẻ về liên kết tệp và sản phẩm bàn giao giữa các môi trường ứng dụng."
   },
   "@deepseek-ai/dsh-experimental-api-speech-to-text": {
     "title": "API chuyển giọng nói thành văn bản",
@@ -66,13 +66,17 @@
     "title": "Dịch máy phần suy luận",
     "description": "Khi agent đang viết, dịch các hàng \"Suy nghĩ\" đã mở rộng sang ngôn ngữ bạn chọn, và nút \"Xem bản gốc\" chuyển lại."
   },
+  "@deepseek-ai/dsh-experimental-cua-macos": {
+    "title": "Nhà cung cấp Computer Use cho macOS",
+    "description": "Cung cấp ứng dụng và cửa sổ macOS nguyên bản cho dịch vụ Computer Use dùng chung."
+  },
   "@deepseek-ai/dsh-experimental-forge": {
     "title": "Yêu cầu thay đổi",
     "description": "Đăng ký nhà cung cấp mã nguồn và theo dõi trạng thái yêu cầu thay đổi qua một dịch vụ độc lập với nhà cung cấp."
   },
   "@deepseek-ai/dsh-experimental-forge-bundle": {
     "title": "Yêu cầu thay đổi & worktree",
-    "description": "Theo dõi các pull request GitHub liên kết bên cạnh cuộc hội thoại của bạn: theo dõi kiểm tra và đánh giá, xem diff và gửi phản hồi cho agent. Xem lại thay đổi cục bộ và dùng một worktree riêng để cô lập từng tác vụ. Các tính năng GitHub yêu cầu gh CLI đã cài đặt và đăng nhập trên máy chủ."
+    "description": "Giữ các pull request GitHub liên kết bên cạnh cuộc hội thoại của bạn: theo dõi kiểm tra và đánh giá, xem diff và gửi phản hồi cho agent. Xem lại thay đổi cục bộ và dùng một worktree riêng để cô lập từng tác vụ. Các tính năng GitHub yêu cầu gh CLI đã cài đặt và đăng nhập trên máy chủ."
   },
   "@deepseek-ai/dsh-experimental-forge-github": {
     "title": "Yêu cầu thay đổi GitHub",
@@ -100,7 +104,7 @@
   },
   "@deepseek-ai/dsh-experimental-ralph-bundle": {
     "title": "Vòng lặp Ralph",
-    "description": "Yêu cầu một vòng lặp Ralph với mục tiêu, và agent sẽ bắt đầu một agent mới xử lý nó từng vòng cho đến khi mục tiêu đạt được, báo cáo bị chặn hoặc đạt giới hạn vòng."
+    "description": "Yêu cầu một vòng lặp Ralph với mục tiêu, và agent sẽ bắt đầu một agent mới xử lý nó từng vòng cho đến khi mục tiêu đạt được, có điểm chặn được báo cáo hoặc chạm giới hạn số vòng."
   },
   "@deepseek-ai/dsh-experimental-session-inspector": {
     "title": "Nhật ký phiên",
@@ -124,7 +128,7 @@
   },
   "@deepseek-ai/dsh-experimental-terminal-bundle": {
     "title": "Terminal thường trực",
-    "description": "Cung cấp cho agent các terminal có tiến trình vẫn chạy ở nền giữa các lệnh gọi công cụ, để nó có thể khởi động máy chủ phát triển hoặc REPL và quay lại đọc đầu ra hoặc nhập liệu sau."
+    "description": "Cung cấp cho agent terminal mở thành thẻ thanh bên để bạn xem và tiếp quản khi gõ lệnh. Tiến trình vẫn chạy giữa các lệnh gọi công cụ nên agent có thể chạy máy chủ phát triển hoặc REPL rồi quay lại đọc đầu ra, và đọc cả terminal bạn tự mở."
   },
   "@deepseek-ai/dsh-experimental-tool-worktree": {
     "title": "Worktree Git",
@@ -136,7 +140,7 @@
   },
   "@deepseek-ai/dsh-experimental-voice-input-bundle": {
     "title": "Nhập bằng giọng nói",
-    "description": "Phiên âm bản ghi cục bộ bằng SenseVoice; lần đầu sử dụng cần cài đặt các phụ thuộc."
+    "description": "Chuyển bản ghi âm thành văn bản ngay trên máy bằng SenseVoice; lần đầu sử dụng cần cài đặt các phụ thuộc."
   },
   "@deepseek-ai/dsh-experimental-worktree": {
     "title": "Dịch vụ worktree",
@@ -163,7 +167,7 @@
   },
   "@deepseek-ai/dsh-harness-dev-context": {
     "title": "Ngữ cảnh phát triển Harness",
-    "description": "Cung cấp thư mục mã nguồn Harness và URL Web cho mô hình mà không thay đổi system prompt."
+    "description": "Cung cấp thư mục mã nguồn Harness và URL Web cho mô hình mà không thay đổi lời nhắc hệ thống."
   },
   "@deepseek-ai/dsh-headless": {
     "title": "Hồ sơ không giao diện",

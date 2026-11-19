@@ -1,6 +1,6 @@
 # Gói ngôn ngữ Tiếng Việt cho DeepSeek Harness
 
-Thêm `Tiếng Việt (vi)` vào **Settings → General → Language** và Việt hoá Web GUI bằng từ điển Tiếng Việt cho tất cả 76 namespace locale mà Harness phát hành (4.247 khóa, đối chiếu DSH 0.2.2-rc.5), cùng 270 tiêu đề và 82 mô tả gói hiển thị trong danh sách plugin, và 3 lời nhắc phê duyệt mà Host gửi kèm yêu cầu quyền.
+Thêm `Tiếng Việt (vi)` vào **Settings → General → Language** và Việt hoá Web GUI bằng từ điển Tiếng Việt cho tất cả 76 namespace locale mà Harness phát hành (4.247 khóa, đối chiếu DSH 0.2.2-rc.5), cùng 271 tiêu đề và 83 mô tả gói hiển thị trong danh sách plugin, và 3 lời nhắc phê duyệt mà Host gửi kèm yêu cầu quyền.
 
 - **Gói client:** `client.js` đăng ký `vi` qua `ctx.locale.addLanguage`, sau đó đăng ký một từ điển cho mỗi namespace bằng `ctx.locale.register(ns, 'vi', dict)`, rồi bọc `ctx.locale.resolveText` để tiêu đề/mô tả gói đã cài và lời nhắc phê duyệt của Host được hiển thị bằng Tiếng Việt khi `vi` đang hoạt động. Các từ điển locale không bao phủ phần văn bản này: Host dựng nó từ `locale/en.json` của từng gói (hoặc từ yêu cầu quyền), nên gói ngôn ngữ mang bản dịch theo và khớp dựa trên văn bản tiếng Anh gốc. Lời nhắc phê duyệt có nội suy giá trị (chế độ quyền sandbox, lý do, v.v.) được khớp theo khuôn mẫu để giữ nguyên giá trị động trong khi dịch phần khung.
 - **Dự phòng:** `en`. Mọi khóa hoặc văn bản gói chưa được gói ngôn ngữ bao phủ sẽ giải thành tiếng Anh, nên giao diện không bao giờ hiển thị khóa thô.

@@ -219,7 +219,7 @@
   "viewer.reason.fork-prepare-failed": "Host không thể chuẩn bị phân nhánh này, do đó thao tác này không chạy",
   "viewer.reason.share-not-writable": "Chủ sở hữu không cho phép ghi phiên này",
   "viewer.reason.source-write-unavailable": "Host này không thể hạn chế phiên chia sẻ, do đó không thể điều khiển nó",
-  "viewer.reason.prompt-identity-missing": "Gửi này không mang danh tính yêu cầu để ghi nhận, do đó Host không chạy nó",
+  "viewer.reason.prompt-identity-missing": "Lần gửi này không mang danh tính yêu cầu để ghi nhận, do đó Host không chạy nó",
   "viewer.reason.viewer-not-authorized": "Tài khoản của bạn không còn quyền truy cập vào chia sẻ này",
   "viewer.reason.liveshare/read-only": "Phiên này nằm ngoài phạm vi chia sẻ bạn nắm giữ, do đó nó không được ghi"
 }
